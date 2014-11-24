@@ -13,12 +13,6 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
     <% if signed_in? %>
-      <li id='add-dropdown' class='dropdown'>
-        <button
-          class='dropdown-toggle navbar-btn btn btn-primary custom-button'
-          data-toggle='dropdown'><span class='glyphicon glyphicon-plus'></span>
-        </button>
-      </li>
       <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn custom-button" %></li>
     <% else %>
       <li class="sign-in-text"><%= link_to "Log in", new_session_url %></li>
