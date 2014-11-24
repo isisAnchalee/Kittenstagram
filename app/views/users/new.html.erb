@@ -1,15 +1,14 @@
-<h1> Sign Up </h2>
-<form class="login-form" action="/users" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label> Username
-    <input name="user[username]" type="text" class=""><br>
-  </label><br>
-  <label>
-  <label> Email
-    <input name="user[email]" type="text" class=""><br>
-  </label><br>
-  <label> Password
-    <input name="user[password]" type="password" class=""><br>
-  </label><br>
-  <input type="submit" value="Submit" class=""><br>
-</form>
+<%= render partial: "layouts/bg" %>
+<div class="box">
+  <div class="welcome-wrapper">
+    <div class="splash-sign-up"> New Users</div>
+    <div class="welcome-message"> The purrfect image, just clicks away.</div>
+    <form class="login-form" action="/users" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input name="user[username]" type="text" class="custom-login username-input" .email-input value="Username"><br>
+        <input name="user[email]" type="text" class="custom-login email-input" value="Email"><br>
+        <input name="user[password]" type="password" class="custom-login password-input" value="Password"><br>
+      <input type="submit" value="Submit" class="btn btn-primary custom-login"><br>
+    </form>
+  </div>
+</div>

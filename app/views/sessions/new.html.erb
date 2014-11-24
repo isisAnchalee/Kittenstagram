@@ -1,12 +1,13 @@
-<h1> Sign In </h2>
-<form action="/session" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label> Username
-    <input name="user[username]" type="text" class=""><br>
-  </label><br>
-  <label>
-  <label> Password
-    <input name="user[password]" type="password" class=""><br>
-  </label><br>
-  <input type="submit" value="Submit" class=""><br>
-</form>
+<%= render partial: "layouts/bg" %>
+<div class="box">
+  <div class="welcome-wrapper">
+    <div class="splash-sign-up"> Sign in!</div>
+    <div class="welcome-message"> Welcome back meow.</div>
+    <form class="login-form" action="/session" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input name="user[username]" type="text" class="custom-login username-input" value="Username"><br>
+        <input name="user[password]" type="password" class="custom-login password-input" value="Password"><br>
+      <input type="submit" value="Submit" class="btn btn-primary custom-login">
+    </form>
+  </div>
+</div>

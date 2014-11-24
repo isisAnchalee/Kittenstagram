@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.sortable
+//= require jquery.bgswitcher
 //= require turbolinks
+//= require underscore
+//= require backbone
+//= require bootstrap-sprockets
+//= require bootstrap
 //= require_tree .

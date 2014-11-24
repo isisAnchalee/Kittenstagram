@@ -1,0 +1,30 @@
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700' rel='stylesheet' type='text/css'>
+</head>
+
+<script>
+  $(document).ready(function(){
+    $('.email-input').on('click', function(){
+      $('.email-input').val("");
+    });
+
+    $('.password-input').on('click', function(){
+      $('.password-input').val("");
+    });
+
+    $('.username-input').on('click', function(){
+      $('.username-input').val("");
+    });
+
+    $(".box").bgswitcher({
+       images: ["http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-005.jpg", "http://stylonica.com/wp-content/uploads/2014/03/Cute-Cats-cats-33440930-1280-800.jpg", "http://www.malindalo.com/wp-content/uploads/2013/02/space-the-sky-the-galaxy-stars-Favim.com-481975.jpg"],
+      effect: "fade", // fade, blind, clip, slide, drop, hide
+      interval: 5000, // Interval of switching
+      loop: true, // Loop the switching
+      shuffle: false, // Shuffle the order of an images
+      duration: 5000, // Effect duration
+      easing: "swing" // Effect easing
+    });
+  });
+
+</script>

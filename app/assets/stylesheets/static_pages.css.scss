@@ -1,3 +1,54 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.splash-hello{
+	position:relative;
+	top:110px;
+	font-size:5em;
+	text-align:center;
+	color:white;
+	font-family:'Oleo Script Swash Caps', cursive;
+}
+
+.navbar{
+	margin: 0 !important;
+}
+.splash-sign-up{
+	position:relative;
+	top:115px;
+	font-family:'Oleo Script Swash Caps', cursive;
+	font-size:4em;
+	text-align:center;
+	color:white;
+	margin-bottom:13px;
+}
+
+.welcome-message{
+	text-align: center;
+	color:white;
+	position:relative;
+	top:85px;
+	font-family: 'helvetica';
+}
+
+.box{
+	height:100vh;
+}
+
+.login-form{
+	position:relative;
+	top:100px;
+	width:200px;
+	margin:0 auto;
+}
+
+.custom-login{
+	width:200px;
+	height:40px;
+	font-weight:normal;
+	font-family: Helvetica Neue;
+	font-size:1.1em;
+}
+
+.email-input,.username-input, .password-input{
+	color:#6a6a6a;
+}
+
