@@ -9,7 +9,9 @@
 }
 
 .navbar{
-	margin: 0 !important;
+	min-height:30px !important;
+  height: 38px !important;
+  margin-bottom: 0 !important;
 }
 .splash-sign-up{
 	position:relative;
@@ -18,6 +20,7 @@
 	font-size:4em;
 	text-align:center;
 	color:white;
+	text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 	margin-bottom:13px;
 }
 
@@ -26,6 +29,7 @@
 	color:white;
 	position:relative;
 	top:85px;
+	text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 	font-family: 'helvetica';
 }
 
@@ -52,3 +56,24 @@
 	color:#6a6a6a;
 }
 
+.nav-heading{
+	font-family:'Oleo Script Swash Caps', cursive;
+	text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+	position:relative;
+	margin: 0 auto;
+	color:white;
+	font-size:1.6em;
+	opacity:0.7;
+	text-align:center;
+	top:4px;
+}
+
+.nav-heading:hover{
+	opacity:0.9;
+}
+
+.sign-in-text{
+	position:relative;
+	top:-35px;
+	display: inline;
+}
