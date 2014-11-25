@@ -4,8 +4,7 @@ window.Kittenstagram = {
   Views: {},
   Routers: {},
   initialize: function() {
-  	var $main = $('.main-page');
-    alert('Hello from Backbone!');
+  	var $main = $('.main-page'); 
   }
 };
 
