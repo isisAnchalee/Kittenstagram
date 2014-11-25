@@ -9,6 +9,11 @@ module Api
       render :show
     end
 
+    def index
+      @photos = Photo.all
+      render :index
+    end
+
     def new
       @photo = current_user.photos.new
       render :new

@@ -1,7 +1,7 @@
 Kittenstagram.Views.PhotoShow = Backbone.CompositeView.extend({
   template: JST['photos/show'],
   className: 'photo-show',
-  
+
   initialize: function(){
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -12,6 +12,7 @@ Kittenstagram.Views.PhotoShow = Backbone.CompositeView.extend({
   	});
   	
   	this.$el.html(renderedContent);
+    this.attachSubviews();
   	return this;
   }
   

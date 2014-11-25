@@ -3,8 +3,8 @@ Kittenstagram.Views.PhotosIndex = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.listenTo(this.collection, 'sync', this.render);
-
-    this.collection.each(this.addImageView.bind(this))
+    this.listenTo(this.collection, 'add', this.addImageView)
+    this.collection.each(this.addImageView.bind(this));
   },
 
   render: function(){
@@ -21,7 +21,7 @@ Kittenstagram.Views.PhotosIndex = Backbone.CompositeView.extend({
     var newImageSubView = new Kittenstagram.Views.PhotoShow({
       model: entry
     });
-    this.addSubview(".photo-feed", newImageSubView)
+    this.addSubview(".photo-feed", newImageSubView);
   }
   
 });
