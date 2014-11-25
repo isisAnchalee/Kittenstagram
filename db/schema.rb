@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125190939) do
+ActiveRecord::Schema.define(version: 20141125193326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "post_images", force: true do |t|
+  create_table "image_posts", force: true do |t|
     t.integer  "user_id",        null: false
     t.string   "filepicker_url", null: false
     t.datetime "created_at"
