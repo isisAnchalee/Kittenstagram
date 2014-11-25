@@ -1,5 +1,5 @@
 Kittenstagram.Collections.Photos = Backbone.Collection.extend({
-	url: '/photos',
+	url: 'api/photos',
   model: Kittenstagram.Models.Photo
 
 });

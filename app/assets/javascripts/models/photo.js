@@ -1,3 +1,3 @@
 Kittenstagram.Models.Photo = Backbone.Model.extend({
-	urlRoot: '/photos'
+	urlRoot: 'api/photos'
 });
