@@ -10,16 +10,14 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 	},
 
 	feedIndex: function(){
-		this.collection.fetch();
 		var feedIndex = new Kittenstagram.Views.PhotosIndex({ 
 			collection: Kittenstagram.photos
 		});
-
 		this._swapView(feedIndex)
 	},
 
 	newPhoto: function(){
-	
+
 	},
 
   _swapView: function (view) {

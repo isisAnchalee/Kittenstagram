@@ -4,14 +4,17 @@ window.Kittenstagram = {
   Views: {},
   Routers: {},
   initialize: function() {
-  	var $main = $('.main-page'); 
+
     Kittenstagram.photos = new Kittenstagram.Collections.Photos();
+
     Kittenstagram.photos.fetch();
+
     new Kittenstagram.Routers.AppRouter({
-      $rootEl: $main,
+      $rootEl: $('#main-page'),
       collection: Kittenstagram.photos
     });
-    Backbone.history.navigate();
+    
+    Backbone.history.start();
   }
 };
 

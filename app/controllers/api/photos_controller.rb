@@ -1,17 +1,13 @@
 module Api
+
   class PhotosController < ApiController
-
-    before_action :verify_signed_in, only: [:new, :create, :destroy]
-
-    # see all photos
+    
+    before_action :require_signed_in!, only: [:new, :create, :destroy]
 
     def show
       @photo = Photo.find(params[:id])
       render :show
     end
-
-
-    # post and destroy photos
 
     def new
       @photo = current_user.photos.new
