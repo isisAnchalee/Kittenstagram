@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users do 
   	resources :images, except: [:create, :destroy]
   end
+  
   resources :images
   resource :session, only: [:create, :destroy]
 end
