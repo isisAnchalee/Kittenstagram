@@ -64,6 +64,8 @@ GEM
     execjs (2.2.2)
     faker (1.4.3)
       i18n (~> 0.5)
+    filepicker-rails (1.2.0)
+      rails (>= 3.2)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.5)
@@ -145,6 +147,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   faker
+  filepicker-rails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
