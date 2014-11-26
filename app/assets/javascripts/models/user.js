@@ -1,7 +1,7 @@
 Kittenstagram.Models.User = Backbone.Model.extend({
 	urlRoot: "/api/users",
 
-	comments: function(){
+	photos: function(){
 		if (this._photos){
 			return this._photos;
 		} else {
