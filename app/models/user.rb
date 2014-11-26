@@ -10,10 +10,10 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   
-  has_many :out_follows, foreign_key: :follower_id, class_name: 'Follower'
+  has_many :out_follows, foreign_key: :follower_id, class_name: 'Follow'
 
   #added
-  has_many :in_follows, foreign_key: :following_id, class_name: 'Follower'
+  has_many :in_follows, foreign_key: :following_id, class_name: 'Follow'
 
 
   #added people following current user
