@@ -1,16 +1,23 @@
-.photos-index{
-	border: 2px solid black;
-}
 
 .photo-feed{
-	border: 1px solid black;
 	position:relative;
 	width:90%;
-	top:150px;
+	top:60px;
 	margin: 0 auto;
 }
 
 .photo-show{
 	width: auto;
 	margin: 0 auto;
+
+}
+
+.photo-author-photo{
+	float:right;
+}
+
+.photo-wrapper{
+	margin-top:10px;
+	margin: 0 auto;
+	width:50%;
 }

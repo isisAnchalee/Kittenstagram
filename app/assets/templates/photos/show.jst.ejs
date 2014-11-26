@@ -1,5 +1,7 @@
 <div class="photo-show">
-	<img src="<%= photo.get('filepicker_url') %>">
-	<%= photo.get("caption") %>
-	<div class="photo-author-photo"></div>
+	<div class="photo-wrapper">
+		<div class="photo-author-photo"></div>
+		<img src="<%= photo.get('filepicker_url') %>">
+		<%= photo.get("caption") %>
+	</div>
 </div>
