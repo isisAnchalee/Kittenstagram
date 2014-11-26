@@ -1,5 +1,5 @@
 module Api
-  CommentsController < ApiController
+  class CommentsController < ApiController
     respond_to :json
     before_action :require_signed_in!
 

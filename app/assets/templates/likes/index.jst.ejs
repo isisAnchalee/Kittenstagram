@@ -1,7 +1,9 @@
 <div class="likes"> 
 	<% if (collection.length > 0){ %>
+		<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
 		<%= collection.length%> people like this post.
 	<%} else {%>
-		No one likes your post. :(
+		<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+		No one likes your post :(
 	<%}%>
  </div>
