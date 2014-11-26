@@ -19,9 +19,9 @@ Kittenstagram.Views.PhotoShow = Backbone.CompositeView.extend({
 
   addUserView: function(){
     var newUserPhotoView = new Kittenstagram.Views.UsersProfilePhotoView({
-      model: Kittenstagram.users.get(this.model.get("user_id"))
+      model: this.model.user()
     });
 
-    this.addSubview(".photo-feed", newUserPhotoView);
+    this.addSubview(".photo-author-photo", newUserPhotoView);
   }
 });
