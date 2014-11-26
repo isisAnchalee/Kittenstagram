@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
  namespace :api, :defaults => { :format => :json } do
  		root "static_pages#feed"
-
+ 		get 'feed_photos', to: "photos#feed"
+ 		
 		resources :users, only: [:show, :update, :destroy]
 		resources :photos, only: [:index, :create, :show, :destroy]
     resources :likes, only: [:create]
