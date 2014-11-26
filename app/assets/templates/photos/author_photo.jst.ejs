@@ -1,6 +1,6 @@
 <a href='#users/<%= user.id%>'>
 	<div class="author-display-pane" data-id='<%= user.id%>'> 
-		<img class='img-circle' src="<%= user.get('profile_photo') %>"><br>
+		<img class='profile-photo img-circle' src="<%= user.get('profile_photo') %>"><br>
 		<span class='author-username'><%= user.escape("username") %></span>
 	</div>
 </a>
