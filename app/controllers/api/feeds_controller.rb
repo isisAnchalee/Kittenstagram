@@ -1,6 +1,7 @@
 module Api
   class FeedsController < ApiController
     respond_to :json
+    
     before_action :require_signed_in!
 
     def create

@@ -9,29 +9,21 @@ class User < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  
+  has_many :out_follows, foreign_key: :follower_id, class_name: 'Follower'
 
-  has_many(
-    :feeds_following,
-    class_name: "Feed",
-    foreign_key: :follower_id,
-    primary_key: :id
-    )
+  #added
+  has_many :in_follows, foreign_key: :following_id, class_name: 'Follower'
 
-  has_many(
-    :feeds_followed,
-    class_name: "Feed",
-    foreign_key: :followee_id,
-    primary_key: :id,
-    dependent: :destroy
-    )
 
-  #people following current user
-  has_many :followers, through: :feeds_followed, source: :follower
+  #added people following current user
+  has_many :followers, through: :in_follows, source: :follower
 
   #people current user follows
-  has_many :follows, through: :feeds_following, source: :follow 
+  has_many :followed_users, through: :out_follows, source: :followee
 
   #need to get photos from feed
+  has_many :followed_photos, through: :followed_users, source: :photos
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

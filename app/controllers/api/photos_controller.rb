@@ -4,11 +4,6 @@ module Api
     
     before_action :require_signed_in!, only: [:new, :create, :destroy]
 
-    def feed
-      @feed = current_user.feeds_following.photos 
-      render :index
-    end
-
     def show
       @photo = Photo.includes(:user, :comments).find(params[:id])
       render :show
