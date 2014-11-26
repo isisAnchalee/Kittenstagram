@@ -5,12 +5,13 @@ module Api
     before_action :require_signed_in!, only: [:new, :create, :destroy]
 
     def show
-      @photo = Photo.find(params[:id])
+      @photo = Photo.find(params[:id]).includes(:user)
+
       render :show
     end
 
     def index
-      @photos = Photo.all
+      @photos = Photo.all.includes(:user)
       render :index
     end
 

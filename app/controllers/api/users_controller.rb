@@ -3,10 +3,15 @@ module Api
   class UsersController < ApiController
    respond_to :json
 
-    before_action :verify_signed_in
+    before_action :require_signed_in!
+
+    def index
+      @users = User.all
+      render :index
+    end
 
     def show
-      @user = User.find_by_username(params[:id])
+      @user = User.find(params[:id])
       render :show
     end
 

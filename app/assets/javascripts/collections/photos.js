@@ -1,7 +1,7 @@
 Kittenstagram.Collections.Photos = Backbone.Collection.extend({
 	url: 'api/photos',
   model: Kittenstagram.Models.Photo,
-  
+
 	getOrFetch: function (id) {
 	  var photo = this.get(id),
 	    photos = this;
