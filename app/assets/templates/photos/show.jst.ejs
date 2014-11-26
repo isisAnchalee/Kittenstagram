@@ -2,7 +2,9 @@
 	<div class="photo-wrapper">
 		<div class="photo-author-photo"></div>
 		<img class= 'img-rounded feed-photo-img' src="<%= photo.get('filepicker_url') %>">
-		<%= photo.get("caption") %>
+		<div class="photo-caption">
+			<%= photo.get("caption") %>
+		</div>
 		<div class="photo-details"></div>
 
 	</div>
