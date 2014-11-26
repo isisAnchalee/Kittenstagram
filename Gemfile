@@ -5,6 +5,7 @@ gem 'turbolinks'
 gem 'bcrypt'
 gem 'filepicker-rails'
 gem 'backbone-on-rails'
+gem "font-awesome-rails"
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
