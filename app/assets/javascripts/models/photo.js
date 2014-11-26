@@ -1,5 +1,6 @@
 Kittenstagram.Models.Photo = Backbone.Model.extend({
 	urlRoot: 'api/photos',
+
 	user: function(){
 		if (this._user){
 			return this._user;
@@ -18,15 +19,30 @@ Kittenstagram.Models.Photo = Backbone.Model.extend({
 		}
 	},
 
+	likes: function(){
+		if (this._likes){
+			return this._likes;
+		} else {
+			this._likes = new Kittenstagram.Collections.Likes([], {
+				photo: this.model
+			});
+			return this._likes;
+		}
+	},
+
 	parse: function(response){
 		
 		if (response.user){
 			this.user().set(response.user, { parse: true })
-			delete response.user
+			delete response.user;
 		}
 		if (response.comments){
 			this.comments().set(response.comments, { parse: true });
-			delete response.comments
+			delete response.comments;
+		}
+		if (response.likes){
+			this.likes().set(response.likes, { parse: true });
+			delete response.likes;
 		}
 
 		return response

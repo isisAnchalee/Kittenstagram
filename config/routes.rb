@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  		root "static_pages#feed"
 
 		resources :users, only: [:show, :update, :destroy]
-    
+    resources :likes, only: [:create]
 		resources :photos, only: [:index, :create, :show, :destroy]
 
 		resources :comments, only: [:create, :index, :update, :destroy]
