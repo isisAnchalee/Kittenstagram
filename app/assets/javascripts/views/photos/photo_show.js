@@ -4,7 +4,10 @@ Kittenstagram.Views.PhotoShow = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.listenTo(this.model, 'sync', this.render);
+    // this.listenTo(this.model.comments(), 'sync', this.addCommentView)
     this.addUserView()
+
+    // this.comments().each(this.addCommentView.bind(this));
   },
 
   render: function(){
@@ -23,5 +26,9 @@ Kittenstagram.Views.PhotoShow = Backbone.CompositeView.extend({
     });
 
     this.addSubview(".photo-author-photo", newUserPhotoView);
+  },
+
+  addCommentView: function(){
+
   }
 });

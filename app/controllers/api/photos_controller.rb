@@ -5,13 +5,12 @@ module Api
     before_action :require_signed_in!, only: [:new, :create, :destroy]
 
     def show
-      @photo = Photo.find(params[:id]).includes(:user)
-
+      @photo = Photo.includes(:user, :comments).find(params[:id])
       render :show
     end
 
     def index
-      @photos = Photo.all.includes(:user)
+      @photos = Photo.all.includes(:user, :comments)
       render :index
     end
 
@@ -23,7 +22,7 @@ module Api
     def create
       @photo = current_user.photos.new(photo_params)
       @photo.save
-      redirect_to users_url
+      redirect_to root_url
     end
 
     def destroy
@@ -33,7 +32,7 @@ module Api
 
     private
     def verify_signed_in
-      redirect_to root_url if !signed_in?
+      redirect_to new_session_url if !signed_in?
     end
 
     def photo_params
