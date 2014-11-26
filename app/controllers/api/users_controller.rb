@@ -6,7 +6,7 @@ module Api
     before_action :require_signed_in!
 
     def index
-      @users = User.all
+      @users = User.includes(:photos).all
       render :index
     end
 
