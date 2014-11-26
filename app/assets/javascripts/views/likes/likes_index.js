@@ -1,7 +1,6 @@
-Kittenstagram.Views.LikesIndex = Backbone.View.extend({
-
+Kittenstagram.Views.LikesView = Backbone.View.extend({
   template: JST['likes/index'],
-  
+
   render: function(){
   	var renderedContent = this.template({
   		collection: this.collection

@@ -2,8 +2,8 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   template: JST['photos/photo_details'],
 
   initialize: function(){
-
-    this.model.comments().each(this.addNewCommentView.bind(this))
+    this.addLikesView();
+    this.model.comments().each(this.addNewCommentView.bind(this));
   },
 
   render: function(){
@@ -11,6 +11,14 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   	this.$el.html(renderedContent);
     this.attachSubviews();
   	return this;
+  },
+
+  addLikesView: function(){
+    var likesSubview = new Kittenstagram.Views.LikesView({
+      photo: this.model
+    });
+    
+    this.addSubview(".photo-likes", likesSubview);
   },
 
   addNewCommentView: function(comment){
