@@ -5,12 +5,12 @@ class User < ActiveRecord::Base
 
   attr_reader :password
   after_initialize :ensure_session_token
-  
+
   has_many :photos
   has_many :comments
   has_many :likes
 
-  has_many (
+  has_many(
     :feeds_following,
     class_name: "Feed",
     foreign_key: :follower_id,
@@ -21,8 +21,18 @@ class User < ActiveRecord::Base
     :feeds_followed,
     class_name: "Feed",
     foreign_key: :followee_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
     )
+
+  #people following current user
+  has_many :followers, through: :feeds_followed, source: :follower
+
+  #people current user follows
+  has_many :follows, through: :feeds_following, source: :follow 
+
+  #photos in follows feed
+  has_many :feed_photos, through: :follows, source: :photos
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

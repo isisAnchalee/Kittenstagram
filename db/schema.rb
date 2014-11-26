@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126205232) do
+ActiveRecord::Schema.define(version: 20141126214100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,15 +26,13 @@ ActiveRecord::Schema.define(version: 20141126205232) do
 
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "feeds", force: true do |t|
-    t.integer  "follower_id", null: false
-    t.integer  "followee_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "followees_followers", id: false, force: true do |t|
+    t.integer "follower_id", null: false
+    t.integer "followee_id", null: false
   end
 
-  add_index "feeds", ["followee_id"], name: "index_feeds_on_followee_id", using: :btree
-  add_index "feeds", ["follower_id"], name: "index_feeds_on_follower_id", using: :btree
+  add_index "followees_followers", ["followee_id", "follower_id"], name: "index_followees_followers_on_followee_id_and_follower_id", using: :btree
+  add_index "followees_followers", ["follower_id", "followee_id"], name: "index_followees_followers_on_follower_id_and_followee_id", using: :btree
 
   create_table "followers", force: true do |t|
     t.integer "following_id", null: false
