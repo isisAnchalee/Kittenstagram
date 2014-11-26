@@ -19,7 +19,8 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 
 	usersShowPage: function(id){
 		var user = new Kittenstagram.Models.User({ id: id });
-		var userShowPage = new Kittenstagram.Views.UsersShow({ model: user })
+		var userShowPage = new Kittenstagram.Views.UsersShow({ model: user });
+		user.fetch()
 		this._swapView(userShowPage)
 	},
 
