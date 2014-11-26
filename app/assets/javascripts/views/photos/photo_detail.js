@@ -14,10 +14,12 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   },
 
   addLikesView: function(){
+    var likes = this.model.likes();
     var likesSubview = new Kittenstagram.Views.LikesView({
+      collection: likes,
       photo: this.model
     });
-    
+
     this.addSubview(".photo-likes", likesSubview);
   },
 

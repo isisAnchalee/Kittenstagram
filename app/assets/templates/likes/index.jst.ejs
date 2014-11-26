@@ -1,1 +1,7 @@
-<div class="likes"> No one likes your post. :( </div>
+<div class="likes"> 
+	<% if (collection.length > 0){ %>
+		<%= collection.length%> people like this post.
+	<%} else {%>
+		No one likes your post. :(
+	<%}%>
+ </div>

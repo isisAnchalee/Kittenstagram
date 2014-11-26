@@ -23,9 +23,7 @@ Kittenstagram.Models.Photo = Backbone.Model.extend({
 		if (this._likes){
 			return this._likes;
 		} else {
-			this._likes = new Kittenstagram.Collections.Likes([], {
-				photo: this.model
-			});
+			this._likes = new Kittenstagram.Collections.Likes();
 			return this._likes;
 		}
 	},
