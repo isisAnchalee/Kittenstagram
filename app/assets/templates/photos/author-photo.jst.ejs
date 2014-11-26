@@ -1,4 +1,5 @@
 <div class="author-display-pane"> 
-	<img src="<%= user.get('profile_photo') %>">
-	<p> <%= user.escape("username") %>
+	<img class='img-circle' src="<%= user.get('profile_photo') %>"><br>
+		<span class='author-username'><%= user.escape("username") %></span>
+
 </div>

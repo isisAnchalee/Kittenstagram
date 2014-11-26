@@ -7,7 +7,7 @@
 }
 
 .photo-show{
-	width: 800px;
+	width: 640px;
 	margin: 0 auto;
 	margin-top: 20px;
 }
@@ -23,6 +23,17 @@
 	margin: 0 auto;
 	display: inline-block;
 	width:50%;
-	min-width: 700px;
+	min-width: 600px;
 
+}
+
+.author-username{
+	position:relative;
+	left:38px;
+	font-weight:bold;
+}
+
+.feed-photo-img{
+	width:400px;
+	height:400px;
 }
