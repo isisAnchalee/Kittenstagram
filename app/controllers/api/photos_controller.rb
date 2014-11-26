@@ -9,6 +9,12 @@ module Api
       render :show
     end
 
+    # def index
+    #   @photos = current_user.followed_photos.includes(:user, :comments)
+      
+    #   render :index
+    # end
+
     def index
       @photos = Photo.all.includes(:user, :comments)
       render :index

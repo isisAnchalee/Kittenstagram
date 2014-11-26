@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   before_action :require_signed_in!
 
   def feed
-  	@user = current_user
+  	@photos = current_user.followed_photos.includes(:user, :comments)
   	render :index
   end
   
