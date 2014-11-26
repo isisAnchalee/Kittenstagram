@@ -7,17 +7,22 @@
 }
 
 .photo-show{
-	width: auto;
+	width: 800px;
 	margin: 0 auto;
-
+	margin-top: 20px;
 }
 
 .photo-author-photo{
-	float:right;
+	float:left;
+	margin-right:50px;
+	position: relative;
 }
 
 .photo-wrapper{
 	margin-top:10px;
 	margin: 0 auto;
+	display: inline-block;
 	width:50%;
+	min-width: 700px;
+
 }
