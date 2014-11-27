@@ -7,7 +7,7 @@ json.photos @user.photos do |photo|
 end
 
 if current_user.follows?(@user)
-	follow =Follow.where(follower_id: current_user.id, followee_id: @user.id).first
+	follow = Follow.where(follower_id: current_user.id, followee_id: @user.id).first
 	json.follow  do
 		json.id follow.id
 		json.followee_id follow.followee_id
