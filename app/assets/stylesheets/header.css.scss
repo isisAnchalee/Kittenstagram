@@ -1,4 +1,19 @@
-	.feed-header {
+	.follow-btn{
+    position:relative;
+    top:100px;
+    right:300px;
+    text-shadow: 0 1px 1px #1c5380;
+    background-image: -webkit-linear-gradient(top,#6f97b6,#3f729b);
+    border-radius: 6px;
+    padding:5px;
+    padding-left:42px;
+    padding-right:42px;
+    font-size:0.8em;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+  .feed-header {
   margin: 0;
   padding: 32px 0 0;
   background: #333333 url("//d36xtkk24g8jdx.cloudfront.net/bluebar/dd6cb37/images/profile/noise-black.png") 50% 50%;
@@ -11,8 +26,8 @@
 }
 .user-profile-details{
   position:relative;
-  left:200px;
-  top:-40px;
+  left:158px;
+  top:-70px;
 }
 .gallery-profile-photo{
   position:absolyte;
