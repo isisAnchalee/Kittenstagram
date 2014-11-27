@@ -5,19 +5,12 @@ window.Kittenstagram = {
   Routers: {},
   initialize: function() {
 
-    Kittenstagram.photos = new Kittenstagram.Collections.Photos();
-
-    Kittenstagram.photos.fetch();
-
     new Kittenstagram.Routers.AppRouter({
-      $rootEl: $('#main-page'),
-      collection: Kittenstagram.photos
+      $rootEl: $('#main-page')
     });
     
     Backbone.history.start();
   }
 };
 
-$(document).ready(function(){
-  Kittenstagram.initialize();
-});
+

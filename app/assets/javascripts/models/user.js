@@ -10,6 +10,15 @@ Kittenstagram.Models.User = Backbone.Model.extend({
 		}
 	},
 
+	follow: function(){
+		it (this._follow){
+			return this._follow;
+		} else {
+			this._follow = new Kittenstagram.Models.Follow({}, { user: this });
+			return this._follow;
+		}
+	},
+
 	parse: function(response){
 		
 		if (response.photos){

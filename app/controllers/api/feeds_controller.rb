@@ -4,8 +4,7 @@ module Api
     before_action :require_signed_in!
 
     def index
-      @photos = current_user.photos
-      @photos += current_user.followed_photos
+      @photos = Photo.where(user_id: current_user.followed_user_ids + [current_user.id])
       render :index
     end
   end

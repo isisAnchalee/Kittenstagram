@@ -9,12 +9,11 @@ class User < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  
+
   has_many :out_follows, foreign_key: :follower_id, class_name: 'Follow'
 
   #added
-  has_many :in_follows, foreign_key: :following_id, class_name: 'Follow'
-
+  has_many :in_follows, foreign_key: :followee_id, class_name: 'Follow'
 
   #added people following current user
   has_many :followers, through: :in_follows, source: :follower
@@ -26,7 +25,7 @@ class User < ActiveRecord::Base
   has_many :followed_photos, through: :followed_users, source: :photos
 
   def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+    user = User.where('LOWER(username) = ?', username.downcase).first
     return nil unless user && user.is_password?(password)
     user
   end

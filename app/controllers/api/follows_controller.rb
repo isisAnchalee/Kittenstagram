@@ -7,20 +7,23 @@ module Api
     def create
       user = User.find_by_username(params[:username])
 
-      @feed = current_user
-      .following
-      .find_by_follow_id(user.id)
+      @follow = Follow.new(
+        follower_id: current_user.id,
+        followee_id: user.id
+        )
 
-      if @feed
-        @feed.destroy
-        render json: { "follow" => false }
-      else 
-        @feed = Feed.create(
-          follower_id: current_user.id,
-          followee_id: user.id
-          )
-        render json: { "follow" => true }
+      if @follow.save
+        render json: @follow
+      else
+        render json: @follow.errors.full_messages, status: 422
+      end
     end
+
+    def destroy
+      @follow = Follow.find(params[:id])
+      @follow.try(:destroy)
+      render json: { "follow" => false }
+    end 
 
   end
 end
