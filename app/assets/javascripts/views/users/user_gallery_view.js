@@ -1,5 +1,4 @@
 Kittenstagram.Views.GalleryView = Backbone.CompositeView.extend({
-	className: "gallery-wrapper",
   template: JST['users/gallery_index'],
 
   initialize: function(){
@@ -8,16 +7,20 @@ Kittenstagram.Views.GalleryView = Backbone.CompositeView.extend({
   },
 
   render: function(){
+    var renderedContent = this.template({
+      photos: this.collection
+    });
   	this.$el.html(renderedContent);
-     this.attachSubviews();
+    this.attachSubviews();
   	return this;
   },
 
-  addPhotoShow: function(){
-    //ADDING GALLERY COMPOSITE VIEW AND IMAGE SUBVEWS
+  addPhotoShow: function(photo){
+    var galleryPhoto = new Kittenstagram.Views.GalleryImageView({
+      model: photo
+    });
 
-
-    this.addSubview(".user-gallery", headerSubview);
+    this.addSubview(".gallery-feed", galleryPhoto);
   }
   
 });

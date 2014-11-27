@@ -3,7 +3,7 @@ Kittenstagram.Views.GalleryImageView = Backbone.View.extend({
 
   render: function(){
   	var renderedContent = this.template({
-  		user: this.model
+  		photo: this.model
   	});
 
   	this.$el.html(renderedContent);
