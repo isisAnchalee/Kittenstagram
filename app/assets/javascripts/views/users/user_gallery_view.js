@@ -20,7 +20,7 @@ Kittenstagram.Views.GalleryView = Backbone.CompositeView.extend({
       model: photo
     });
 
-    this.addSubview(".gallery-feed", galleryPhoto);
+    this.addSubview(".row", galleryPhoto);
   }
   
 });
