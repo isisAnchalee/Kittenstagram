@@ -13,6 +13,10 @@
 	margin-bottom: 20px;
 }
 
+.comment-form{
+	margin-top:15px;
+	margin-bottom: -13px;
+}
 .photo-author-photo{
 	float:left;
 	margin-right:50px;
@@ -29,9 +33,19 @@
 }
 
 .author-username{
-	position:relative;
-	left:38px;
+	position:absolute;
+	right:60px;
+	top:10px;
 	font-weight:bold;
+}
+.timelineCenter {
+	background: #e0e1e2 url(//d36xtkk24g8jdx.cloudfront.net/bluebar/be7c37a/images/shared/noise-2.png);
+	border: 1px solid rgba(0,0,0,.1);
+	border-width: 0 1px;
+	width: 470px;
+	margin-top:-30px;
+	padding: 16px 32px;
+	margin-left: 70px;
 }
 
 .feed-photo-img{
@@ -46,8 +60,9 @@
 	margin: 0 auto;
 }
 .comment-profile-photo{
-	width:35px;
-	height:35px;
+	width:30px;
+	height:30px;
+	margin-top:4px;
 }
 
 .photo-likes{
@@ -55,5 +70,7 @@
 }
 
 .likes{
-	width:400px;
+	margin: 0 auto;
+	font-family: 'Montserrat', sans-serif;
+	width:99.8%;
 }

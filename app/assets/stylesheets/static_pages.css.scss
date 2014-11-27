@@ -79,10 +79,21 @@
 }
 
 .custom-button{
-	font-family: helvetica;
+	font-family: 'Montserrat', sans-serif;
 	display:inline;
+	padding: 6px 5px 8px 7px;
+	padding-top:12px;
 	position:relative;
-	top:-37px;
+	top:-47px;
+	left:60px;
+	background-color:transparent;
+	color:white;
+	border: 0;
+	border-right: 1px solid #06365f;
+	border-right-color: rgba(0,0,0,.1);
+	box-shadow: inset 1px 0 0 rgba(255,255,255,.1);
+	text-shadow: 0 1px 0 rgba(3,27,47,.5);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	float:right;
-	background: url(//d36xtkk24g8jdx.cloudfront.net/bluebar/be7c37a/images/shared/shared-assets.png) no-repeat 6px -194px;
+
 }

@@ -5,7 +5,6 @@ Kittenstagram.Models.Follow = Backbone.Model.extend({
 
 	initialize: function(attributes, options){
 		this.user = options.user;
-		
 	}
 
 })

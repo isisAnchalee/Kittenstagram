@@ -11,7 +11,7 @@ Kittenstagram.Views.PhotosIndex = Backbone.CompositeView.extend({
   	var renderedContent = this.template({
   		photos: Kittenstagram.Collections.photos
   	});
-  	
+  	$('body').css('background-color','#edeeef')
   	this.$el.html(renderedContent);
     this.attachSubviews();
   	return this;

@@ -1,10 +1,12 @@
 <div class="photo-show">
 	<div class="photo-wrapper">
 		<div class="photo-author-photo"></div>
-		<img class= 'img-rounded feed-photo-img' src="<%= photo.get('filepicker_url') %>">
-		<div class="photo-caption">
-			<%= photo.get("caption") %>
+		<div class="timelineCenter">
+			<img class= 'feed-photo-img' src="<%= photo.get('filepicker_url') %>">
+			<div class="photo-caption">
+				<%= photo.get("caption") %>
+			</div>
+			<div class="photo-details"></div>
 		</div>
-		<div class="photo-details"></div>
 	</div>
 </div>

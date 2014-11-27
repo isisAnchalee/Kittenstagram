@@ -8,12 +8,16 @@
 }
 
 .profile-photo{
-	width:100px !important;
-	height:100px !important;
+	width:50px !important;
+	height:50px !important;
 }
-.profile-desc{
+.photo-stats{
+	position:relative;
+	right:150px;
+	top:-50px;
+	width:400px;
+}
 
-}
 .logo-link{
 	color:white;
 	text-decoration:none;

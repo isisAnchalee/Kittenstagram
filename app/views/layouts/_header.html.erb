@@ -6,7 +6,7 @@
       <div class="nav-heading"><a class='logo-link' href='#'>Kittenstagram</a> </div>
       <ul class="nav navbar-nav navbar-right">
       <% if signed_in? %>
-        <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn custom-button" %></li>
+        <li><%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn custom-button" %></li>
       <% else %>
         <li class="sign-in-text"><%= link_to "Log in", new_session_url %></li>
         <li class="sign-in-text"><%= link_to "Sign up", new_users_url %></li>
