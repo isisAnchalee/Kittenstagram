@@ -17,6 +17,8 @@
 .logo-link{
 	color:white;
 	text-decoration:none;
+	font-family: 'Billabong', cursive !important;
+	font-size:1.2em;
 }
 
 .logo-link:hover{
@@ -27,6 +29,7 @@
 .navbar{
 	background-image: url(//d36xtkk24g8jdx.cloudfront.net/bluebar/be7c37a/images/shared/noise-2.png),-webkit-linear-gradient(top,#517fa4,#306088);
 	background-color: #517fa4;
+	height:43px !important;
 }
 
 ul{
