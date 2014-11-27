@@ -5,7 +5,11 @@
                 <img src="<%= user.get("profile_photo") %>"
                 class="img-polaroid img-rounded img-thumbnail img-responsive" />
             </div>
-            <button> Follow </button>
+            <% if (user.follow().isNew()){ %>
+            <button class='follow-btn'> Follow </button>
+            <% }else{ %>
+            <button class='unfollow-btn'> Unfollow </button>
+            <% } %>
              <h2><%= user.escape('username') %></h2>
             <p> SO fancy meow. </p>
             </p>

@@ -11,7 +11,7 @@ Kittenstagram.Models.User = Backbone.Model.extend({
 	},
 
 	follow: function(){
-		it (this._follow){
+		 if (this._follow){
 			return this._follow;
 		} else {
 			this._follow = new Kittenstagram.Models.Follow({}, { user: this });
@@ -24,6 +24,11 @@ Kittenstagram.Models.User = Backbone.Model.extend({
 		if (response.photos){
 			this.photos().set(response.photos, { parse: true })
 			delete response.photos;
+		}
+
+		if (response.follow){
+			this.follow().set(response.follow, { parse: true });
+			delete response.follow;
 		}
 
 		return response

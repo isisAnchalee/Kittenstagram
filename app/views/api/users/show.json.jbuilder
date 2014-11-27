@@ -6,4 +6,13 @@ json.photos @user.photos do |photo|
 	json.caption photo.caption
 end
 
+if current_user.follows?(@user)
+	follow =Follow.where(follower_id: current_user.id, followee_id: @user.id).first
+	json.follow  do
+		json.id follow.id
+		json.followee_id follow.followee_id
+		json.follower_id follow.follower_id
+	end
+end
+
 json.photo_count @user.photos.length
