@@ -9,19 +9,33 @@
   position: relative;
   overflow: hidden;
 }
- 
-    
+.user-profile-details{
+  position:relative;
+  left:200px;
+  top:-40px;
+}
+.gallery-profile-photo{
+  position:absolyte;
+  margin-top:-100px;
+  height: 130px !important;
+  width: 130px !important;
+  padding-top:-90px;
+}
+.head-row{
+  background-color: #f8f8f8 !important;
+}
+.row{
+  padding-top:25px;
+  background-color: #eaeaea;
+}
 .profile-user {
   position: relative;
   max-width: 964px;
-  min-height: 75px;
+  height: 105px;
   margin: 0 auto;
   padding: 10px 30px 15px;
   border-bottom: 1px solid #d9d9d9;
-  background: #eeeeee url("//d36xtkk24g8jdx.cloudfront.net/bluebar/dd6cb37/images/bg/white-gradient-200px.png") repeat-x 50% 50%;
-  -webkit-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.05), -1px 0 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.05), -1px 0 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.05), -1px 0 0 rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background: #f8f8f8;
 }
 .compWrapper {
   margin-left: auto;

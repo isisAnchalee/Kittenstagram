@@ -1,18 +1,20 @@
 <div class="profile-user">
-    <div class="row">
+    <div class="row head-row">
         <div class="col-md-6">
             <div class="pull-left" style="margin-right: 15px;">
                 <img src="<%= user.get("profile_photo") %>"
-                class="img-polaroid img-rounded img-thumbnail img-responsive" />
+                class=" gallery-profile-photo img-polaroid img-rounded img-thumbnail img-responsive" />
             </div>
-            <% if (user.follow().isNew()){ %>
-            <button class='follow-btn'> Follow </button>
-            <% }else{ %>
-            <button class='unfollow-btn'> Unfollow </button>
-            <% } %>
-             <h2><%= user.escape('username') %></h2>
-            <p> SO fancy meow. </p>
-            </p>
+            <div class="user-profile-details">
+                <% if (user.follow().isNew()){ %>
+                <button class='follow-btn'> Follow </button>
+                <% }else{ %>
+                <button class='unfollow-btn'> Unfollow </button>
+                <% } %>
+                 <h2><%= user.escape('username') %></h2>
+                <p> SO fancy meow. </p>
+                </p>
+            </div>
         </div>
         
     </div>
