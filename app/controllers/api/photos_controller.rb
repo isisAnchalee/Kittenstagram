@@ -36,7 +36,7 @@ module Api
     end
 
     def photo_params
-      params.require(:photo).permit(:filepicker_url, :caption)
+      params.require(:photo).permit(:filepicker_url)
     end
   end
 end
