@@ -1,5 +1,7 @@
 <form class='new-comment'>
   <div class="form-group">
-    <input type="comment" class="form-control" placeholder="Write a comment...">
+    <input type="comment" name="comment[body]" class="form-control" placeholder="Write a comment...">
   </div>
+  <input type="hidden" name="comment[user_id]" value="<%= CURRENT_USER_ID %>">
+  <input type="hidden" name="comment[photo_id]" value="<%= photo.id %>">
 </form>
