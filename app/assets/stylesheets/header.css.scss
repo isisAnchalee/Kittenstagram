@@ -1,4 +1,4 @@
-	.follow-btn, .unfollow-btn{
+  .follow-btn, .unfollow-btn{
     position:relative;
     top:100px;
     right:300px;
@@ -699,6 +699,7 @@
   }
 }
 
+
 .Image {
   background-size: 100% 100%;
   position: relative;
@@ -708,5 +709,7 @@
  }
   
  ul.thumbnails li{
-  margin: 5px !important;   
+  width:100px !important;
+  height: 100px !important;
+  // margin: 5px !important;   
     }
