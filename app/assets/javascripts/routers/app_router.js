@@ -2,6 +2,8 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 	initialize: function(options){
 		this.$rootEl = options.$rootEl;
 		this.collection = options.collection
+
+		this.addProfilePane();
 	},
 
 	routes: {
@@ -29,5 +31,14 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
     this.currentView && this.currentView.remove();
     this.currentView = view;
     this.$rootEl.html(view.render().$el);
+  },
+
+  addProfilePane: function(){
+  	var user = new Kittenstagram.Models.User({ id: CURRENT_USER_ID });
+  	user.fetch();
+  	var navbarPhoto = new Kittenstagram.Views.Navbar({
+  		model: user
+  	});
+  	$('.navbar-profile-pane').html(navbarPhoto.render().$el);
   }
 });

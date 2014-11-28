@@ -78,6 +78,20 @@
 	display: inline;
 }
 
+.like-button{
+	width:35px !important;
+	height:35px !important;
+}
+
+.timelineLikeButton {
+display: inline;
+
+}
+
+.like-button{
+	display: inline;
+}
+
 .custom-button{
 	font-family: 'Montserrat', sans-serif;
 	display:inline;
@@ -88,6 +102,7 @@
 	left:60px;
 	background-color:transparent;
 	color:white;
+	opacity: 0.8;
 	border: 0;
 	border-right: 1px solid #06365f;
 	border-right-color: rgba(0,0,0,.1);
@@ -96,4 +111,8 @@
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	float:right;
 
+}
+
+.custom-button:hover{
+	opacity: 1;
 }
