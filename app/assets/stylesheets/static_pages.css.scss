@@ -7,7 +7,36 @@
 	color:white;
 	font-family:'Oleo Script Swash Caps', cursive;
 }
-
+.followers-pane{
+	z-index:10;
+	position:relative;
+	left:169px;
+	top:-5px;
+	text-align:center;
+	padding:5px !important;
+}
+.photo-pane{
+	z-index: 10;
+	position: relative;
+	top:50px;
+	left:100px;
+	text-align:center;
+	padding:5px !important;
+}
+.following-pane{
+	position:relative;
+	left:240px;
+	top:-60px;
+	z-index:10;
+	text-align:center;
+	padding:5px !important;
+}
+.profile-stats{
+	position:absolute;
+	right:300px;
+	z-index:10;
+	top:-30px;
+}
 .navbar{
 	min-height:30px !important;
   height: 38px !important;
@@ -59,6 +88,10 @@
 .home-button, .home-icon .fa-lg{
 	color:white;
 	opacity: 0.9;
+}
+
+.home-button:active,.home-button:visited, .home-button:hover{
+	color:white;
 }
 
 .custom-login{

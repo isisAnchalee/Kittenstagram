@@ -1,0 +1,9 @@
+profile_details.jst.ejs insert into line 12
+            <ul class="inline user-counts-list">
+                <li>Photos <span class="count">100</span>
+                </li>
+                <li>Followers <span class="count">50</span>
+                </li>
+                <li>Following <span class="count">130</span>
+                </li>
+            </ul>

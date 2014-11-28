@@ -1,3 +1,4 @@
+<div class="profile-stats"></div>
 <div class="profile-user">
     <div class="row head-row">
         <div class="col-md-6">
@@ -5,6 +6,7 @@
                 <img src="<%= user.get("profile_photo") %>"
                 class=" gallery-profile-photo img-polaroid img-rounded img-thumbnail img-responsive" />
             </div>
+
             <div class="user-profile-details">
                 <% if (user.follow().isNew()){ %>
                 <button class='follow-btn'> Follow </button>
@@ -15,6 +17,7 @@
                 <span class='profile-desc'><p> SO fancy meow. </p></span>
                 </p>
             </div>
+
         </div>
         
     </div>

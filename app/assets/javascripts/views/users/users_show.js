@@ -6,6 +6,7 @@ Kittenstagram.Views.UsersShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.addHeaderView)
     this.listenTo(this.model, 'sync', this.addUserDetailsView)
     this.listenTo(this.model, 'sync', this.addGalleryView)
+    this.listenTo(this.model, 'sync', this.addProfileStats)
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -44,6 +45,14 @@ Kittenstagram.Views.UsersShow = Backbone.CompositeView.extend({
    });
 
    this.addSubview(".user-gallery", userImageGallery);
+  },
+
+  addProfileStats: function(){
+    var userProfileStats = new Kittenstagram.Views.ProfileDetails({
+      model: this.model
+    });
+
+    this.addSubview(".profile-stats", userProfileStats);
   }
   
 });
