@@ -31,6 +31,7 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
 
           // Remove the image attribute with raw data
           // from the model after uploading it.
+          Backbone.history.navigate("#", {trigger: true})
           delete that.model.attributes.image;
 
         }
@@ -55,7 +56,7 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
   },
 
   _updatePreview: function(imageData){
-    this.$el.find("#photo-image-preview").attr("src", imageData);
+    this.$el.find("#photo-image-preview").attr("src", imageData).css("max-width", "200px").css("max-height","200px");
   }
 
 });
