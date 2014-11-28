@@ -5,6 +5,10 @@
 	top:60px;
 	margin: 0 auto;
 }
+.merp{
+	position:relative;
+	margin-top:-40px;
+}
 
 .photo-show{
 	width: 640px;
@@ -54,6 +58,10 @@
 	-webkit-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
+}
+
+.navbar-btn{
+	padding:15px;
 }
 
 .photo-details{

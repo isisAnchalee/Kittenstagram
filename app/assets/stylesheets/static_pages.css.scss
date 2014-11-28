@@ -23,7 +23,9 @@
 	text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 	margin-bottom:13px;
 }
-
+.profile-link:active{
+	color:white;
+}
 .welcome-message{
 	text-align: center;
 	color:white;
@@ -35,6 +37,17 @@
 
 .box{
 	height:100vh;
+}
+.navbar-profile{
+	position:relative;
+	height:26px;
+	width:26px;
+	top:18px;
+	margin-left:7px;
+	margin-right:7px;
+	box-shadow: inset 0 0 0 1px rgba(255,255,255,.1),inset 0 1px 0 rgba(255,255,255,.3);
+	border: 1px solid black;
+	opacity: 1 !important;
 }
 
 .login-form{
@@ -99,10 +112,12 @@ display: inline;
 	padding-top:12px;
 	position:relative;
 	top:-47px;
-	left:60px;
+	left:110px;
+	padding-right:10px;
 	background-color:transparent;
 	color:white;
 	opacity: 0.8;
+	font-size: 1 em !important;
 	border: 0;
 	border-right: 1px solid #06365f;
 	border-right-color: rgba(0,0,0,.1);

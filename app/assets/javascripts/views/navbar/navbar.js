@@ -8,7 +8,6 @@ Kittenstagram.Views.Navbar = Backbone.View.extend({
   	var renderedContent = this.template({
   		user: this.model
   	});
-  	console.log("rendering");
 
   	this.$el.html(renderedContent);
   	return this;

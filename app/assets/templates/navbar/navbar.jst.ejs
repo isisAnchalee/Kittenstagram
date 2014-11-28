@@ -1,1 +1,1 @@
-<button class="custom-button navbar-btn"><%= user.escape("username") %> </button>
+<a href='#users/<%= user.id %>' class='profile-link'><button class="custom-button navbar-btn"><img class='navbar-profile merp' src='<%= user.get('profile_photo') %>'> <%= user.escape("username") %> </button></a>
