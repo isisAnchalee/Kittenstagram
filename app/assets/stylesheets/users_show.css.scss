@@ -8,14 +8,17 @@
 }
 
 .header-logo{
-	height:35px;
-	width:35px;
+	height:27px;
+	width:27px;
 }
 
 .home-icon{
 	float:left;
+	padding-left:20px;
+	padding-right:20px;
 	position:relative;
 	padding:6px;
+	top:-3px;
 	right:90px;
 	border-right: 1px solid #06365f;
 	border-right-color: rgba(0,0,0,.1);
@@ -35,9 +38,15 @@
 	width:400px;
 }
 
+a{
+	text-decoration: none !important;
+}
+
 .logo-link{
-	color:white;
-	text-decoration:none;
+	position:relative;
+	right:50px;
+	color:white !important;
+	text-decoration:none !important;
 	font-family: 'Billabong', cursive !important;
 	font-size:1.2em;
 }
@@ -45,6 +54,14 @@
 .logo-link:hover{
 	color:white;
 	text-decoration: none;
+}
+
+.logo-link:active{
+	text-decoration:none !important;     
+}
+
+.logo-link::visited{
+	color:white;
 }
 
 .navbar{
