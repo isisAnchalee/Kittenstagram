@@ -39,7 +39,7 @@ Kittenstagram.Models.Photo = Backbone.Model.extend({
 			delete response.comments;
 		}
 		if (response.likes){
-			this.likes().set(response.likes, { parse: true });
+			this.likes().set(response.likes);
 			delete response.likes;
 		}
 

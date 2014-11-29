@@ -20,7 +20,8 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
   heartAnimation: function(event){
     event.preventDefault();
-    $('.like-heart').html("♥").toggleClass('heart').toggleClass('pulse1')
+    $('.like-heart').html("♥").toggleClass('heart').toggleClass('pulse1');
+    $('.fav-btn').css('color', 'red');
     setTimeout(function(){
       $('.like-heart').html(" ").toggleClass('pulse1').toggleClass('heart');
     }, 500)

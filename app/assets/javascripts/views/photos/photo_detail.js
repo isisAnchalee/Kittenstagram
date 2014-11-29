@@ -6,7 +6,8 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.model.comments().each(this.addNewCommentView.bind(this));
   },
 
-events:{ "click .fav-btn": "likePhoto",
+  events:{ "click .fav-btn": "likePhoto",
+
   },
 
   render: function(){
@@ -38,8 +39,8 @@ events:{ "click .fav-btn": "likePhoto",
     var id = this.model.id;
     var $currentTarget = $(event.currentTarget);
     var like = new Kittenstagram.Models.Like();
-    like.set("photo_id", this.model.id)
-    debugger;
+    like.set("photo_id", id)
+
     like.save({}, {
       error: function(model, resp){
         debugger;
