@@ -6,7 +6,8 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
     "change #photo-file-input": "fileSelect",
     "click #sepiabtn": "addSepia",
     "click #brightnessbtn": "addBrightness",
-    "click #noisebtn": "addNoise"
+    "click #noisebtn": "addNoise",
+    "click #contrastbtn": "addContrast"
   },
 
   initialize: function(){
@@ -89,8 +90,17 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
 
   addNoise: function(e){
     e.preventDefault();
+
     Caman('.preview', window.imageData, function(){
       this.noise(10);
+      this.render();
+    });
+  },
+
+  addContrast: function(e){
+    e.preventDefault()
+    Caman('.preview', window.imageData, function(){
+      this.contrast(10);
       this.render();
     });
   }
