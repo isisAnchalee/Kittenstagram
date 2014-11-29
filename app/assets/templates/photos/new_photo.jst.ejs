@@ -1,25 +1,30 @@
 <div class="new-photo-wrapper list-group-item">
-<h1>Create Photo</h1>
+<h1>Upload Photo</h1>
+  <form class="photo-form">
 
-<form class="photo-form">
+    <label>
+      Select Photo
+      <input type="file" name="photo[filepicker_url]" id="photo-file-input">
+    </label>
 
-  <label>
-    Upload Photo
-    <input type="file" name="photo[filepicker_url]" id="photo-file-input">
-  </label>
+    <canvas class="preview">
 
-  <canvas class="preview">
+    </canvas>
 
-  </canvas>
+      <nav id="buttons" class="centered">
+        <a href="#" id="resetbtn" class="btn">Reset Photo</a>
+        <a href="#" id="brightnessbtn" class="btn">Brightness</a>
+        <a href="#" id="noisebtn" class="btn">Noise</a>
+        <a href="#" id="sepiabtn" class="btn">Sepia</a>
+        <a href="#" id="contrastbtn" class="btn">Contrast</a>
+        <a href="#" id="colorbtn" class="btn">Add Blue</a>
+      </nav>
 
-  <img src="" id="photo-image-preview">
-  <br>
+    <button>Post</button>
 
-  <button>Post</button>
+  </form>
 
-</form>
-
-<div class="photo-loading">
-  <img src="">
-</div>
+  <div class="photo-loading">
+    <img src="">
+  </div>
 </div>
