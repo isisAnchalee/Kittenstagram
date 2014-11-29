@@ -1,7 +1,25 @@
 .singular-photo-wrapper{
 	position:relative;
-	width:800px;
+	width:805px;
 	margin: 0 auto;
-	margin-top:100px;
+	margin-top:70px;
+	box-shadow: 0px 0px 35px -12px rgba(0, 0, 0, 0.75);
+}
 
+.main-photo{
+	float:left;
+}
+.comment-details-pane {
+	float:right;
+	width:360px;
+	height:402px;
+	position:relative;
+
+}
+
+.photo-display{
+	padding-top:14px !important;
+	padding-bottom:15px !important;
+	padding-left:15px !important;
+	padding-right:15px !important;
 }
