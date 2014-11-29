@@ -21,8 +21,11 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
+//= require image_editor
 //= require kittenstagram
 //= require caman.full.min
+//= require camanFiltering
+//= require kinetic-v5.1.0.min
 //= require_tree ../images
 //= require_tree ./utils
 //= require_tree ../templates

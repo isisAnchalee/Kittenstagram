@@ -5,6 +5,10 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render)
   },
 
+  events:{
+    "click .fav-btn": "heartAnimation"
+  },
+
   render: function(){
   	var renderedContent = this.template({
   		photo: this.model
@@ -12,6 +16,14 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
   	this.$el.html(renderedContent);
     return this;
+  },
+
+  heartAnimation: function(event){
+    event.preventDefault();
+    $('.like-heart').html("♥").toggleClass('heart').toggleClass('pulse1')
+    setTimeout(function(){
+      $('.like-heart').html(" ").toggleClass('pulse1').toggleClass('heart');
+    }, 500)
   }
   
 });

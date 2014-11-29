@@ -1,3 +1,4 @@
+
 .new-photo-wrapper{
 	width:600px;
 	margin: 0 auto;
@@ -9,3 +10,39 @@
 	height:500px;
 	width:500px;
 }
+
+.nav-tabs {
+border-bottom: 1px solid #dddddd;
+}
+
+.nav {
+margin-bottom: 0;
+padding-left: 0;
+list-style: none;
+}
+
+#editor-controls {
+float: right;
+width: 500px;
+}
+
+#filters, #adjustments {
+padding-top: 9px;
+}
+.tab-content>.active {
+display: block;
+}
+
+.filter-preview {
+position: relative;
+cursor: pointer;
+display: inline-block;
+float: left;
+width: 100px;
+height: 100px;
+margin-top: 6px;
+margin-right: 15px;
+margin-bottom: 9px;
+text-align: center;
+}
+

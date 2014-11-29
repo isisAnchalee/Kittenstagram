@@ -6,6 +6,9 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.model.comments().each(this.addNewCommentView.bind(this));
   },
 
+events:{ "click .fav-btn": "likePhoto",
+  },
+
   render: function(){
   	var renderedContent = this.template({});
   	this.$el.html(renderedContent);
@@ -28,6 +31,24 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
       model: comment
     });
     this.addSubview(".photo-comments", newCommentView);
-  }
+  },
 
+  likePhoto: function(event){
+    event.preventDefault();
+    var id = this.model.id;
+    var $currentTarget = $(event.currentTarget);
+    var like = new Kittenstagram.Models.Like();
+    like.set("photo_id", this.model.id)
+    debugger;
+    like.save({}, {
+      error: function(model, resp){
+        debugger;
+        console.log(resp.error())
+      },
+      success:function(){
+        console.log("yay!!")
+      }
+    })
+
+  }
 });
