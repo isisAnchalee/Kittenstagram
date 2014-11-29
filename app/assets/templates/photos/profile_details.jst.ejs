@@ -1,9 +1,9 @@
 
-<div class='stat-pane photo-pane list-group-item'>Photos<br> <span class="count">100</span>
+<div class='stat-pane photo-pane list-group-item'>Photos<br> <span class="count"><%= user.get("photo_count") %> </span>
 </div>
 
-<div class='stat-pane followers-pane list-group-item'>Followers<br> <span class="count">50</span>
+<div class='stat-pane followers-pane list-group-item'>Followers<br> <span class="count"><%= user.get("follower_count")%> </span>
 </div>
 
-<div class='stat-pane following-pane list-group-item'>Following<br> <span class="count">130</span>
+<div class='stat-pane following-pane list-group-item'>Following<br> <span class="count"><%= user.get("following_count")%></span>
 </div>

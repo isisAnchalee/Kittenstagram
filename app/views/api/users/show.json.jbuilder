@@ -16,3 +16,5 @@ if current_user.follows?(@user)
 end
 
 json.photo_count @user.photos.length
+json.follower_count @user.followers.length
+json.following_count @user.followed_users.length
