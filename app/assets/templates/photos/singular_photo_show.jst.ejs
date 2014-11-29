@@ -2,6 +2,25 @@
 	<div class="photo-display list-group-item">
 	<img class= 'feed-photo-img' src="<%= photo.get('filepicker_url') %>">
 	<div class="comment-details-pane list-group-item">
+
+		<div class="private-pane">
+			<div class="like-button">
+				<i class=" fav-btn fa fa-heart"></i>
+			</div>
+
+			<div class="photo-likes">
+			</div>
+		</div>
+
+	<form class='new-comment photo-page-comment-form'>
+  <div class="form-group">
+    <input type="comment" name="comment[body]" class="form-control" placeholder="Write a comment...">
+	  </div>
+	  <input type="hidden" name="comment[user_id]" value="<%= CURRENT_USER_ID %>">
+	  <input type="hidden" name="comment[photo_id]" value="<%= photo.id %>">
+	</form>
+
+
 	</div>
 		<div class="author-options">
 		<button class='delete-photo-btn'> Delete </button>
