@@ -9,7 +9,8 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 	routes: {
 		"": "feedIndex",
 		"new":"newPhoto",
-		"users/:id":"usersShowPage"
+		"users/:id":"usersShowPage",
+		"photos/:id": "photoShowPage"
 	},
 
 	feedIndex: function(){
@@ -32,6 +33,15 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 		var userShowPage = new Kittenstagram.Views.UsersShow({ model: user });
 		user.fetch()
 		this._swapView(userShowPage)
+	},
+
+	photoShowPage: function(id){
+		var photo = new Kittenstagram.Models.Photo({ id: id });
+		photo.fetch();
+		var photoShowPage = new Kittenstagram.Views.SingularPhotoShow({
+			model: photo
+		});
+		this._swapView(photoShowPage);
 	},
 
   _swapView: function (view) {
