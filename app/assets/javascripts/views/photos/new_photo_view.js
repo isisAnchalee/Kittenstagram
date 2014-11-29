@@ -9,7 +9,8 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
     "click #noisebtn": "addNoise",
     "click #contrastbtn": "addContrast",
     "click #vintagebtn": "addVintage",
-    "click #claritybtn": "addClarity"
+    "click #claritybtn": "addClarity",
+    "click #retrobtn" : "addRetro"
   },
 
   initialize: function(){
@@ -28,12 +29,20 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
       $(".photo-loading").fadeIn();
 
       var that = this;
-      var formData = $(event.currentTarget).serializeJSON();
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      var dataURL = canvas.toDataURL();
+      var canvasImg = $('#canvasImg');
+      canvasImg.attr("src", dataURL);
+
+      this.model.set("filepicker_url", dataURL);
+      console.log(" hi!!!!")
 
       this.model.save({}, {
         success: function () {
           that.collection.add(that.model);
-
+          console.log("success!!")
           // Remove the image attribute with raw data
           // from the model after uploading it.
           delete that.model.attributes.filepicker_url;
@@ -48,7 +57,6 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
     var reader = new FileReader();
 
     reader.onloadend = function(){
-      that.model.set("filepicker_url", this.result);
       that._updatePreview(this.result);
     }
 
@@ -125,7 +133,14 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
       this.clarity();
       this.render();
     });
+  },
 
+  addRetro: function(e){
+    e.preventDefault()
+    Caman('.preview', window.imageData, function(){
+      this.crossProcess();
+      this.render();
+    });
   }
 
 });
