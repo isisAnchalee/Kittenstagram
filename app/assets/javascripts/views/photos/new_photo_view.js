@@ -71,13 +71,13 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
   window.imageData = imageData;
   window.originalImage = imageData;
     Caman(".preview", imageData, function () {
-      this.resize({
-        width: 500,
-        height: 500
-      });
+
+    $(".preview").css({"height":"500", "width": "500"})
+
 
       this.render();
     });
+
   },
 
   addSepia: function(e){
