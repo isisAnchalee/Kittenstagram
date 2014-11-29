@@ -25,14 +25,12 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
       var formData = $(event.currentTarget).serializeJSON();
 
       this.model.save({}, {
-        error: function () { alert("There was an error processing your request!") },
         success: function () {
-          // that.collection.add(that.model);
+          that.collection.add(that.model);
 
           // Remove the image attribute with raw data
           // from the model after uploading it.
-          Backbone.history.navigate("#", {trigger: true})
-          delete that.model.attributes.image;
+          delete that.model.attributes.filepicker_url;
 
         }
       })
@@ -56,7 +54,9 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
   },
 
   _updatePreview: function(imageData){
-    this.$el.find("#photo-image-preview").attr("src", imageData).css("max-width", "200px").css("max-height","200px");
+    Caman(".preview", imageData, function () {
+      // manipulate image here
+      this.brightness(5).render();
+    });
   }
-
 });

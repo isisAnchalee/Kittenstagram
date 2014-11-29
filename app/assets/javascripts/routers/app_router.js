@@ -21,7 +21,9 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 	},
 
 	newPhoto: function(){
-		var newPhotoPage = new Kittenstagram.Views.NewPhoto();
+		var newPhotoPage = new Kittenstagram.Views.NewPhoto({
+			collection: Kittenstagram.feedPhotos
+		});
 		this._swapView(newPhotoPage)
 	},
 

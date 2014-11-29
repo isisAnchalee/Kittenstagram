@@ -22,6 +22,8 @@
 //= require underscore
 //= require backbone
 //= require kittenstagram
+//= require caman.full.min
+//= require_tree ../images
 //= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models
