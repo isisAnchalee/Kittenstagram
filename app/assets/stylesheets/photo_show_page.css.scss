@@ -12,7 +12,47 @@ width: 100px;
 text-align: center;
 border-right: 1px solid silver;
 }
+.glyphicon {
+position: relative;
+top: 1px;
+display: inline-block;
+font-family: 'Glyphicons Halflings';
+font-style: normal;
+font-weight: normal;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.feed-item-favorite-bar {
+width: 399px !important;
+position:relative;
+top:-13px;
+right:16px;
+height: 40px;
+background-color: #EEEEEE;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+box-sizing: border-box;
+}
+.feed-item-fav-btn {
+float: left;
+border-right: 1px solid rgba(0,0,0,0.1);
+}
+.fav-btn, .actions-btn {
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+border: 1px solid #dddddd;
+padding:10px;
+padding-left:11px;
+padding-bottom: 7px;
+color: silver;
+font-size: 1.5em;
+transition: color 200ms, background-color 200ms;
+}
+.like-button{
+	display: inline;
 
+}
 #follow-info {
 float: right;
 position: relative;
