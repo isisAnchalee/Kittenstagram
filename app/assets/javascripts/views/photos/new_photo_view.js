@@ -7,7 +7,9 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
     "click #sepiabtn": "addSepia",
     "click #brightnessbtn": "addBrightness",
     "click #noisebtn": "addNoise",
-    "click #contrastbtn": "addContrast"
+    "click #contrastbtn": "addContrast",
+    "click #vintagebtn": "addVintage",
+    "click #claritybtn": "addClarity"
   },
 
   initialize: function(){
@@ -59,6 +61,7 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
 
   _updatePreview: function(imageData){
   window.imageData = imageData;
+  window.originalImage = imageData;
     Caman(".preview", imageData, function () {
       this.resize({
         width: 500,
@@ -103,7 +106,26 @@ Kittenstagram.Views.NewPhoto = Backbone.CompositeView.extend({
       this.contrast(10);
       this.render();
     });
-  }
+  },
 
+  addVintage: function(e){
+    e.preventDefault();
+
+    Caman('.preview', window.imageData, function(){
+      this.vintage();
+      this.render();
+    });
+
+  },
+
+  addClarity: function(e){
+    e.preventDefault();
+
+    Caman('.preview', window.imageData, function(){
+      this.clarity();
+      this.render();
+    });
+
+  }
 
 });
