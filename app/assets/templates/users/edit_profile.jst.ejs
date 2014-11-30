@@ -2,23 +2,14 @@
 	<div class="container">
 		<form role="form">
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Email address</label>
-		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		    <label for="username-input">Username</label>
+		    <input type="email" class="form-control" id="username-input" placeholder="Enter username">
 		  </div>
 		  <div class="form-group">
-		    <label for="exampleInputPassword1">Password</label>
-		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		    <label for="bio-input">Description</label>
+		    <input type="text" maxlength="100"  class="form-control desc-input" id="bio-input" placeholder="Write a short bio...">
 		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputFile">File input</label>
-		    <input type="file" id="exampleInputFile">
-		    <p class="help-block">Example block-level help text here.</p>
-		  </div>
-		  <div class="checkbox">
-		    <label>
-		      <input type="checkbox"> Check me out
-		    </label>
-		  </div>
+		    <div id="chars">You have 100 characters remaining!</div>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
