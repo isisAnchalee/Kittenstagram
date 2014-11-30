@@ -16,7 +16,7 @@
                     <button class='unfollow-btn'> Unfollow </button>
                 <% } %>
                     <h2 class='profile-name'><%= user.escape('username') %></h2>
-                    <span class='profile-desc'><p> SO fancy meow. </p></span>
+                    <p class='profile-desc'><%= user.escape('bio') %></p>
                 </p>
             </div>
 

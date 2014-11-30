@@ -16,20 +16,21 @@
 
   .edit-btn{
     margin-left:-2px;
-     padding-left:32px;
-     padding-right:30px;
+   padding-left:32px;
+   padding-right:30px;
   }
 
   .photo-likes{
     left:21px !important;
   }
+
   .unfollow-btn{
     right:302px;
     padding-left:37px;
     padding-right:37px;
   }
 
-  .feed-header {
+.feed-header {
   margin: 0;
   padding: 32px 0 0;
   background: #333333 url("//d36xtkk24g8jdx.cloudfront.net/bluebar/dd6cb37/images/profile/noise-black.png") 50% 50%;
@@ -40,24 +41,29 @@
   position: relative;
   overflow: hidden;
 }
+
 .user-profile-details{
   position:relative;
   left:158px;
   top:-70px;
 }
+
 .gallery-profile-photo{
   margin-top:-100px;
   height: 130px !important;
   width: 130px !important;
   padding-top:-90px;
 }
+
 .head-row{
   background-color: #f8f8f8 !important;
 }
+
 .row{
   padding-top:25px;
   background-color: #eaeaea;
 }
+
 .profile-user {
   position: relative;
   max-width: 964px;
@@ -67,6 +73,7 @@
   border-bottom: 1px solid #d9d9d9;
   background: #f8f8f8;
 }
+
 .compWrapper {
   margin-left: auto;
   margin-right: auto;
@@ -110,10 +117,10 @@
 }
 
 .compPhoto {
-  position: absolute;
-  height: 50%;
-  width: 20%;
-  margin: 0 0 0 -1px;
+    position: absolute;
+    height: 50%;
+    width: 20%;
+    margin: 0 0 0 -1px;
   .compFrontside, .compFlipside {
     bottom: 1px;
     left: 1px;
