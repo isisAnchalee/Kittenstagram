@@ -38,6 +38,7 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 	photoShowPage: function(id){
 		var photo = new Kittenstagram.Models.Photo({ id: id });
 		photo.fetch();
+		
 		var photoShowPage = new Kittenstagram.Views.SingularPhotoShow({
 			model: photo
 		});

@@ -4,7 +4,7 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   initialize: function(){
     this.addLikesView();
     this.model.comments().each(this.addNewCommentView.bind(this));
-    this.listenTo(this.model.comments(), "add remove", this.renderSubviews)
+    this.listenTo(this.model.comments(), "add remove", this.attachSubviews)
   },
 
   events:{ "click .fav-btn": "likePhoto",
