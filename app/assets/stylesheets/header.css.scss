@@ -1,4 +1,4 @@
-  .follow-btn, .unfollow-btn{
+  .follow-btn, .unfollow-btn, .edit-btn{
     position:relative;
     top:100px;
     right:300px;
@@ -12,6 +12,12 @@
     color:white;
     font-family: 'Montserrat', sans-serif;
 
+  }
+
+  .edit-btn{
+    margin-left:-2px;
+     padding-left:32px;
+     padding-right:30px;
   }
 
   .photo-likes{

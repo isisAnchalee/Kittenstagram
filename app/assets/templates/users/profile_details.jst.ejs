@@ -9,7 +9,7 @@
 
             <div class="user-profile-details">
                 <% if (user.id === CURRENT_USER_ID){%>
-                    <button> Edit Profile</button>
+                    <button class='edit-btn'> Edit Profile</button>
                 <% } else if (user.follow().isNew()){ %>
                 <button class='follow-btn'> Follow </button>
                 <% }else{ %>
