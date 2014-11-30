@@ -3,8 +3,9 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "sync", this.addComments);
-    this.listenTo(this.model.comments(), "add remove", this.render);
+    this.listenTo(this.model.comments(), "add", this.addNewCommentView);
+    this.listenTo(this.model.comments(), "remove", this.removeComment);
+    this.model.comments().each(this.addNewCommentView.bind(this));
   },
 
   events:{
@@ -13,16 +14,10 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     "click .delete-photo-btn" : "deletePhoto"
   },
 
-  addComments: function(){
-    var that = this;
-    this.model.comments().each(function(comment){
-      that.addNewCommentView(comment);
-    });
-  },
-
   addNewCommentView: function(comment){
     var newCommentView = new Kittenstagram.Views.CommentShow({
-      model: comment
+      model: comment,
+      user: comment.user
     });
 
     this.addSubview(".photo-comments", newCommentView);
@@ -73,6 +68,14 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     event.preventDefault;
     this.model.destroy();
     Backbone.history.navigate("#", { trigger: true })
+  },
+
+  removeComment: function(comment){
+    var commentSubview = _(this.subviews()['.photo-comments']).find(function(subview){
+      return subview.model === comment;
+    });
+
+    this.removeSubview(".photo-comments", commentSubview);
   }
   
 });
