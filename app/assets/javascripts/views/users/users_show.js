@@ -1,5 +1,6 @@
 Kittenstagram.Views.UsersShow = Backbone.CompositeView.extend({
 	className: "users-wrapper",
+  
   template: JST['users/show'],
 
   initialize: function(){

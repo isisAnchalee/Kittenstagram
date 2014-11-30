@@ -1,3 +1,4 @@
+
 <div class="profile-stats"></div>
 <div class="profile-user">
     <div class="row head-row">
@@ -15,8 +16,14 @@
                 <% }else{ %>
                     <button class='unfollow-btn'> Unfollow </button>
                 <% } %>
-                    <h2 class='profile-name'><%= user.escape('username') %></h2>
-                    <p class='profile-desc'><%= user.escape('bio') %></p>
+                    <% if ((<%= user.escape("bio")%>).length > 20){ %>
+                        <h2 class='long-profile-name'><%= user.escape('username') %></h2>
+                        <p class='long-desc'><%= user.escape('bio') %></p>
+                    <% } else { %>
+                        <h2 class='short-profile-name'><%= user.escape('username') %></h2>
+                        <p class='short-desc'><%= user.escape('bio') %></p>
+                    <% } %>
+                    
                 </p>
             </div>
 
@@ -24,3 +31,4 @@
         
     </div>
 </div>
+

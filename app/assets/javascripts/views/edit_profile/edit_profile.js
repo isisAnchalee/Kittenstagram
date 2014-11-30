@@ -21,10 +21,10 @@ Kittenstagram.Views.EditProfile = Backbone.CompositeView.extend({
 
   charsLeft: function(event){
     event.preventDefault();
-    var max_chars = 100,
-    chars_used = $('.desc-input').val().length,
-    chars_left = max_chars - chars_used;
-        $('#chars').text('You have ' + chars_left + ' characters remaining!');
+    var maxChars = 55,
+    charsUsed = $('.desc-input').val().length,
+    charsLeft= maxChars - charsUsed;
+        $('#chars').text('You have ' + charsLeft + ' characters remaining!');
   },
 
   updateUser: function(event){

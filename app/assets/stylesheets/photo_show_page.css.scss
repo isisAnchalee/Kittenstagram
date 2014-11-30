@@ -57,10 +57,21 @@
   width: 75px;
 }
 
-.profile-desc{
+.long-desc{
   width:270px !important;
   position:relative;
-  top:-10px;
+  top:-9px;
+}
+
+.short-profile-name{
+  position:relative;
+  top:17px;
+}
+
+.short-desc{
+  width:280px;
+  position:relative;
+  top:10px;
 }
 
 .filter-preview span {
