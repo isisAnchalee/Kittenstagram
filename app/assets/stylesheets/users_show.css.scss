@@ -6,14 +6,17 @@
 	width: 700px;
 	margin: 0 auto;
 }
+
 #chars{
 	margin-top:-11px;
 	margin-bottom:5px;
 }
+
 .header-logo{
 	height:27px;
 	width:27px;
 }
+
 .profile-name{
 	position:relative;
 	top:7px;
@@ -24,7 +27,7 @@
 	padding-left:20px;
 	padding-right:20px;
 	position:relative;
-	padding:6px;
+	padding:5px;
 	top:-3px;
 	right:90px;
 	border-right: 1px solid #06365f;
@@ -38,6 +41,7 @@
 	width:50px !important;
 	height:50px !important;
 }
+
 .photo-stats{
 	position:relative;
 	right:150px;
@@ -55,6 +59,7 @@ a{
 .logo-link{
 	position:relative;
 	right:50px;
+	top:-1px;
 	color:white !important;
 	text-decoration:none !important;
 	font-family: 'Billabong', cursive !important;
@@ -75,9 +80,15 @@ a{
 }
 
 .navbar{
-	background-image: url(//d36xtkk24g8jdx.cloudfront.net/bluebar/be7c37a/images/shared/noise-2.png),-webkit-linear-gradient(top,#517fa4,#306088);
-	background-color: #517fa4;
-	height:43px !important;
+	width: 100%;
+	height:42px !important;
+	background: linear-gradient(#6487af, #325f91);
+	box-shadow: 0 0 9px 2px rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: white;
+	z-index: 1000;
 }
 
 ul{
