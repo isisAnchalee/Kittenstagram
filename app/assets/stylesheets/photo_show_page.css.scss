@@ -13,9 +13,11 @@
 .cmt-username{
   font-family: 'Montserrat', sans-serif;
 }
+
 .edit-profile-div{
   margin-top:85px;
 }
+
 .photo-page-comment-form{
 	position:absolute;
 	top:360px;
@@ -37,6 +39,7 @@
   float:right;
   color:gray;
 }
+
 .private-pane{
 	top:315px !important;
 	width:360px !important;
@@ -48,6 +51,7 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 .adjustment-label {
   display: inline-block;
   width: 75px;
@@ -71,6 +75,7 @@
   text-align: center;
   border-right: 1px solid silver;
 }
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -93,10 +98,12 @@
   border-bottom: 1px solid rgba(0,0,0,0.1);
   box-sizing: border-box;
 }
+
 .feed-item-fav-btn {
   float: left;
   border-right: 1px solid rgba(0,0,0,0.1);
 }
+
 .fav-btn, .actions-btn {
   display: table-cell;
   vertical-align: middle;
@@ -109,6 +116,7 @@
   font-size: 1.5em;
   transition: color 200ms, background-color 200ms;
 }
+
 .like-button{
 	display: inline;
 
@@ -128,16 +136,18 @@
 .following{
 	border-right:none !important;
 }
+
 .main-photo{
 	float:left;
 }
+
 .comment-details-pane {
 	float:right;
 	width:360px;
 	height:402px;
 	position:relative;
-
 }
+
 .back-link{
 	position:absolute;
 	margin-top:5px;
