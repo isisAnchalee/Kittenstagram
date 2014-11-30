@@ -1,9 +1,13 @@
 <div class="comment">
 	<img class='comment-profile-photo' src='<%= comment.escape('profile_pic')%>'>
-	<span class='cmt-username'><%= comment.escape("username")%>:</span>
+	<span class='cmt-username'>
+		<%= comment.escape("username")%>:
+	</span>
 	<%= comment.escape("body") %>
 
 	<% if (comment.escape("user_id") == CURRENT_USER_ID){ %>
-		<div data-id="<%= comment.escape("id")%>" class='delete-comment'><button class='delete-cmt'>x</button></div>
+		<div data-id="<%= comment.escape("id")%>" class='delete-comment'>
+			<button class='delete-cmt'>x</button>
+		</div>
 	<% } %>
 </div>

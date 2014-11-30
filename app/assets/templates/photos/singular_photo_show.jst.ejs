@@ -35,7 +35,9 @@
 
 	</div>
 		<div class="author-options">
-		<button class='delete-photo-btn'> Delete </button>
+		<% if (photo.get("user_id") === CURRENT_USER_ID){ %>
+			<button class='delete-photo-btn'> Delete </button>
+		<% } %>
 		<a class='back-link' href='#users/<%= photo.get("user_id")%>'> Back to gallery </a>
 		</div>
 	</div>
