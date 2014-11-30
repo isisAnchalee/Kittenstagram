@@ -9,14 +9,14 @@
 
             <div class="user-profile-details">
                 <% if (user.id === CURRENT_USER_ID){%>
-                    <button class='edit-btn'> Edit Profile</button>
+                    <a href='#edit'><button class='edit-btn'> Edit Profile</button></a>
                 <% } else if (user.follow().isNew()){ %>
-                <button class='follow-btn'> Follow </button>
+                    <button class='follow-btn'> Follow </button>
                 <% }else{ %>
-                <button class='unfollow-btn'> Unfollow </button>
+                    <button class='unfollow-btn'> Unfollow </button>
                 <% } %>
-                 <h2 class='profile-name'><%= user.escape('username') %></h2>
-                <span class='profile-desc'><p> SO fancy meow. </p></span>
+                    <h2 class='profile-name'><%= user.escape('username') %></h2>
+                    <span class='profile-desc'><p> SO fancy meow. </p></span>
                 </p>
             </div>
 

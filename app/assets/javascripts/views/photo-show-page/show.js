@@ -74,7 +74,5 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     this.model.destroy();
     Backbone.history.navigate("#", { trigger: true })
   }
-
-
   
 });

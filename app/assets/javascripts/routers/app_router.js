@@ -10,7 +10,8 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 		"": "feedIndex",
 		"new":"newPhoto",
 		"users/:id":"usersShowPage",
-		"photos/:id": "photoShowPage"
+		"photos/:id": "photoShowPage",
+		"edit":"editProfile"
 	},
 
 	feedIndex: function(){
@@ -59,5 +60,14 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
   		model: user
   	});
   	$('.navbar-profile-pane').html(navbarPhoto.render().$el);
+  },
+
+  editProfile: function(){
+  	var user = new Kittenstagram.Models.User({ id: CURRENT_USER_ID});
+  	user.fetch();
+  	var editProfileView = new Kittenstagram.Views.EditProfile({
+  		model: user
+  	});
+  	this._swapView(editProfileView)
   }
 });
