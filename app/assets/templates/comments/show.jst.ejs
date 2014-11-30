@@ -1,7 +1,7 @@
 <div class="comment">
 	<img class='comment-profile-photo' src='<%= comment.escape('profile_pic')%>'>
 	<span class='cmt-username'>
-		<%= comment.escape("username")%>:
+		<a href='#users/<%= comment.escape("user_id")%>'><%= comment.escape("username")%></a>:
 	</span>
 	<%= comment.escape("body") %>
 
