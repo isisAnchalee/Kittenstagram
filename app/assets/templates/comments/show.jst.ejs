@@ -1,5 +1,6 @@
 <div class="comment">
 	<img class='comment-profile-photo' src='<%= comment.escape('profile_pic')%>'>
+	<span class='cmt-username'><%= comment.escape("username")%>:</span>
 	<%= comment.escape("body") %>
 
 	<% if (comment.escape("user_id") == CURRENT_USER_ID){ %>
