@@ -12,8 +12,19 @@
 	width:349px;
 }
 
+.delete-cmt{
+  padding:3px;
+  border: none;
+  background-color: transparent;
+}
+
 .red-heart{
   color: #bf200d !important;
+}
+
+.delete-comment{
+  float:right;
+  color:gray;
 }
 .private-pane{
 	top:315px !important;

@@ -24,6 +24,7 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     var newCommentView = new Kittenstagram.Views.CommentShow({
       model: comment
     });
+
     this.addSubview(".photo-comments", newCommentView);
   },
 
