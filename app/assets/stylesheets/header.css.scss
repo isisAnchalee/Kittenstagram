@@ -1,4 +1,4 @@
-.follow-btn, .unfollow-btn, .edit-btn{
+.follow-btn, .edit-prof-btn, .unfollow-btn, .edit-btn{
   position:relative;
   top:100px;
   right:300px;
@@ -11,11 +11,14 @@
   font-size:0.8em;
   color:white;
   font-family: 'Montserrat', sans-serif;
-
   }
-
+  .edit-prof-btn{
+    position:relative;
+    top:-1px;
+    left:2px;
+  }
   .edit-btn{
-    margin-left:-2px;
+  margin-left:-2px;
    padding-left:32px;
    padding-right:30px;
   }
