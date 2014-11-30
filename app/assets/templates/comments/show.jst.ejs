@@ -7,7 +7,7 @@
 
 	<% if (comment.escape("user_id") == CURRENT_USER_ID){ %>
 		<div data-id="<%= comment.escape("id")%>" class='delete-comment'>
-			<button class='delete-cmt'>x</button>
+			<button type="button" class="close delete-cmt"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 		</div>
 	<% } %>
 </div>
