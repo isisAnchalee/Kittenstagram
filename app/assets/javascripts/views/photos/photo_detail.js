@@ -4,13 +4,23 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   initialize: function(){
     this.addLikesView();
     this.model.comments().each(this.addNewCommentView.bind(this));
-    this.listenTo(this.model.comments(), "add remove", this.attachSubviews)
+    this.listenTo(this.model.comments(), "add", this.addNewCommentView);
+    this.listenTo(this.model.comments(), "remove", this.removeComment);
     this.listenTo(this.model.likes(), "change", this.render)
   },
 
+  addNewCommentView: function(comment){
+    var newCommentView = new Kittenstagram.Views.CommentShow({
+      model: comment,
+      user: comment.user
+    });
+
+    this.addSubview(".photo-comments", newCommentView);
+  },
+
   events:{ 
-  "click .fav-btn": "likePhoto",
-  "submit .new-comment": "createNewComment"
+    "click .fav-btn": "likePhoto",
+    "submit .new-comment": "createNewComment"
   },
 
   render: function(){
@@ -18,6 +28,14 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   	this.$el.html(renderedContent);
     this.attachSubviews();
   	return this;
+  },
+
+  removeComment: function(comment){
+    var commentSubview = _(this.subviews()['.photo-comments']).find(function(subview){
+      return subview.model === comment;
+    });
+
+    this.removeSubview(".photo-comments", commentSubview);
   },
 
   addLikesView: function(){
@@ -28,13 +46,6 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     });
 
     this.addSubview(".photo-likes", likesSubview);
-  },
-
-  addNewCommentView: function(comment){
-    var newCommentView = new Kittenstagram.Views.CommentShow({
-      model: comment
-    });
-    this.addSubview(".photo-comments", newCommentView);
   },
 
   likePhoto: function(event){
