@@ -1,14 +1,15 @@
 <div class="singular-photo-wrapper">
 	<div class="photo-display list-group-item">
-	<img class= 'feed-photo-img' src="<%= photo.get('filepicker_url') %>">
-	<div class="comment-details-pane list-group-item">
-	<div class="photo-comments">
-	</div>
+		<img class= 'feed-photo-img' src="<%= photo.get('filepicker_url') %>">
+		<div class="comment-details-pane list-group-item">
+			<div class="photo-comments">
+			</div>
 		<div class="private-pane">
 			<div class="like-button">
 				<i class=" fav-btn fa fa-heart"></i>
 			</div>
-			<div class="like-heart"></div>
+			<div class="like-heart">
+			</div>
 			<div class="photo-likes">
 			
 			<div class="likes ind-likes"> 
@@ -20,7 +21,6 @@
 					Be the first to like this!
 				<%}%>
 			 </div>
- 
 			</div>
 		</div>
 
@@ -32,7 +32,6 @@
 	  <input type="hidden" name="comment[photo_id]" value="<%= photo.id %>">
 	</form>
 
-
 	</div>
 		<div class="author-options">
 		<% if (photo.get("user_id") === CURRENT_USER_ID){ %>
@@ -41,6 +40,4 @@
 		<a class='back-link' href='#users/<%= photo.get("user_id")%>'> Back to gallery </a>
 		</div>
 	</div>
-
-
 </div>
