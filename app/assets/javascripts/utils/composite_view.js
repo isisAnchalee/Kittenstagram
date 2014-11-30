@@ -26,7 +26,18 @@ Backbone.CompositeView = Backbone.View.extend({
       })
     })
   },
-  
+  delegateEvents: function(){
+    //delegate the parent views events
+    Backbone.View.prototype.delegateEvents.call(this);
+    //delegate events for each subview
+    //if the parent needs to be delegated, all the subviews do too
+    _(this.subviews()).each(function(subviews, selector) {
+      _(subviews).each(function(subview){
+        subview.delegateEvents();
+      });
+    });
+  },
+
   attachSubviews: function () {
     // I decided I didn't want a function that renders ALL the
     // subviews together. Instead, I think:
@@ -64,6 +75,7 @@ Backbone.CompositeView = Backbone.View.extend({
     subviews.splice(subviews.indexOf(subview), 1);
   },
 
+  
   subviews: function (selector) {
     // Map of selectors to subviews that live inside that selector.
     // Optionally pass a selector and I'll initialize/return an array

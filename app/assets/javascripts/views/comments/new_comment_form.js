@@ -1,22 +1,13 @@
-Kittenstagram.Views.CommentForm = Backbone.View.extend({
+Kittenstagram.Views.CommentForm = Backbone.CompositeView.extend({
   template: JST['comments/new'],
-
-  events:{
-  "click form.new-comment": "createNewComment"
-  },
-
+  
   render: function(){
   	var renderedContent = this.template({
   		photo: this.model
   	});
-  	this.delegateEvents();
+
   	this.$el.html(renderedContent);
   	return this;
-  },
-
-  createNewComment: function(event){
-  	event.preventDefault();
-  	comsole.log("meow!!");
   }
 
 });

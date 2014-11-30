@@ -13,7 +13,7 @@ module Api
       else
  				@like = Like.create(
 	        user_id: current_user.id,
-	        photo_id: params[:photo_id],
+	        photo_id: like_params[:photo_id],
 	        )
  				
       	render json: { "like" => true }

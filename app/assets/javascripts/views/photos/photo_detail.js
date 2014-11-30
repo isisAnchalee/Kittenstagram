@@ -4,10 +4,11 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   initialize: function(){
     this.addLikesView();
     this.model.comments().each(this.addNewCommentView.bind(this));
+    this.listenTo(this.model.comments(), "add remove", this.renderSubviews)
   },
 
   events:{ "click .fav-btn": "likePhoto",
-
+  "submit .new-comment": "createNewComment"
   },
 
   render: function(){
@@ -49,7 +50,32 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
       success:function(){
         console.log("yay!!")
       }
-    })
+    });
+  },
 
+
+  heartAnimation: function(event){
+    event.preventDefault();
+    $('.like-heart').html("♥").toggleClass('heart').toggleClass('pulse1');
+    $('.fav-btn').css('color', 'red');
+    setTimeout(function(){
+      $('.like-heart').html(" ").toggleClass('pulse1').toggleClass('heart');
+    }, 500)
+  },
+
+
+  createNewComment: function(event){
+    event.preventDefault();
+    var that = this;
+    var $currentTarget = $(event.currentTarget);
+    console.log($currentTarget.serializeJSON());
+    var attrs = $currentTarget.serializeJSON();
+    var comment = new Kittenstagram.Models.Comment(attrs);
+    comment.save({},{
+      success: function(){
+        console.log("HEY!!!")
+        that.model.comments().add(comment);
+      }
+    })
   }
 });

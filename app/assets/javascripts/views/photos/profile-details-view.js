@@ -1,4 +1,4 @@
-Kittenstagram.Views.ProfileDetails = Backbone.View.extend({
+Kittenstagram.Views.ProfileDetails = Backbone.CompositeView.extend({
   template: JST['photos/profile_details'],
 
   render: function(){

@@ -1,7 +1,8 @@
-
 <div class="likes"> 
-	<% if (collection.length > 0){ %>
-		<%= collection.length%> people like this post.
+	<% if (collection.length === 1){ %>
+		1 person likes this!
+	<% } else if (collection.length > 1){ %>
+	<%= collection.length %> people like this!
 	<%} else {%>
 		Be the first to like this!
 	<%}%>

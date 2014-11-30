@@ -10,13 +10,13 @@ module Api
     end
 
     def create
-      @comment = Comment.create(
-        user_id: current_user.id,
-        photo_id: params[:photo_id],
-        body: params[:body]
-        )
-
-      render json: @comment
+      @comment = Comment.create(comment_params)
+      @comment.user_id = current_user.id
+      if @comment.save
+        render json: @comment
+      else
+        render json: @comment.errors.full_messages
+      end
     end
 
     def destroy
@@ -25,5 +25,9 @@ module Api
       render json: @comment
     end
 
+    private
+    def comment_params
+      params.require(:comment).permit(:photo_id, :body)
+    end
   end
 end
