@@ -101,14 +101,16 @@ box-sizing: border-box;
 .photo-likes{
 	margin-bottom:10px;
 }
-
+.ind-likes{
+	right:48px !important;
+}
 .likes{
 	margin: 0 auto;
 	// font-family: 'Montserrat', sans-serif;
 	width:200px;
 	position:relative;
 	top:-28px;
-	right:48px;
+	right:68px;
 }
 
 .like-heart{

@@ -26,11 +26,9 @@ Backbone.CompositeView = Backbone.View.extend({
       })
     })
   },
+
   delegateEvents: function(){
-    //delegate the parent views events
     Backbone.View.prototype.delegateEvents.call(this);
-    //delegate events for each subview
-    //if the parent needs to be delegated, all the subviews do too
     _(this.subviews()).each(function(subviews, selector) {
       _(subviews).each(function(subview){
         subview.delegateEvents();
@@ -39,17 +37,6 @@ Backbone.CompositeView = Backbone.View.extend({
   },
 
   attachSubviews: function () {
-    // I decided I didn't want a function that renders ALL the
-    // subviews together. Instead, I think:
-    //
-    // * The user of CompositeView should explicitly render the
-    //   subview themself when they build the subview object.
-    // * The subview should listenTo relevant events and re-render
-    //   itself.
-    //
-    // All that is necessary is "attaching" the subview `$el`s to the
-    // relevant points in the parent CompositeView.
-
     var view = this;
     _(this.subviews()).each(function (subviews, selector) {
       view.$(selector).empty();
@@ -57,8 +44,9 @@ Backbone.CompositeView = Backbone.View.extend({
         view.attachSubview(selector, subview);
       });
     });
+    this.delegateEvents(); //add this line
   },
-
+  
   remove: function () {
     Backbone.View.prototype.remove.call(this);
     _(this.subviews()).each(function (subviews) {

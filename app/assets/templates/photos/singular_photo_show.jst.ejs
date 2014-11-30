@@ -10,6 +10,17 @@
 			</div>
 			<div class="like-heart"></div>
 			<div class="photo-likes">
+			
+			<div class="likes ind-likes"> 
+				<% if (collection.length === 1){ %>
+					1 person likes this!
+				<% } else if (collection.length > 1){ %>
+					<%= collection.length %> people like this!
+				<%} else {%>
+					Be the first to like this!
+				<%}%>
+			 </div>
+ 
 			</div>
 		</div>
 

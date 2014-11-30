@@ -40,7 +40,8 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 		photo.fetch();
 		
 		var photoShowPage = new Kittenstagram.Views.SingularPhotoShow({
-			model: photo
+			model: photo,
+			collection: photo.likes()
 		});
 		this._swapView(photoShowPage);
 	},

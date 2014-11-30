@@ -5,9 +5,11 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.addLikesView();
     this.model.comments().each(this.addNewCommentView.bind(this));
     this.listenTo(this.model.comments(), "add remove", this.attachSubviews)
+    this.listenTo(this.model.likes(), "change", this.render)
   },
 
-  events:{ "click .fav-btn": "likePhoto",
+  events:{ 
+  "click .fav-btn": "likePhoto",
   "submit .new-comment": "createNewComment"
   },
 
@@ -37,45 +39,48 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
 
   likePhoto: function(event){
     event.preventDefault();
+    var that = this;
     var id = this.model.id;
     var $currentTarget = $(event.currentTarget);
     var like = new Kittenstagram.Models.Like();
     like.set("photo_id", id)
 
     like.save({}, {
-      error: function(model, resp){
-        debugger;
-        console.log(resp.error())
-      },
       success:function(){
-        console.log("yay!!")
+        console.log("meow!!")
+        that.model.likes().add(like);
       }
     });
   },
-
-
-  heartAnimation: function(event){
-    event.preventDefault();
-    $('.like-heart').html("♥").toggleClass('heart').toggleClass('pulse1');
-    $('.fav-btn').css('color', 'red');
-    setTimeout(function(){
-      $('.like-heart').html(" ").toggleClass('pulse1').toggleClass('heart');
-    }, 500)
-  },
-
 
   createNewComment: function(event){
     event.preventDefault();
     var that = this;
     var $currentTarget = $(event.currentTarget);
-    console.log($currentTarget.serializeJSON());
+
     var attrs = $currentTarget.serializeJSON();
     var comment = new Kittenstagram.Models.Comment(attrs);
     comment.save({},{
       success: function(){
-        console.log("HEY!!!")
         that.model.comments().add(comment);
       }
     })
+  },
+
+  likePhoto: function(event){
+    event.preventDefault();
+    var that = this;
+    var id = this.model.id;
+    var $currentTarget = $(event.currentTarget);
+    var like = new Kittenstagram.Models.Like();
+    like.set("photo_id", id)
+
+    like.save({}, {
+      success:function(){
+        console.log("meow!!")
+        that.model.likes().add(like);
+      }
+    });
   }
+
 });

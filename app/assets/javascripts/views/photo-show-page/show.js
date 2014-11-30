@@ -4,10 +4,12 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
   initialize: function(){
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "sync", this.addComments);
+    this.listenTo(this.model.comments(), "add remove", this.render);
   },
 
   events:{
-    "click .fav-btn": "heartAnimation"
+    "submit .photo-page-comment-form": "createNewComment",
+    "click .fav-btn": "likePhoto"
   },
 
   addComments: function(){
@@ -26,11 +28,45 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
   render: function(){
   	var renderedContent = this.template({
-  		photo: this.model
+  		photo: this.model,
+      collection: this.collection
   	});
-    debugger;
+
   	this.$el.html(renderedContent);
+    this.attachSubviews();
     return this;
+  },
+
+  createNewComment: function(event){
+    event.preventDefault();
+    var that = this;
+    var $currentTarget = $(event.currentTarget);
+
+    var attrs = $currentTarget.serializeJSON();
+    var comment = new Kittenstagram.Models.Comment(attrs);
+    comment.save({},{
+      success: function(){
+        that.model.comments().add(comment);
+      }
+    });
+  },
+
+  likePhoto: function(event){
+    event.preventDefault();
+    var that = this;
+    var id = this.model.id;
+    var $currentTarget = $(event.currentTarget);
+    var like = new Kittenstagram.Models.Like();
+    like.set("photo_id", id)
+
+    like.save({}, {
+      success:function(){
+        console.log("meow!!")
+        that.model.likes().add(like);
+      }
+    });
   }
+
+
   
 });
