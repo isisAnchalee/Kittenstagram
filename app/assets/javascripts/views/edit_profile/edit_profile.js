@@ -6,7 +6,8 @@ Kittenstagram.Views.EditProfile = Backbone.CompositeView.extend({
   },
 
   events:{
-    "keyup .desc-input": "charsLeft"
+    "keyup .desc-input": "charsLeft",
+    "submit form": "updateUser"
   },
 
   render: function(){
@@ -24,6 +25,18 @@ Kittenstagram.Views.EditProfile = Backbone.CompositeView.extend({
     chars_used = $('.desc-input').val().length,
     chars_left = max_chars - chars_used;
         $('#chars').text('You have ' + chars_left + ' characters remaining!');
+  },
+
+  updateUser: function(event){
+    event.preventDefault();
+    var formData = $(event.currentTarget).serializeJSON();
+    
+    this.model.save(formData, {
+      success: function(){
+        Backbone.history.navigate("#", { trigger: true });
+      }.bind(this)
+    })
+
   }
 
 });

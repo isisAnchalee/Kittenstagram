@@ -1,17 +1,17 @@
 Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
+
 	initialize: function(options){
 		this.$rootEl = options.$rootEl;
 		this.collection = options.collection
-
 		this.addProfilePane();
 	},
 
 	routes: {
 		"": "feedIndex",
-		"new":"newPhoto",
-		"users/:id":"usersShowPage",
+		"new": "newPhoto",
+		"users/:id": "usersShowPage",
 		"photos/:id": "photoShowPage",
-		"edit":"editProfile"
+		"edit": "editProfile"
 	},
 
 	feedIndex: function(){
@@ -47,12 +47,6 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 		this._swapView(photoShowPage);
 	},
 
-  _swapView: function (view) {
-    this.currentView && this.currentView.remove();
-    this.currentView = view;
-    this.$rootEl.html(view.render().$el);
-  },
-
   addProfilePane: function(){
   	var user = new Kittenstagram.Models.User({ id: CURRENT_USER_ID });
   	user.fetch();
@@ -69,5 +63,11 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
   		model: user
   	});
   	this._swapView(editProfileView)
+  },
+
+  _swapView: function (view) {
+    this.currentView && this.currentView.remove();
+    this.currentView = view;
+    this.$rootEl.html(view.render().$el);
   }
 });
