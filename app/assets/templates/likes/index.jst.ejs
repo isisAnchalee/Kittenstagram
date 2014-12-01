@@ -2,22 +2,26 @@
 	<% if (collection.length === 1){ %>
 		<a class="liker" href="#users/<%= collection.models[0].id %>"> <%= collection.models[0].get('username') %></a> likes this!
 	<% } else if (collection.length === 2){ %>
-		<a class="liker" href="#users/<%= collection.models[0].id %>"><%= collection.models[0].username %></a>
-		and <a class="liker" href="#users/<%= collection.models[1].id%>"> <%= collection.models[1].username %></a> like this!
+		<a class="liker" href="#users/<%= collection.models[0].id %>"><%= collection.models[0].get("username") %></a>
+		and <a class="liker" href="#users/<%= collection.models[1].id%>"> <%= collection.models[1].get("username") %></a> like this!
 	<%} else if (collection.length === 3){%>
 		<% var prev = collection.slice(0, 3) %>
 		<% _.each(prev, function(liker, i){ %>
 			<% if (i < 2) { %>
-				<a href='#users/<%= liker.id%>'> <%= liker.username %></a>,
+				<a class="liker" href='#users/<%= liker.id%>'> <%= liker.get("username") %></a>,
 			<% } else { %>
 				<% if (i === 2){ %>
 					and
 				<% } %>
-			<a href='#users/<%= liker.id%>'> <%= liker.username %></a>
+			<a class="liker" href='#users/<%= liker.id%>'> <%= liker.get("username") %></a>
 			<% } %>
 		<% }) %> like this.
 				<%} else if (collection.length === 0 ){%>
 					Be the first to like this!
-				<% }else { %>
+				<% }else{ %>
+					<% var prev = collection.slice(0, 2) %>
+					<% _.each(prev, function(liker, i){ %>
+					<a class="liker" href='#users/<%= liker.id%>'> <%= liker.get("username") %></a>,
+					<% }) %> and <%=(collection.length - 2) %> others like this.
 				<% } %>
  </div>
