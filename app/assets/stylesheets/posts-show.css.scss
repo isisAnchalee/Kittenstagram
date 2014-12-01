@@ -12,7 +12,18 @@
 }
 
 .count{
+	position:relative;
 	font-size:1.2em !important;
+	font-weight:bold;
+	top:2px;
+}
+
+.stat-text{
+	font-family: 'Montserrat', sans-serif;
+	position:relative;
+	top:-5px;
+	font-size:0.9em;
+	color: #7d7d7d;
 }
 
 .feed-item-favorites {

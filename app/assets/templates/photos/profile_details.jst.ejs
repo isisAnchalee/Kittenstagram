@@ -1,10 +1,20 @@
 <div id="follow-info">
-	<div class='follow-info-content'>Photos<br> <span class="count"><%= user.get("photo_count") %> </span>
+	<div class='follow-info-content'>
+		<span class="count"><%= user.get("photo_count") %></span><br> 
+		<span class="stat-text">Photos</span>
 	</div>
 
-	<div class='follow-info-content '>Followers<br> <span class="count"><%= user.get("follower_count")%> </span>
+	<div class='follow-info-content '>
+		<span class="count"><%= user.get("follower_count")%></span><br>
+	<% if (user.get("follower_count") === 1){ %>
+		<span class="stat-text">Follower</span>
+		<% } else { %>
+		<span class="stat-text">Followers</span>
+		<% } %>
 	</div>
 
-	<div class='follow-info-content following'>Following<br> <span class="count"><%= user.get("following_count")%></span>
+	<div class='follow-info-content following'> 
+		<span class="count"><%= user.get("following_count")%></span><br>
+		<span class="stat-text">Following</span>
 	</div>
 </div>
