@@ -3,25 +3,24 @@ module Api
 		respond_to :json
 		
 		before_action :require_signed_in!
-
+		#TODO: set up the if else so we can send error responses too
 		def create
-			@like = current_user.likes.find_by_photo_id(like_params[:photo_id])
-
-			if @like
-      	@like.destroy
-      	render json: { "like" => false }
-      else
- 				@like = Like.create(
-	        user_id: current_user.id,
-	        photo_id: like_params[:photo_id],
-	        )
- 				
-      	render json: { "like" => true }
-      end
+			@like = Like.create(
+      	user_id: current_user.id,
+      	photo_id: params[:photo_id],
+      )
+ 			# @photo = @like.photo
+      render :template => 'api/likes/_like'
     end
 
- 		def like_params
-      params.require(:like).permit(:photo_id)
+    def destroy
+    	@like = current_user.likes.find_by_photo_id(params[:photo_id])
+    	@like.destroy!
+      render :json => @like
     end
+
+ 		# def like_params
+   #    params.require(:like).permit(:photo_id)
+   #  end
 	end
 end

@@ -2,7 +2,7 @@ Kittenstagram.Views.LikesView = Backbone.View.extend({
   template: JST['likes/index'],
   
   initialize: function(){
-    this.listenTo(this.collection, "change", this.render);
+    this.listenTo(this.collection, "add remove", this.render);
   },
 
   render: function(){

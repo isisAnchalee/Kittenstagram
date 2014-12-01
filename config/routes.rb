@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
 		resources :photos, only: [:index, :create, :show, :destroy]
     resources :likes, only: [:create]
+    delete 'likes', to: "likes#destroy"
 		resources :comments, only: [:create, :index, :update, :destroy]
   end
 

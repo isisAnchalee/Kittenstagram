@@ -6,7 +6,7 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.model.comments().each(this.addNewCommentView.bind(this));
     this.listenTo(this.model.comments(), "add", this.addNewCommentView);
     this.listenTo(this.model.comments(), "remove", this.removeComment);
-    this.listenTo(this.model.likes(), "add remove", this.refreshLikesView.bind(this))
+    // this.listenTo(this.model.likes(), "add remove", this.refreshLikesView.bind(this))
   },
 
   events:{ 
@@ -50,21 +50,21 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.addSubview(".photo-likes", likesSubview);
   },
 
-  refreshLikesView: function(likes){
-    var likesSubview = _(this.subviews()['.photo-likes']).find(function(subview){
-      return subview.model === likes;
-    });
+  // refreshLikesView: function(likes){
+  //   var likesSubview = _(this.subviews()['.photo-likes']).find(function(subview){
+  //     return subview.model === likes;
+  //   });
 
-    this.removeSubview(".photo-likes", likesSubview);
+  //   this.removeSubview(".photo-likes", likesSubview);
 
-    var likes = this.model.likes();
-    var likesSubview = new Kittenstagram.Views.LikesView({
-      collection: likes,
-      model: this.model
-    });
+  //   var likes = this.model.likes();
+  //   var likesSubview = new Kittenstagram.Views.LikesView({
+  //     collection: likes,
+  //     model: this.model
+  //   });
 
-    this.addSubview(".photo-likes", likesSubview);
-  },
+  //   this.addSubview(".photo-likes", likesSubview);
+  // },
   
   createNewComment: function(event){
     event.preventDefault();
@@ -75,6 +75,7 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     var comment = new Kittenstagram.Models.Comment(attrs);
     comment.save({},{
       success: function(){
+        //should get all the user profile stuff from rails
         that.model.comments().add(comment);
       }
     })
@@ -82,18 +83,22 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
 
   likePhoto: function(event){
     event.preventDefault();
-    var that = this;
-    var id = this.model.id;
-    var $currentTarget = $(event.currentTarget);
-    var like = new Kittenstagram.Models.Like();
-    like.set("photo_id", id)
+    this.model.toggleLike(function(){
+      $(event.currentTarget).toggleClass('red');
+    }.bind(this))
+    // var that = this;
+    // var id = this.model.id;
+    // var $currentTarget = $(event.currentTarget);
+    // var like = new Kittenstagram.Models.Like();
+    // like.set("photo_id", id);
 
-    like.save({}, {
-      success:function(){
-        console.log("meow!!")
-        that.model.likes().add(like);
-      }
-    });
+    // like.save({}, {
+    //   success:function(){
+    //     console.log("meow!!")
+    //     that.model.likes().add(like);
+    //     that.render();
+    //   }
+    // });
   }
 
 });
