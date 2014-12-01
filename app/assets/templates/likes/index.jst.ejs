@@ -1,10 +1,10 @@
 <div class="likes"> 
 	<% var likers = photo.get("likers")%>
 	<% if (likers.length === 1){ %>
-		<a href="#users/<%= likers[0].id %>"> <%= likers[0].username %></a> likes this!
+		<a class="liker" href="#users/<%= likers[0].id %>"> <%= likers[0].username %></a> likes this!
 	<% } else if (likers.length === 2){ %>
-		<a href="#users/<%= likers[0].id %>"><%= likers[0].username %></a>
-		and <a href="#users/<%= likers[1].id%>"> <%= likers[1].username %></a> like this!
+		<a class="liker" href="#users/<%= likers[0].id %>"><%= likers[0].username %></a>
+		and <a class="liker" href="#users/<%= likers[1].id%>"> <%= likers[1].username %></a> like this!
 	<%} else {%>
 		Be the first to like this!
 	<%}%>

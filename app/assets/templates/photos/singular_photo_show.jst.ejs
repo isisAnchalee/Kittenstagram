@@ -13,13 +13,19 @@
 			<div class="photo-likes">
 			
 			<div class="likes ind-likes"> 
-				<% if (collection.length === 1){ %>
-					1 person likes this!
-				<% } else if (collection.length > 1){ %>
+				<% var likers = photo.get("likers")%>
+				<% if (collection.length === 0 ){ %>
+					Be the first to like this!
+				<%} else if (collection.length === 1){ %>
+						<a href="#users/<%= likers[0].id%>"><%= likers[0].username %></a> likes this!
+				<% } else if (collection.length === 2){ %>
 					<%= collection.length %> people like this!
+					<a href="#users/<%= likers[0].id%>"><%= likers[0].username %></a> and <a href="#users/<%= likers[1].id%>"><%= likers[1].username %></a> like this!
 				<%} else {%>
 					Be the first to like this!
 				<%}%>
+
+
 			 </div>
 			</div>
 		</div>
