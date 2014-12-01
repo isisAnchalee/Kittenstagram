@@ -14,7 +14,7 @@ module Api
       @comment.user_id = current_user.id
       if @comment.save
         #need to include user profile pic and name
-        render json: @comment
+        render :show
       else
         render json: @comment.errors.full_messages
       end

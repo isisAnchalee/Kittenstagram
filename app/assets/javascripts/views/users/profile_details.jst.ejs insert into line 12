@@ -1,21 +1,20 @@
 
 TODO:
 HEROKU
-Like button rerendering on change
 Edit Profile w/ incomplete data
-fetchung user after posting comment
-Feed show most recent
+fetching user after posting comment
+Setting Profile Photo
 
 
 Ask Andrew:
 Fix Bootstrap grid css
 Fix Error displays
 
-SCHOOL:
+
+Questions: 
+How to get feed showing by most recent
+http://stackoverflow.com/questions/3393687/default-sort-order-for-a-rails-model
+
+
+Read Up On:
 Filters/Kinetic
-Rerendering on likes
-
-Explore/Most Recent Photos Page
-
-
-
