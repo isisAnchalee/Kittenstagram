@@ -1,7 +1,9 @@
+
 <div class="photo-show">
 	<div class="photo-wrapper">
 		<div class="photo-author-photo"></div>
 		<div class="timelineCenter">
+		<div class="photo-time-ago"> <%= photo.get("time_ago") %> ago</div>
 			<img class= 'feed-photo-img' src="<%= photo.get('filepicker_url') %>">
 			<div class="photo-caption">
 				<%= photo.get("caption") %>

@@ -40,6 +40,20 @@
   color:gray;
 }
 
+.photo-time-ago{
+  color:silver;
+  position:relative;
+  top:36px;
+  right:180px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.author-username{
+  position:absolute;
+  right:55px;
+  top:6px;
+  font-weight:bold;
+}
 .private-pane{
 	top:315px !important;
 	width:360px !important;

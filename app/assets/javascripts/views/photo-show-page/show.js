@@ -6,6 +6,7 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.comments(), "add", this.addNewCommentView);
     this.listenTo(this.model.comments(), "remove", this.removeComment);
     this.model.comments().each(this.addNewCommentView.bind(this));
+    this.listenTo(this.model.likes(), "change", this.render)
   },
 
   events:{
@@ -19,7 +20,6 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
       model: comment,
       user: comment.user
     });
-
     this.addSubview(".photo-comments", newCommentView);
   },
 

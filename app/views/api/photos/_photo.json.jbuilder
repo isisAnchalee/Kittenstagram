@@ -4,6 +4,8 @@ json.user photo.user, :id, :username, :profile_photo
 
 json.likes photo.likes
 
+json.time_ago time_ago_in_words(photo.created_at)
+
 json.comments photo.comments do |comment|
   json.id comment.id
   json.profile_pic comment.user.profile_photo
