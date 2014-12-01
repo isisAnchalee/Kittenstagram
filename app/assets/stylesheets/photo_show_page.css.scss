@@ -102,9 +102,12 @@
 .long-desc{
   width:270px !important;
   position:relative;
-  top:-9px;
+  top:-25px;
 }
-
+.long-profile-name{
+  position:relative;
+  top:-7px;
+}
 .short-profile-name{
   position:relative;
   top:5px;
@@ -117,17 +120,17 @@
 }
 
 .short-location, .long-location{
+  position:relative;
   color: #7d7d7d;
   font-weight: bold;
 }
 
 .short-location{
-  position:relative;
   top:-10px;
 }
 
 .long-location{
-
+  top:-22px;
 }
 .filter-preview span {
   position: absolute;
