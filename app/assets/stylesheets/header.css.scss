@@ -11,12 +11,17 @@
   font-size:0.8em;
   color:white;
   font-family: 'Montserrat', sans-serif;
-  }
-  .edit-prof-btn{
-    position:relative;
-    top:-1px;
-    left:2px;
-  }
+}
+
+.default-banner{
+  z-index:-1;
+}
+
+.edit-prof-btn{
+  position:relative;
+  top:-1px;
+  left:2px;
+}
   .edit-btn{
   margin-left:-2px;
    padding-left:32px;
