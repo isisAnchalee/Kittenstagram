@@ -13,7 +13,6 @@ module Api
       @comment = Comment.create(comment_params)
       @comment.user_id = current_user.id
       if @comment.save
-        #need to include user profile pic and name
         render :show
       else
         render json: @comment.errors.full_messages

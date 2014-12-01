@@ -6,12 +6,22 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.comments(), "add", this.addNewCommentView);
     this.listenTo(this.model.comments(), "remove", this.removeComment);
     this.model.comments().each(this.addNewCommentView.bind(this));
+    this.addCommentFormView();
+    this.addLikesView();
   },
 
   events:{
-    "submit .photo-page-comment-form" : "createNewComment",
+    "submit form" : "createNewComment",
     "click .fav-btn" : "likePhoto",
     "click .delete-photo-btn" : "deletePhoto"
+  },
+
+  addCommentFormView: function(){
+    var newCommentForm = new Kittenstagram.Views.CommentForm({
+      model: this.model
+    });
+
+    this.addSubview(".comment-form", newCommentForm);
   },
 
   addNewCommentView: function(comment){
@@ -47,6 +57,16 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
         that.model.comments().add(comment);
       }
     });
+  },
+
+  addLikesView: function(){
+    var likes = this.model.likes();
+    var likesSubview = new Kittenstagram.Views.LikesView({
+      collection: likes,
+      model: this.model
+    });
+
+    this.addSubview(".photo-likes", likesSubview);
   },
 
   likePhoto: function(event){
