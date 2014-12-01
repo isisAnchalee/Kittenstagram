@@ -13,3 +13,8 @@ json.comments photo.comments do |comment|
   json.body comment.body
   json.user_id comment.user.id
 end
+
+json.likers photo.likers do |liker|
+  json.id liker.id
+  json.username liker.username
+end

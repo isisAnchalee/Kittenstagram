@@ -7,6 +7,7 @@ Kittenstagram.Views.LikesView = Backbone.View.extend({
 
   render: function(){
   	var renderedContent = this.template({
+      photo: this.model,
   		collection: this.collection
   	});
 
