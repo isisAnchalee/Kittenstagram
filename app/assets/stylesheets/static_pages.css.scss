@@ -7,6 +7,7 @@
 	color:white;
 	font-family:'Oleo Script Swash Caps', cursive;
 }
+
 .followers-pane{
 	z-index:10;
 	position:relative;
@@ -15,6 +16,7 @@
 	text-align:center;
 	padding:5px !important;
 }
+
 .photo-pane{
 	z-index: 10;
 	position: relative;
@@ -23,6 +25,7 @@
 	text-align:center;
 	padding:5px !important;
 }
+
 .following-pane{
 	position:relative;
 	left:240px;
@@ -31,17 +34,20 @@
 	text-align:center;
 	padding:5px !important;
 }
+
 .profile-stats{
 	position:absolute;
 	right:300px;
 	z-index:10;
 	top:-30px;
 }
+
 .navbar{
 	min-height:30px !important;
   height: 38px !important;
   margin-bottom: 0 !important;
 }
+
 .splash-sign-up{
 	position:relative;
 	top:115px;
@@ -55,6 +61,7 @@
 .profile-link:active{
 	color:white;
 }
+
 .welcome-message{
 	text-align: center;
 	color:white;
@@ -67,6 +74,7 @@
 .box{
 	height:100vh;
 }
+
 .navbar-profile{
 	position:relative;
 	height:26px;
@@ -85,7 +93,7 @@
 	width:200px;
 	margin:0 auto;
 }
-.home-button, .home-icon .fa-lg{
+.home-button, .home-icon .fa-lg, .explore-btn{
 	color:white;
 	opacity: 0.9;
 }

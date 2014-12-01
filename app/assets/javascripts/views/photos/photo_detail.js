@@ -6,7 +6,6 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.model.comments().each(this.addNewCommentView.bind(this));
     this.listenTo(this.model.comments(), "add", this.addNewCommentView);
     this.listenTo(this.model.comments(), "remove", this.removeComment);
-
   },
 
   events:{ 
@@ -48,22 +47,6 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     });
 
     this.addSubview(".photo-likes", likesSubview);
-  },
-
-  likePhoto: function(event){
-    event.preventDefault();
-    var that = this;
-    var id = this.model.id;
-    var $currentTarget = $(event.currentTarget);
-    var like = new Kittenstagram.Models.Like();
-    like.set("photo_id", id)
-
-    like.save({}, {
-      success:function(){
-        console.log("meow!!")
-        that.model.likes().add(like);
-      }
-    });
   },
 
   createNewComment: function(event){

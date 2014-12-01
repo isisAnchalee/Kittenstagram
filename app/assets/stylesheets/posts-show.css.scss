@@ -115,16 +115,17 @@
 }
 
 
-.ind-likes{
-	right:48px !important;
-}
 .likes{
 	margin: 0 auto;
 	// font-family: 'Montserrat', sans-serif;
-	width:200px;
+	width:240px;
 	position:relative;
 	top:-28px;
-	right:68px;
+	right:48px !important;
+}
+
+.ind-likes{
+	right:28px !important;
 }
 
 .like-heart{
