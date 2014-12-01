@@ -70,18 +70,9 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
   likePhoto: function(event){
     event.preventDefault();
-    var that = this;
-    var id = this.model.id;
-    var $currentTarget = $(event.currentTarget);
-    var like = new Kittenstagram.Models.Like();
-    like.set("photo_id", id)
-
-    like.save({}, {
-      success:function(){
-        console.log("meow!!")
-        that.model.likes().add(like);
-      }
-    });
+    this.model.toggleLike(function(){
+      $(event.currentTarget).toggleClass('red');
+    }.bind(this))
   },
 
   deletePhoto: function(event){
