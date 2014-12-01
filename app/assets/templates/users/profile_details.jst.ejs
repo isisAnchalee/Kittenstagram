@@ -16,14 +16,14 @@
                 <% }else{ %>
                     <button class='unfollow-btn'> Unfollow </button>
                 <% } %>
-                    <% if ((<%= user.escape("bio")%>).length > 20){ %>
+
+                    <% if (<%= user.escape("bio")%>.length > 25){ %>
                         <h2 class='long-profile-name'><%= user.escape('username') %></h2>
                         <p class='long-desc'><%= user.escape('bio') %></p>
                     <% } else { %>
                         <h2 class='short-profile-name'><%= user.escape('username') %></h2>
                         <p class='short-desc'><%= user.escape('bio') %></p>
                     <% } %>
-                    
                 </p>
             </div>
 
