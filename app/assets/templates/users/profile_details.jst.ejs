@@ -12,12 +12,12 @@
                 <% if (user.id === CURRENT_USER_ID){%>
                     <a href='#edit'><button class='edit-btn'> Edit Profile</button></a>
                 <% } else if (user.follow().isNew()){ %>
-                    <button class='follow-btn'> Follow </button>
+                    <button class='follow-btn'> <span class="ui-button-text">Follow</span></button>
                 <% }else{ %>
-                    <button class='unfollow-btn'> Unfollow </button>
+                    <button class='unfollow-btn'> <span class="ui-button-text">Unfollow</span> </button>
                 <% } %>
 
-                    <% if (<%= user.escape("bio")%>.length > 15){ %>
+                    <% if (<%= user.escape("bio")%>.length > 27){ %>
                         <h2 class='long-profile-name'><%= user.escape('username') %></h2>
                         <span class='long-location'><%= user.get("location") %> </span>
                         <p class='long-desc'><%= user.escape('bio') %></p>

@@ -20,14 +20,17 @@ Kittenstagram.Views.UserDetailsView = Backbone.View.extend({
   	this.model.follow().save()
     var $currentTarget = $(event.currentTarget);
     $currentTarget.toggleClass("follow-btn");
-    console.log($currentTarget);
-
+    $currentTarget.toggleClass("unfollow-btn");
+    $(".ui-button-text").text("Unfollow");
   },
 
   unfollowUser: function(event){
   	event.preventDefault();
   	this.model.follow().destroy();
-
+    var $currentTarget = $(event.currentTarget);
+    $currentTarget.toggleClass("unfollow-btn");
+    $currentTarget.toggleClass("follow-btn");
+    $(".ui-button-text").text("Follow");
   }
   
 });
