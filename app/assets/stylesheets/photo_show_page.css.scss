@@ -40,14 +40,21 @@
   color:gray;
 }
 
-.photo-time-ago{
+.photo-time-ago, .photo-time-ago-long {
   color:silver;
   position:relative;
-  top:36px;
-  right:180px;
   font-family: 'Montserrat', sans-serif;
 }
 
+.photo-time-ago-long{
+  top:36px;
+  right:220px;
+}
+
+.photo-time-ago{
+  top:36px;
+  right:176px;
+}
 .author-username{
   position:absolute;
   right:55px;
