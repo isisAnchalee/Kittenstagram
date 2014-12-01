@@ -6,10 +6,10 @@
 		<a class="liker" href="#users/<%= likers[0].id %>"><%= likers[0].username %></a>
 		and <a class="liker" href="#users/<%= likers[1].id%>"> <%= likers[1].username %></a> like this!
 	<%} else if (likers.length === 3){%>
-	<% var prev = likers.slice(0, 3) %>
+		<% var prev = likers.slice(0, 3) %>
 		<% _.each(prev, function(liker, i){ %>
 			<% if (i < 2) { %>
-				<a href='#users/<%= liker.id%>'> <%= liker.username %></a>, 
+				<a href='#users/<%= liker.id%>'> <%= liker.username %></a>,
 			<% } else { %>
 				<% if (i === 2){ %>
 					and
@@ -17,5 +17,8 @@
 			<a href='#users/<%= liker.id%>'> <%= liker.username %></a>
 			<% } %>
 		<% }) %> like this.
-	<%}%>
+				<%} else if (collection.length === 0 ){%>
+					Be the first to like this!
+				<% }else { %>
+				<% } %>
  </div>

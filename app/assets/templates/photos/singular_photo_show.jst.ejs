@@ -37,7 +37,6 @@
 						<a href='#users/<%= liker.id%>'> <%= liker.username %></a>
 						<% } %>
 					<% }) %> like this.
-				<%} else {%>
 					<% var prev = likers.slice(0, 3) %>
 					<% prev.each(function(liker){ %>
 						<a href='#users/<%= liker.id%>"> liker.username</a>, 

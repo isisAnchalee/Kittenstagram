@@ -1,8 +1,11 @@
 
 TODO:
+HEROKU
+Like button rerendering on change
 Edit Profile w/ incomplete data
-Like button animation
-Explore/Most Recent Photos Page
+fetchung user after posting comment
+Feed show most recent
+
 
 Ask Andrew:
 Fix Bootstrap grid css
@@ -11,3 +14,8 @@ Fix Error displays
 SCHOOL:
 Filters/Kinetic
 Rerendering on likes
+
+Explore/Most Recent Photos Page
+
+
+
