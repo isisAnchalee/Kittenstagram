@@ -24,7 +24,9 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   },
 
   render: function(){
-  	var renderedContent = this.template({});
+  	var renderedContent = this.template({
+      photo: this.model
+    });
   	this.$el.html(renderedContent);
     this.attachSubviews();
   	return this;

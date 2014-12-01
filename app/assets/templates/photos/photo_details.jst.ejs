@@ -5,7 +5,12 @@
 <div class="feed-item-favorite-bar">
 	
 	<div class="like-button">
-		<i class=" fav-btn fa fa-heart"></i>
+		<% var ids = _.pluck(photo.get("likers"), "id") %>
+		<% if (ids.indexOf(CURRENT_USER_ID) >= 0){ %>
+				<i class="fav-btn fa fa-heart red"></i>
+		<% } else {%>
+				<i class="fav-btn fa fa-heart"></i>
+		<% } %>
 	</div>
 	
 	<div class="photo-likes">

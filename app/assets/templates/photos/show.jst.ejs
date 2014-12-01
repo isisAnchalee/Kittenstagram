@@ -3,7 +3,7 @@
 	<div class="photo-wrapper">
 		<div class="photo-author-photo"></div>
 		<div class="timelineCenter">
-		<% if ( photo.get("time_ago").length < 8){ %>
+		<% if (photo.get("time_ago").length < 8){ %>
 			<div class="photo-time-ago"> <%= photo.get("time_ago") %> ago</div>
 		<% } else { %>
 			<div class="photo-time-ago-long"> <%= photo.get("time_ago") %> ago</div>
