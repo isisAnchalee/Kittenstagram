@@ -21,4 +21,6 @@ Kittenstagram.Collections.Photos = Backbone.Collection.extend({
 });
 Kittenstagram.userPhotos = new Kittenstagram.Collections.Photos();
 Kittenstagram.feedPhotos = new Kittenstagram.Collections.Photos();
+Kittenstagram.recentPhotos = new Kittenstagram.Collections.Photos();
+Kittenstagram.recentPhotos.url = "api/feeds/recent";
 Kittenstagram.feedPhotos.url = "api/feeds";

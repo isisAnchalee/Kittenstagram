@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resource :users, only:[:new, :create]
 
  namespace :api, :defaults => { :format => :json } do
- 		resources :feeds, only: [:index]
+ 		resources :feeds, only: [:index] do 
+      collection do
+        get 'recent', to: 'feeds#recent'
+      end
+    end
 
 		resources :users, only: [:show, :update, :destroy] do 
 			resource :follow, only: [:create, :destroy]

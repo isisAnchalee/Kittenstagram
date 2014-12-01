@@ -4,15 +4,15 @@
 		<form role="form">
 		  <div class="form-group">
 		    <label for="username-input">Username:</label>
-		    <input type="text" class="form-control" name="user[username]" id="username-input" placeholder="Enter username">
+		    <input type="text" class="form-control" name="username" id="username-input" placeholder="Enter username" value="<%= user.get('username')%>">
 		  </div>
 			<div class="form-group">
 		    <label for="location-input">Location:</label>
-		    <input type="string" class="form-control" name="user[location]" id="location-input" placeholder="Enter location">
+		    <input type="string" class="form-control" name="location" id="location-input" placeholder="Enter location" value="<%= user.get('location') %>">
 		  </div>
 		  <div class="form-group">
 		    <label for="bio-input">Bio:</label>
-		    <textarea maxlength="55"  class="form-control desc-input" name="user[bio]" id="bio-input" placeholder="Tell us about yourself..."></textarea>
+		    <textarea maxlength="55"  class="form-control desc-input" name="bio" id="bio-input" placeholder="Tell us about yourself..."><%= user.get("bio") %></textarea>
 		  </div>
 		    <div id="chars">You have 55 characters remaining!</div>
 		  <button type="submit" class="edit-prof-btn">Submit</button>

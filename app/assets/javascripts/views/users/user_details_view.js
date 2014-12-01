@@ -3,7 +3,7 @@ Kittenstagram.Views.UserDetailsView = Backbone.View.extend({
 
   events:{
   	"click button.follow-btn": "followUser",
-  	"click button.unfollow-btn": "unfollowUser"
+  	"click button.unfollow-btn": "unfollowUser",
   },
   
   render: function(){
@@ -18,11 +18,16 @@ Kittenstagram.Views.UserDetailsView = Backbone.View.extend({
   followUser: function(event){
   	event.preventDefault();
   	this.model.follow().save()
+    var $currentTarget = $(event.currentTarget);
+    $currentTarget.toggleClass("follow-btn");
+    console.log($currentTarget);
+
   },
 
   unfollowUser: function(event){
   	event.preventDefault();
   	this.model.follow().destroy();
+
   }
   
 });
