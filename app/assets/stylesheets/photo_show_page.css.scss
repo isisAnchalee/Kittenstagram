@@ -77,6 +77,7 @@
   top:6px;
   font-weight:bold;
 }
+
 .private-pane{
 	top:315px !important;
 	width:360px !important;
@@ -222,16 +223,28 @@
 	margin-top: 5px;
 	margin-bottom:-5px !important;
 	text-shadow: 0 1px 1px #1c5380;
-  background-image: -webkit-linear-gradient(top,#6f97b6,#3f729b);
+  background-image: -webkit-linear-gradient(top,#b36a6a,#9f1010);
   border-radius: 6px;
   padding:5px;
-  padding-left:42px;
-  padding-right:42px;
+  padding-left:20px;
+  padding-right:17px;
   font-size:0.8em;
   color:white;
   font-family: 'Montserrat', sans-serif;
 }
 
+.profile-photo-btn{
+  position:relative;
+  text-shadow: 0 1px 1px #1c5380;
+  background: linear-gradient(#6487af, #325f91);
+  border-radius: 6px;
+  padding:5px;
+  padding-left:22px;
+  padding-right:22px;
+  font-size:0.8em;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+}
 
 .heart {
 	font-size: 152px;

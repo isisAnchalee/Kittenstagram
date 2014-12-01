@@ -49,7 +49,6 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
     event.preventDefault();
     var that = this;
     var $currentTarget = $(event.currentTarget);
-
     var attrs = $currentTarget.serializeJSON();
     var comment = new Kittenstagram.Models.Comment(attrs);
     comment.save({},{
