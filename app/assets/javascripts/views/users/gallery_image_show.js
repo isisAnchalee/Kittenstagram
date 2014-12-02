@@ -1,6 +1,21 @@
-Kittenstagram.Views.GalleryImageView = Backbone.View.extend({
+Kittenstagram.Views.GalleryImageView = Backbone.CompositeView.extend({
   template: JST['users/gallery_image_view'],
   className: 'col-xs-3',
+
+  initialize: function(){
+  },
+
+  events:{
+  	'click a': 'showModal',
+  	'hidden.bs.modal .modal': 'removeModalEvent',
+
+  },
+
+  showModal: function(event){
+  	event.preventDefault();
+ 		this.addPhotoShow();
+  	this.$('.modal').modal();
+  },
 
   render: function(){
   	var renderedContent = this.template({
@@ -8,9 +23,33 @@ Kittenstagram.Views.GalleryImageView = Backbone.View.extend({
   	});
 
   	this.$el.html(renderedContent);
+  	this.attachSubviews();
   	return this;
-  }
+  },
 
+  removeModalEvent: function(event){
+  	event.preventDefault()
+  	console.log(event.currentTarget);
+
+  },
+
+  removeModalSubview: function(photo){
+    var imageShow =
+      _(this.subviews()['.modal-photo-page']).find(function(subview){
+        return subview.model == photo;
+      });
+
+    this.removeSubview(".modal-photo-page", imageShow);
+  },
+
+  addPhotoShow: function(){
+    var galleryPhoto = new Kittenstagram.Views.SingularPhotoShow({
+      model: this.model
+    });
+
+    this.addSubview(".modal-photo-page", galleryPhoto);
+  }
+  
 });
 
   

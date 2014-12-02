@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :email, :username, uniqueness: true
 
   attr_reader :password
+  
   after_initialize :ensure_session_token
 
   has_many :photos, dependent: :destroy
@@ -11,17 +12,9 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
 
   has_many :out_follows, foreign_key: :follower_id, class_name: 'Follow'
-
-  #added
   has_many :in_follows, foreign_key: :followee_id, class_name: 'Follow'
-
-  #added people following current user
   has_many :followers, through: :in_follows, source: :follower
-
-  #people current user follows
   has_many :followed_users, through: :out_follows, source: :followee
-
-  #need to get photos from feed
   has_many :followed_photos, through: :followed_users, source: :photos
 
   def self.find_by_credentials(username, password)
@@ -33,7 +26,6 @@ class User < ActiveRecord::Base
   def follows?(user)
     followed_user_ids.include?(user.id)
   end
-
 
   def password=(password)
     @password = password

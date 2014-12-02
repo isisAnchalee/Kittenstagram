@@ -1,0 +1,129 @@
+
+<div class="new-photo">
+  <div id='editor-main'>
+    <div id='editor'></div>
+    <form id='editor-form' role='form' action='#'>
+      <div id='file-drop-pane'></div>
+      <button id='upload' class='btn btn-default'>Upload</button>
+      <button id='cancel' class='btn btn-default pull-right'>Cancel</button>
+    </form>
+  </div>
+
+      <div id='filters'>
+        <div data-name='none' class='filter-preview filter'>
+          <span>None</span>
+          <img src="" alt="Filter - None" />
+        </div>
+        <div data-name='claribel' class="filter-preview filter">
+          <span>Claribel</span>
+          <img src="" alt="Filter - Claribel" />
+        </div>
+        <div data-name='lomo' class="filter-preview filter">
+          <span>Lomo</span>
+          <img src="" alt="Filter - Lomo" />
+        </div>
+        <div data-name='vintage' class="filter-preview filter">
+          <span>Vintage</span>
+          <img src="" alt="Filter - Vintage" />
+        </div>
+        <div data-name='clarity' class="filter-preview filter">
+          <span>Clarity</span>
+          <img src="" alt="Filter - Clarity" />
+        </div>
+        <div data-name='sinCity' class="filter-preview filter">
+          <span>Sin City</span>
+          <img src="" alt="Filter - Sin City" />
+        </div>
+        <div data-name='sunrise' class="filter-preview filter">
+          <span>Sunrise</span>
+          <img src="" alt="Filter - Sunrise" />
+        </div>
+        <div data-name='crossProcess' class="filter-preview filter">
+          <span>Cross Process</span>
+          <img src="" alt="Filter - Cross Process" />
+        </div>
+        <div data-name='orangePeel' class="filter-preview filter">
+          <span>Orange Peel</span>      
+          <img src="" alt="Filter - Orange Peel" />
+        </div>
+        <div data-name='love' class="filter-preview filter">
+          <span>Love</span>
+          <img src="" alt="Filter - Love" />
+        </div>
+        <div data-name='grungy' class="filter-preview filter">
+          <span>Grungy</span>
+          <img src="" alt="Filter - Grungy" />
+        </div>
+        <div data-name='jarques' class="filter-preview filter">
+          <span>Jarques</span>
+          <img src="" alt="Filter - Jarques" />
+        </div>
+        <div data-name='pinhole' class="filter-preview filter">
+          <span>Pinhole</span>
+          <img src="" alt="Filter - Pinhole" />
+        </div>
+        <div data-name='oldBoot' class="filter-preview filter">
+          <span>Old Boot</span>
+          <img src="" alt="Filter - Old Boot" />
+        </div>
+        <div data-name='glowingSun' class="filter-preview filter">
+          <span>Glowing Sun</span>
+          <img src="" alt="Filter - Glowing Sun" />
+        </div>
+        <div data-name='hazyDays' class="filter-preview filter">
+          <span>Hazy Days</span>
+          <img src="" alt="Filter - Hazy Days" />
+        </div>
+        <div data-name='herMajesty' class="filter-preview filter">
+          <span>Her Majesty</span>
+          <img src="" alt="Filter - Her Majesty" />
+        </div>
+        <div data-name='nostalgia' class="filter-preview filter">
+          <span>Nostalgia</span>
+          <img src="" alt="Filter - Nostalgia" />
+        </div>
+        <div data-name='hemingway' class="filter-preview filter">
+          <span>Hemingway</span>
+          <img src="" alt="Filter - Hemingway" />
+        </div>
+        <div data-name='concentrate' class="filter-preview filter">
+          <span>Concentrate</span>
+          <img src="" alt="Filter - Concentrate" />
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+(function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v1/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
+
+filepicker.setKey("Ao7feED0vTQpo2ZBCV7nZz");
+
+filepicker.makeDropPane($('#file-drop-pane')[0], {
+  multiple: true,
+  dragEnter: function() {
+    $("#file-drop-pane").html("Drop to upload").css({
+      'backgroundColor': "#E0E0E0",
+      'border': "1px solid #000"
+    });
+  },
+  dragLeave: function() {
+    $("#file-drop-pane").html("Drop files here").css({
+      'backgroundColor': "#F6F6F6",
+      'border': "1px dashed #666"
+    });
+  },
+  onSuccess: function(Blobs) {
+    $("#file-drop-pane").text("Done, see result below");
+    $("#localDropResult").text(JSON.stringify(Blobs));
+  },
+  onError: function(type, message) {
+    $("#localDropResult").text('('+type+') '+ message);
+  },
+  onProgress: function(percentage) {
+    $("#file-drop-pane").text("Uploading ("+percentage+"%)");
+  }
+});
+
+</script>

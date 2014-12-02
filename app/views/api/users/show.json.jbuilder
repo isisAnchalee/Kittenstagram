@@ -4,6 +4,17 @@ json.photos @user.photos do |photo|
 	json.id photo.id
 	json.filepicker_url photo.filepicker_url
 	json.caption photo.caption
+
+	json.likes photo.likes do |like|
+		json.id like.user.id
+		json.username like.user.username
+	end
+
+	json.comments photo.comments do |comment|
+		json.body comment.body
+		json.username comment.user.username
+		json.profile_photo comment.user.profile_photo
+	end
 end
 
 if current_user.follows?(@user)

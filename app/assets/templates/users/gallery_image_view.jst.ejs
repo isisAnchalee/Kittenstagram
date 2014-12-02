@@ -1,6 +1,16 @@
 
-<a href="#photos/<%= photo.id%>" class="thumbnail">
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+	    <div class="modal-photo-page">
+	    </div>
+    </div>
+  </div>
+</div>
+
+
+<a href="javascript:void(0)" data-toggle="modal"class="thumbnail">
      <img class='img-responsive gallery-image' src='<%= photo.escape('filepicker_url')%>'>
 </a>
-
 
