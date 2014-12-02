@@ -98,9 +98,9 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
     user.save({},{
       success: function(){
-        console.log("meow!!")
+        Backbone.history.navigate("#users/" + CURRENT_USER_ID, { trigger: true });
       }
-    })
+    });
   }
   
 });
