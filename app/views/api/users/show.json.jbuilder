@@ -6,14 +6,19 @@ json.photos @user.photos do |photo|
 	json.caption photo.caption
 
 	json.likes photo.likes do |like|
-		json.id like.user.id
+		json.id like.id
+		json.photo_id like.photo_id
+		json.user_id like.user_id
 		json.username like.user.username
+		json.profile_photo like.user.profile_photo
 	end
 
 	json.comments photo.comments do |comment|
-		json.body comment.body
-		json.username comment.user.username
-		json.profile_photo comment.user.profile_photo
+	  json.id comment.id
+	  json.profile_pic comment.user.profile_photo
+	  json.username comment.user.username
+	  json.body comment.body
+	  json.user_id comment.user.id
 	end
 end
 

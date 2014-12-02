@@ -8,6 +8,7 @@ json.likes photo.likes do |like|
 	json.photo_id like.photo_id
 	json.user_id like.user_id
 	json.username like.user.username
+	json.profile_photo like.user.profile_photo
 end
 
 json.likes_count photo.likers.length

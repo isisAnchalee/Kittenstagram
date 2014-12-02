@@ -2,6 +2,7 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
 
   initialize: function () {
     this.editor = null;
+    debugger;
   },
 
   id: 'editor-container',
