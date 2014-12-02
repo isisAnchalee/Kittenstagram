@@ -125,15 +125,17 @@
 }
 
 .short-profile-name{
+  font-size:3em;
   position:relative;
-  top:10px;
+  width:90px;
+  top:-5px;
   right:15px;
 }
 
 .short-desc{
   width:280px;
   position:relative;
-  top:-7px;
+  top:-19px;
   right:13px;
 }
 
@@ -141,10 +143,13 @@
   position:relative;
   color: #7d7d7d;
   font-weight: bold;
+  font-size: 0.9em;
+  letter-spacing: 3px;
+  font-style: italic;
 }
 
 .short-location{
-  top:-3px;
+  top:-15px;
   right:13px;
 }
 
@@ -216,12 +221,15 @@
 	display: inline;
 
 }
+.ind-page{
+  top:0px !important;
+}
 
 #follow-info {
   float: right;
   position: relative;
   left:280px;
-  top:45px;
+  top:41px;
   background: linear-gradient(#eee, #f0f0f0, #f0f0f0, #eee, #eee, #eee, #eee, #ddd);
   border: 1px solid silver;
   border-radius: 6px;

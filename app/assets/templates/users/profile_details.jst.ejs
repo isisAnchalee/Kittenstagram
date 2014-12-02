@@ -21,7 +21,14 @@
                         <span class='long-location'><%= user.get("location") %> </span>
                         <p class='long-desc'><%= user.escape('bio') %></p>
                     <% } else { %>
-                        <h2 class='short-profile-name'><%= user.escape('username') %></h2>
+                        <h2 class='short-profile-name'><%= user.escape('username') %> 
+                        <span class='gender-sign'>
+                        <% if (user.get("gender") === "M"){ %>
+                            ♂ 
+                        <% } else { %>
+                            ♀
+                        <% } %>
+                        </span></h2>
                         <span class='short-location'><%= user.get("location") %> </span>
                         <p class='short-desc'><%= user.escape('bio') %></p>
                     <% } %>

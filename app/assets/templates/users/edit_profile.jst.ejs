@@ -10,6 +10,12 @@
 		    <label for="location-input">Location:</label>
 		    <input type="string" class="form-control" name="location" id="location-input" placeholder="Enter location" value="<%= user.get('location') %>">
 		  </div>
+		<label class="radio-inline">
+		  <input type="radio" name="user[gender]" id="inlineRadio1" value="F"> M
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" name="user[gender]" id="inlineRadio2" value="F"> F
+		</label>
 		  <div class="form-group">
 		    <label for="bio-input">Bio:</label>
 		    <textarea maxlength="55"  class="form-control desc-input" name="bio" id="bio-input" placeholder="Tell us about yourself..."><%= user.get("bio") %></textarea>
