@@ -29,17 +29,9 @@ Kittenstagram.Views.GalleryImageView = Backbone.CompositeView.extend({
 
   removeModalEvent: function(event){
   	event.preventDefault()
-  	console.log(event.currentTarget);
-
-  },
-
-  removeModalSubview: function(photo){
-    var imageShow =
-      _(this.subviews()['.modal-photo-page']).find(function(subview){
-        return subview.model == photo;
-      });
-
+    var imageShow = this.subviews()['.modal-photo-page'][0];
     this.removeSubview(".modal-photo-page", imageShow);
+
   },
 
   addPhotoShow: function(){
