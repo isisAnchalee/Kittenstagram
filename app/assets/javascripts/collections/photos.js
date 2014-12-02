@@ -19,6 +19,7 @@ Kittenstagram.Collections.Photos = Backbone.Collection.extend({
 	}
 
 });
+
 Kittenstagram.userPhotos = new Kittenstagram.Collections.Photos();
 Kittenstagram.feedPhotos = new Kittenstagram.Collections.Photos();
 Kittenstagram.recentPhotos = new Kittenstagram.Collections.Photos();

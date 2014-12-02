@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+.explore-btn{
+  font-family: 'Montserrat', sans-serif;
+  font-size:0.7em;
+}
+.explore-btn:hover,.explore-btn:active, .explore-btn:visited{
+  color:white;
+  opacity: 0.9;
+}
+
 .singular-photo-wrapper{
 	position:relative;
 	width:805px;
@@ -67,7 +76,7 @@
 
 .photo-time-ago-long{
   top:36px;
-  right:235px;
+  right:232px;
 }
 
 .photo-time-ago{

@@ -11,7 +11,8 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
 		"new": "newPhoto",
 		"users/:id": "usersShowPage",
 		"photos/:id": "photoShowPage",
-		"edit": "editProfile"
+		"edit": "editProfile",
+		"explore": "explorePage"
 	},
 
 	feedIndex: function(){
@@ -63,6 +64,19 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
   		model: user
   	});
   	this._swapView(editProfileView)
+  },
+
+  explorePage: function(){
+  	var recentPhotos = Kittenstagram.recentPhotos;
+  	recentPhotos.fetch({
+  		data: { count: 30 }
+  	});
+
+  	var explorePage = new Kittenstagram.Views.Explore({
+  		collection: recentPhotos
+  	});
+
+  	this._swapView(explorePage);
   },
 
   _swapView: function (view) {

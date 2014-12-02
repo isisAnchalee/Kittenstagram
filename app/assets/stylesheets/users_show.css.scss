@@ -23,7 +23,7 @@
 
 }
 
-.home-icon{
+.home-icon, .explore-icon, .new-icon{
 	float:left;
 	padding-left:20px;
 	padding-right:20px;
@@ -42,7 +42,13 @@
 	width:50px !important;
 	height:50px !important;
 }
-
+.explore-icon{
+	position:relative;
+	top:-5px;
+}
+.new-icon{
+	position:relative;
+}
 .photo-stats{
 	position:relative;
 	right:150px;

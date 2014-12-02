@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
 	validates :user_id, :filepicker_url, presence:true
-	 default_scope { order('created_at DESC') }
+	default_scope { order('created_at DESC') }
 
 	belongs_to :user
 	has_many :comments
