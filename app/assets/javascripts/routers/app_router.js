@@ -69,7 +69,7 @@ Kittenstagram.Routers.AppRouter = Backbone.Router.extend({
   explorePage: function(){
   	var recentPhotos = Kittenstagram.recentPhotos;
   	recentPhotos.fetch({
-  		data: { count: 30 }
+  		data: { count: 40 }
   	});
 
   	var explorePage = new Kittenstagram.Views.Explore({
