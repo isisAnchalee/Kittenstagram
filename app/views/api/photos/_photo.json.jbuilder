@@ -10,6 +10,8 @@ json.likes photo.likes do |like|
 	json.username like.user.username
 end
 
+json.likes_count photo.likers.length
+
 json.time_ago time_ago_in_words(photo.created_at)
 
 json.comments photo.comments do |comment|

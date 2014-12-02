@@ -118,19 +118,21 @@
   position:relative;
   top:-22px;
 }
+
 .long-profile-name{
   position:relative;
   top:-7px;
 }
 .short-profile-name{
   position:relative;
-  top:5px;
+  top:10px;
+  right:15px;
 }
 
 .short-desc{
   width:280px;
   position:relative;
-  top:-11px;
+  top:-7px;
 }
 
 .short-location, .long-location{
@@ -140,7 +142,7 @@
 }
 
 .short-location{
-  top:-7px;
+  top:-2px;
 }
 
 .long-location{
