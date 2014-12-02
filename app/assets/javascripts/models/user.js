@@ -28,28 +28,6 @@ Kittenstagram.Models.User = Backbone.Model.extend({
 		}
 	},
 
-	toggleLike: function(successCallback){
-		//make an ajax request to like a photo
-		var type = "POST";
-		var likeCallback = this.addLike.bind(this);
-		if(this.get('liked')){
-			type = "DELETE";
-			likeCallback = this.removeLike.bind(this);
-		}
-		var that = this;
-		$.ajax({
-			url: 'api/likes',
-			data: { photo_id: this.id },
-			method: type,
-			success: function(response){
-				that.set('liked', !that.get('liked'));
-				//the next line will either add or remove this like 
-				likeCallback(response);
-				successCallback();
-			}
-		});
-
-	},
 	parse: function(response){
 		
 		if (response.photos){
