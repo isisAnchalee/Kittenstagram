@@ -4,19 +4,21 @@ Kittenstagram.Views.Explore = Backbone.CompositeView.extend({
   initialize: function(){
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'sync', this.createSubviews)
+
   },
 
   render: function(){
     var renderedContent = this.template({
       collection: this.collection
     });
-
+   
     this.attachSubviews();
     this.$el.html(renderedContent);
     return this;
   },
 
   createSubviews: function(){
+    $('#loading').remove();
     this.collection.each(this.addItem.bind(this));
   },
 
