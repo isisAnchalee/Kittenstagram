@@ -59,7 +59,7 @@
   color:gray;
 }
 
-.photo-time-ago, .photo-time-ago-long {
+.photo-time-ago, .photo-time-ago-long,.photo-time-ago-med {
   color:silver;
   position:relative;
   font-family: 'Montserrat', sans-serif;
@@ -72,7 +72,12 @@
 
 .photo-time-ago{
   top:36px;
-  right:182px;
+  right:178px;
+}
+
+.photo-time-ago-med{
+  top:36px;
+  right:215px;
 }
 
 .author-username{
