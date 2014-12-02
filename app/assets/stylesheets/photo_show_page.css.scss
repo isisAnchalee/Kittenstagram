@@ -1,7 +1,18 @@
 *{
   box-sizing: border-box;
 }
+.modal{
+}
 
+.modal-photo-page{
+  margin-top:-40px;
+  padding-bottom:35px;
+}
+
+.modal-content{
+  padding-top:-200px !important;
+  min-width: 800px !important;
+}
 .explore-btn{
   font-family: 'Montserrat', sans-serif;
   font-size:0.7em;
@@ -258,8 +269,8 @@
 }
 
 .photo-display{
-  position:absolute;
-  height:455px;
+  position:relative;
+  height:430px;
 	padding-top:14px !important;
 	padding-bottom:30px !important;
 	padding-left:15px !important;
@@ -267,12 +278,13 @@
 }
 
 .delete-photo-btn{
-	margin-top: 5px;
+	margin-top: 25px;
 	margin-bottom:-5px !important;
 	text-shadow: 0 1px 1px #1c5380;
   background-image: -webkit-linear-gradient(top,#b36a6a,#9f1010);
   border-radius: 6px;
   padding:5px;
+  right: 13px;
   padding-left:20px;
   padding-right:17px;
   font-size:0.8em;
@@ -286,8 +298,10 @@
   background: linear-gradient(#6487af, #325f91);
   border-radius: 6px;
   padding:5px;
+  right:13px;
   padding-left:22px;
   padding-right:22px;
+  margin-top: 25px;
   font-size:0.8em;
   color:white;
   font-family: 'Montserrat', sans-serif;
