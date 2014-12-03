@@ -24,8 +24,8 @@
     </div>
   </div>
 
-<div class="navbar-profile-pane"></div>
-  <ul class="nav">
+
+  <ul>
   <% if signed_in? %>
     <li><%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn custom-button" %></li>
   <% else %>
@@ -33,6 +33,6 @@
     <li class="sign-in-text"><%= link_to "Sign up", new_users_url %></li>
   <% end %>
   </ul>
-
+<div class="navbar-profile-pane"></div>
 
 </nav>

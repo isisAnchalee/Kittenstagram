@@ -5,11 +5,17 @@
 	margin-top:80px;
 	box-shadow: 0px 0px 35px -12px rgba(0, 0, 0, 0.75);
 }
+.editor-background{
+	background-color: white;
+	padding-bottom:30px;
+}
 
-#editor-main{
+
+#main-editor{
 	margin: 0 auto;
 	width:800px;
 	position:relative;
+	top: 60px !important;
 }
 
 #editor{
@@ -21,11 +27,6 @@
 	line-height: 470px;
 	text-align: center;
 	font-weight: bold;
-}
-
-#editor-main{
-	position:relative;
-	top: 60px !important;
 }
 
 #upload{

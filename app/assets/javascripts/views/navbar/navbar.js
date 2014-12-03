@@ -1,5 +1,6 @@
 Kittenstagram.Views.Navbar = Backbone.View.extend({
   template: JST['navbar/navbar'],
+  className:'prof-btn',
 
   initialize:function(){
   	this.listenTo(this.model, 'sync', this.render)

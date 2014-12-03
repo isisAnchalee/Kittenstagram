@@ -2,6 +2,7 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   initialize: function () {
     this.editing = false;
     this.editor = null;
+    $('body').css('background-color', '#edeeef');
   },
 
   id: 'editor-container',
@@ -38,7 +39,6 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     reader.onloadend = function (e) {
       view.image = this.result;
       view.editing = true;
-      debugger;
       view.render();
     };
 

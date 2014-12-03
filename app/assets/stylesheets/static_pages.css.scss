@@ -11,6 +11,7 @@
 #editing-controls{
 	width:300px;
 }
+
 .followers-pane{
 	z-index:10;
 	position:relative;
@@ -49,6 +50,7 @@
 	min-height:30px !important;
   height: 38px !important;
   margin-bottom: 0 !important;
+  min-width: 500px;
 }
 
 .splash-sign-up{
@@ -100,6 +102,7 @@
 .home-button, .home-icon .fa-lg, .explore-btn{
 	color:white;
 	opacity: 0.9;
+	z-index: 20;
 }
 
 .home-button:active,.home-button:visited, .home-button:hover{
@@ -156,12 +159,11 @@ display: inline;
 	padding: 6px 5px 8px 7px;
 	padding-top:12px;
 	position:relative;
-	top:-47px;
-	left:110px;
 	padding-right:10px;
 	background-color:transparent;
 	color:white;
 	opacity: 0.8;
+	top:-47px;
 	font-size: 1 em !important;
 	border: 0;
 	border-right: 1px solid #06365f;
@@ -170,9 +172,11 @@ display: inline;
 	text-shadow: 0 1px 0 rgba(3,27,47,.5);
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	float:right;
-
 }
 
+.prof-btn{
+	top:-10px;
+}
 .custom-button:hover{
 	opacity: 1;
 }

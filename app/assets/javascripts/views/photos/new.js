@@ -9,6 +9,7 @@ Kittenstagram.Views.New= Backbone.CompositeView.extend({
   initialize: function(){
     this.model = new Kittenstagram.Models.Photo();
     this.model.collection = this.collection;
+    $('body').css('background-color', '#edeeef');
   },
 
   render: function(){
