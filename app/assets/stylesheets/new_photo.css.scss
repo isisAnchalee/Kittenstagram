@@ -1,3 +1,17 @@
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: silver;
+    width: 210px;
+    height:15px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #666;
+    opacity: 0.5;
+    width: 10px;
+    height: 15px;
+}
 
 .new-photo-wrapper{
 	width:600px;
@@ -11,11 +25,11 @@
 }
 
 #adjustments{
-	width:200px;
+	width:220px;
 	position:relative;
 	float:right;
-	top:-722px;
-	right: 40px;
+	top:-737px;
+	right: 30px;
 }
 
 #filters{
@@ -32,10 +46,18 @@
 	top: 60px !important;
 }
 
+.adj{
+	position: relative;
+	top:-5px;
+	padding:2px !important;
+	line-height: 10px !important;
+	margin: 0 !important;
+}
+
 #editor{
 	position:relative;
-	left:40px;
-	border: 3px dashed #090909;
+	left:30px;
+	border: 3px dashed rgba(0, 0, 0, 0.1);
 	height: 500px;
 	width:500px;
 	line-height: 470px;
@@ -45,16 +67,20 @@
 
 #upload{
 	position:relative;
-	left:355px;
-	top:-27px;
+	left:595px;
+	top:475px;
 }
 
 #cancel{
 	position:relative;
-	left: 355px;
-	top:-27px;
+	left: 595px;
+	top: 475px;
 }
-
+#reset{
+	position:relative;
+	left:360px;
+	top: 475px;
+}
 .upload-wrapper{
 	left:42px;
 	position:relative;
