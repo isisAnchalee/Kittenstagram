@@ -1,13 +1,15 @@
-<div class="new-photo">
-  <div id='editor-main'>
-    <div id='file-upload-wrapper'>
-      <div id='file-upload' class='filepicker_dragdrop'>
-        Drop Photos Here!
-      </div>
-      <div id='local-drop-result'>
-      </div>
 
+<div id='editor-main'>
+  <div id='editor'></div>
+
+  <form id='editor-form' role='form' action='#'>
+    <div id='file-upload-wrapper'>
+      <div id='file-upload'>
+      </div>
+      <input id='file-source' type='file' accept='image/*'>
     </div>
 
-  </div>
+    <button id='upload' class='btn btn-default'>Upload</button>
+    <button id='cancel' class='btn btn-default pull-right'>Cancel</button>
+  </form>
 </div>

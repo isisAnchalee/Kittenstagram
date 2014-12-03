@@ -1,49 +1,64 @@
 Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   initialize: function () {
+    this.editing = false;
     this.editor = null;
-    this.image = null;
-
   },
 
   id: 'editor-container',
 
-  template: JST['photos/new'],
+  template:  JST['photos/new'],
+
+  events: {
+    'click #file-upload': 'fileUploadClick',
+    'change #file-source': 'handleFile',
+    'click #upload': 'onSubmitUpload',
+  },
 
   render: function () {
+    var view = this;
     var content = this.template();
     this.$el.html(content);
 
-    this.addEditPane();
+    if (this.editing) {
+      this.editor = new ImageEditor({
+        selector: 'editor', 
+        base64Image: view.image,
+      });
+    }
+
     return this;
   },
 
-  addEditPane: function(){
-    filepicker.makeDropPane(this.$('#file-upload'), {
-      dragEnter: function() {
-        this.$("#file-upload").html("Drop to upload").css({
-          'backgroundColor': "#E0E0E0",
-          'border': "1px solid #000"
-        });
-      },
-      
-      dragLeave: function() {
-        this.$("#file-upload").html("Drop files here").css({
-          'backgroundColor': "#F6F6F6",
-          'border': "1px dashed #666"
-        });
-      },
+  handleFile: function (event) {
+    
+    var view = this;
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
 
-      onSuccess: function(Blobs) {
-        var url = Blobs[0].url;
-        console.log(url);
-      },
-      onError: function(type, message) {
-        this.$("#local-drop-result").text('('+type+') '+ message);
-      },
+    reader.onloadend = function (e) {
+      view.image = this.result;
+      view.editing = true;
+      debugger;
+      view.render();
+    };
 
-      onProgress: function(percentage) {
-        this.$("#file-upload").text("Uploading ("+percentage+"%)");
-      }
+    reader.readAsDataURL(file);
+  },
+
+  onSubmitUpload: function (event) {
+    event.preventDefault();
+    var view = this;
+
+    this.editor.saveImage(function (base64Image) {
+      var attrs = $('#editor-form').serializeJSON();
+      attrs.image = base64Image;
+      view.model.save(attrs, {
+        success:function(){
+          console.log("meow!")
+        }
+      });
+
     });
   }
+
 });

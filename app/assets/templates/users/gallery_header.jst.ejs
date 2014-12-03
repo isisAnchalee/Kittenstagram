@@ -8,7 +8,7 @@
             <% if (counter < 8){ %>
             <div class="compPhoto compPhoto<%= counter%>"> <a href="#photos/<%= photo.escape("id")%>">
                         <div class="Image iWithTransition header-photo">
-                            <img src="<%= photo.escape('filepicker_url') %>" class="img-responsive" />
+                            <img src="<%= photo.escape('image') %>" class="img-responsive" />
                             <b class="compPhotoShadow"></b>
                         </div>
                     </a>

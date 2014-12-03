@@ -3,8 +3,8 @@ json.extract! @user, :id, :username, :gender, :location, :email, :profile_photo,
 json.photos @user.photos do |photo|
 	json.id photo.id
 	json.liked !!current_user.likes.find{ |like| like.photo_id == photo.id }
-	json.filepicker_url photo.filepicker_url
-	json.caption photo.caption
+	json.url photo.image.url
+	json.thumb_url photo.image.url(:thumb)
 
 	json.likes photo.likes do |like|
 		json.id like.id

@@ -19,7 +19,18 @@ module Kittenstagram
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
-    config.filepicker_rails.api_key = "Ao7feED0vTQpo2ZBCV7nZz"
+    # config.i18n.default_locale = :de    
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_protocol => 'http',
+      :url =>':s3_domain_url',
+      :path => "images/:class/:id.:style.:extension",
+      :s3_host_name => 's3.amazonaws.com',
+      :s3_credentials => {
+        :bucket => Figaro.env.aws_bucket, #these values safely stored in application.yml thanks to figaro!
+        :access_key_id => Figaro.env.access_key_id,
+        :secret_access_key => Figaro.env.secret_access_key
+      }
+    }
   end
 end

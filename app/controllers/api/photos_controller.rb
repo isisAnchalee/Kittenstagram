@@ -1,7 +1,8 @@
 module Api
 
   class PhotosController < ApiController
-    
+    wrap_parameters :photo, include: [:image]
+
     before_action :require_signed_in!, only: [:new, :create, :destroy]
 
     def show
@@ -36,7 +37,7 @@ module Api
     end
 
     def photo_params
-      params.require(:photo).permit(:filepicker_url)
+      params.require(:photo).permit(:image)
     end
   end
 end

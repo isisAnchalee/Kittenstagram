@@ -37,7 +37,7 @@ Kittenstagram.Views.New= Backbone.CompositeView.extend({
       var canvasImg = $('#canvasImg');
       canvasImg.attr("src", dataURL);
 
-      this.model.set("filepicker_url", dataURL);
+      this.model.set("image", dataURL);
       console.log(" hi!!!!")
 
       this.model.save({}, {
@@ -46,7 +46,7 @@ Kittenstagram.Views.New= Backbone.CompositeView.extend({
           console.log("success!!")
           // Remove the image attribute with raw data
           // from the model after uploading it.
-          delete that.model.attributes.filepicker_url;
+          delete that.model.attributes.image;
 
         }
       })

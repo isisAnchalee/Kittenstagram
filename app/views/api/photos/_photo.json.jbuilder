@@ -1,4 +1,4 @@
-json.extract! photo, :id, :user_id, :filepicker_url, :caption, :created_at, :updated_at
+json.extract! photo, :id, :user_id, :created_at, :updated_at
 json.liked !!current_user.likes.find{ |like| like.photo_id == photo.id }
 
 json.user photo.user, :id, :username, :profile_photo
@@ -10,6 +10,9 @@ json.likes photo.likes do |like|
 	json.username like.user.username
 	json.profile_photo like.user.profile_photo
 end
+
+json.url photo.image.url
+json.thumb_url photo.image.url(:thumb)
 
 json.likes_count photo.likers.length
 

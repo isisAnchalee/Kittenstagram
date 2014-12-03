@@ -24,6 +24,7 @@ ImageEditor.prototype.initializeKinetic = function (selector) {
     height: 512,
     fill: 'black'
   });
+  
   this.backgroundLayer = new Kinetic.Layer();
   this.backgroundLayer.add(this.background);
 
