@@ -21,7 +21,7 @@ Kittenstagram.Views.EditProfile = Backbone.CompositeView.extend({
 
   charsLeft: function(event){
     event.preventDefault();
-    var maxChars = 55,
+    var maxChars = 30,
     charsUsed = $('.desc-input').val().length,
     charsLeft= maxChars - charsUsed;
         $('#chars').text('You have ' + charsLeft + ' characters remaining!');

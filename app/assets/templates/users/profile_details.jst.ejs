@@ -1,12 +1,11 @@
 
 <div class="profile-stats"></div>
-<div class="profile-user">
-    <div class="row head-row">
+    <div class="profile-user">
+        <div class="row head-row">
             <div class="pull-left" style="margin-right: 15px;">
                 <img src="<%= user.get("profile_photo") %>"
                 class=" gallery-profile-photo img-polaroid img-rounded img-thumbnail img-responsive" />
             </div>
-
             <div class="user-profile-details">
                 <% if (user.id === CURRENT_USER_ID){%>
                     <a href='#edit'><button class='edit-btn'> Edit Profile</button></a>
@@ -15,27 +14,19 @@
                 <% }else{ %>
                     <button class='unfollow-btn'> <span class="ui-button-text">Unfollow</span> </button>
                 <% } %>
-
-                    <% if (<%= user.escape("bio")%>.length > 27){ %>
-                        <h2 class='long-profile-name'><%= user.escape('username') %></h2>
-                        <span class='long-location'><%= user.get("location") %> </span>
-                        <p class='long-desc'><%= user.escape('bio') %></p>
-                    <% } else { %>
-                        <h2 class='short-profile-name'><%= user.escape('username') %>
-                        <span class='gender-sign'>
-                        <% if (user.get("gender") === "M"){ %>
-                            ♂ 
-                        <% } else { %>
-                            ♀
-                        <% } %>
-                        </span></h2>
-                        <span class='short-location'><%= user.get("location") %> </span>
-                        <p class='short-desc'><%= user.escape('bio') %></p>
-                    <% } %>
+                <h2 class='short-profile-name'><%= user.escape('username') %>
+                <span class='gender-sign'>
+                <% if (user.get("gender") === "M"){ %>
+                    ♂ 
+                <% } else { %>
+                    ♀
+                <% } %>
+                </span></h2>
+                <span class='short-location'><%= user.get("location") %> </span>
+                <p class='short-desc'><%= user.escape('bio') %></p>
                 </p>
-        
+            </div>
         </div>
-        
     </div>
 </div>
 

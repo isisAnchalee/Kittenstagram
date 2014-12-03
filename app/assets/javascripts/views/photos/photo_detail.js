@@ -49,21 +49,6 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
 
     this.addSubview(".photo-likes", likesSubview);
   },
-  
-  createNewComment: function(event){
-    event.preventDefault();
-    var that = this;
-    var $currentTarget = $(event.currentTarget);
-
-    var attrs = $currentTarget.serializeJSON();
-    var comment = new Kittenstagram.Models.Comment(attrs);
-    comment.save({},{
-      success: function(){
-        //should get all the user profile stuff from rails
-        that.model.comments().add(comment);
-      }
-    })
-  },
 
   likePhoto: function(event){
     event.preventDefault();

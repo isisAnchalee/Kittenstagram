@@ -11,7 +11,6 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
   },
 
   events:{
-    "submit form" : "createNewComment",
     "click .fav-btn" : "likePhoto",
     "click .delete-photo-btn" : "deletePhoto",
     "click .profile-photo-btn": "setProfilePhoto"
@@ -45,19 +44,6 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
   	this.$el.html(renderedContent);
     this.attachSubviews();
     return this;
-  },
-
-  createNewComment: function(event){
-    event.preventDefault();
-    var that = this;
-    var $currentTarget = $(event.currentTarget);
-    var attrs = $currentTarget.serializeJSON();
-    var comment = new Kittenstagram.Models.Comment(attrs);
-    comment.save({},{
-      success: function(){
-        that.model.comments().add(comment);
-      }
-    });
   },
 
   addLikesView: function(){

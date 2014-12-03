@@ -8,7 +8,6 @@
   margin-top:-40px;
   padding-bottom:35px;
 }
-
 .modal-content{
   padding-top:-200px !important;
   min-width: 800px !important;
@@ -79,25 +78,14 @@
   color:gray;
 }
 
-.photo-time-ago, .photo-time-ago-long,.photo-time-ago-med {
+.photo-time-ago{
   color:silver;
   position:relative;
+  top:22px;
+  float:right;
+  right:510px;
+  font-size:0.9em;
   font-family: 'Montserrat', sans-serif;
-}
-
-.photo-time-ago-long{
-  top:36px;
-  right:237px;
-}
-
-.photo-time-ago{
-  top:36px;
-  right:178px;
-}
-
-.photo-time-ago-med{
-  top:36px;
-  right:215px;
 }
 
 .author-username{
@@ -206,7 +194,7 @@
   height: 40px;
   background-color: #EEEEEE;
   border-right: 1px solid #bdbdbd;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid #bdbdbd !important;
   box-sizing: border-box;
 }
 
@@ -223,10 +211,10 @@
   border-left: 1px solid #bdbdbd;
   padding:10px;
   padding-left:11px;
-  padding-bottom: 7px;
+  padding-bottom: 8px;
   color: silver;
   font-size: 1.5em;
-  transition: color 200ms, background-color 200ms;
+  transition: color 350ms, background-color 200ms;
 }
 
 .like-button{
