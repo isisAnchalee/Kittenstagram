@@ -29,13 +29,12 @@
 	padding-right:20px;
 	position:relative;
 	padding:5px;
-	top:-3px;
-	right:90px;
 	border-right: 1px solid #06365f;
 	border-right-color: rgba(0,0,0,.1);
 	box-shadow: inset 1px 0 0 rgba(255,255,255,.1);
 	text-shadow: 0 1px 0 rgba(3,27,47,.5);
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	font-size: 1.5em;
 }
 
 .profile-photo{
@@ -44,7 +43,8 @@
 }
 .explore-icon{
 	position:relative;
-	top:-5px;
+	top:-3px;
+	padding-bottom:8px;
 }
 .new-icon{
 	position:relative;

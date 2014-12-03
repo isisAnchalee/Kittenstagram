@@ -1,36 +1,38 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="navigation">
-<div class="container container-fluid">
-    <div> 
-
-      <div class="nav-heading">
-
-        <div class="home-icon">
-          <a class='home-button' href="#">
-            <i class="fa fa-home fa-lg"></i>
-          </a>
-        </div>
-        <div class="new-icon">
-          <a class='home-button' href="#new">
-            <i class="fa fa-camera"></i>
-          </a>
-        </div>
-        <div class="explore-icon">
-          <a class='explore-btn' href="#explore">
-           <i class="fa fa-users fa-lg"></i>
-          </a>
-        </div>
-
-        <a class='logo-link' href='#'><img class='header-logo' src='http://i59.tinypic.com/155m78j.png'>Kittenstagram</a> </div>
-      <ul class="nav navbar-nav navbar-right">
-      <% if signed_in? %>
-        <li><%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn custom-button" %></li>
-      <% else %>
-        <li class="sign-in-text"><%= link_to "Log in", new_session_url %></li>
-        <li class="sign-in-text"><%= link_to "Sign up", new_users_url %></li>
-      <% end %>
-      </ul>
-    <div class="navbar-profile-pane"></div>
+  <div class="pull-left">
+    <div class="home-icon">
+      <a class='home-button' href="#">
+        <i class="fa fa-home fa-lg"></i>
+      </a>
+    </div>
+    <div class="new-icon">
+      <a class='home-button' href="#new">
+        <i class="fa fa-camera"></i>
+      </a>
+    </div>
+    <div class="explore-icon">
+      <a class='explore-btn' href="#explore">
+       <i class="fa fa-users fa-lg"></i>
+      </a>
+    </div>
   </div>
-</div>
+
+  <div class="center-group">
+    <div class="nav-heading">
+      <a class='logo-link' href='#'><img class='header-logo' src='http://i59.tinypic.com/155m78j.png'>Kittenstagram</a>
+    </div>
+  </div>
+
+<div class="navbar-profile-pane"></div>
+  <ul class="nav">
+  <% if signed_in? %>
+    <li><%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn custom-button" %></li>
+  <% else %>
+    <li class="sign-in-text"><%= link_to "Log in", new_session_url %></li>
+    <li class="sign-in-text"><%= link_to "Sign up", new_users_url %></li>
+  <% end %>
+  </ul>
+
+
 </nav>
