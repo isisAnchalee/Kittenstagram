@@ -12,6 +12,39 @@
 	position:relative;
 }
 
+#editor{
+	position:relative;
+	left:140px;
+	border: 3px dashed #7d7d7d;
+	height: 500px;
+	width:500px;
+	line-height: 470px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#editor-main{
+	position:relative;
+	top: 60px !important;
+}
+
+#upload{
+	position:relative;
+	left:355px;
+	top:-27px;
+}
+
+#cancel{
+	position:relative;
+	right:300px;
+	top:-27px;
+}
+
+.upload-wrapper{
+	left:140px;
+	position:relative;
+ 	top:20px;
+}
 .filepicker_dragdrop {
   padding: 8px;
   height: 50px;

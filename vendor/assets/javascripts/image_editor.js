@@ -13,15 +13,15 @@ ImageEditor = function (options) {
 ImageEditor.prototype.initializeKinetic = function (selector) {
   this.stage = new Kinetic.Stage({
     container: selector,
-    width: 512,
-    height: 512
+    width: 494,
+    height: 494
   });
 
   this.background = new Kinetic.Rect({
     x: 0, 
     y: 0,
-    width: 512,
-    height: 512,
+    width: 494,
+    height: 494,
     fill: 'black'
   });
   
@@ -34,7 +34,7 @@ ImageEditor.prototype.initializeKinetic = function (selector) {
   this.stage.add(this.imageLayer);
 };
 
-ImageEditor.prototype.initializeCaman = function (base64Image) {
+ImageEditor.prototype.initializeCaman = function ( base64Image) {
   this.camanCanvas = document.createElement('canvas');
   var context = this.camanCanvas.getContext('2d');
 
@@ -105,7 +105,7 @@ ImageEditor.prototype.render = function (options) {
 };
 
 ImageEditor.prototype.scaleToFit = function (width, height) {
-  var scale = 512 / (width < height ? width : height);
+  var scale = 494 / (width < height ? width : height);
   this.setScale(scale);
 };
 
@@ -114,8 +114,8 @@ ImageEditor.prototype.center = function (width, height, scale) {
   height *= scale;
 
   this.kineticImage.position({
-    x: (512 - width) / 2,
-    y: (512 - height) / 2
+    x: (494 - width) / 2,
+    y: (494 - height) / 2
   });
 };
 
