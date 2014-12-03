@@ -22,6 +22,7 @@ module Api
 
     def create
       @photo = current_user.photos.new(photo_params)
+      fail
       @photo.save
       redirect_to root_url
     end

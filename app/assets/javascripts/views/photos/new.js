@@ -4,13 +4,6 @@ Kittenstagram.Views.New= Backbone.CompositeView.extend({
   events: {
     "submit form": "submit",
     "change #photo-file-input": "fileSelect",
-    "click #sepiabtn": "addSepia",
-    "click #brightnessbtn": "addBrightness",
-    "click #noisebtn": "addNoise",
-    "click #contrastbtn": "addContrast",
-    "click #vintagebtn": "addVintage",
-    "click #claritybtn": "addClarity",
-    "click #retrobtn" : "addRetro"
   },
 
   initialize: function(){

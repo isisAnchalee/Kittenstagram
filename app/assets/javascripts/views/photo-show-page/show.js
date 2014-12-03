@@ -94,7 +94,7 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
   setProfilePhoto: function(event){
     event.preventDefault();
     var user = new Kittenstagram.Models.User({id: this.model.get("user_id")});
-    user.set("profile_photo", this.model.get("image"));
+    user.set("profile_photo", this.model.get("url"));
 
     user.save({},{
       success: function(){

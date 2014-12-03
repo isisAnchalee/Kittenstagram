@@ -199,12 +199,13 @@
 }
 
 .feed-item-favorite-bar {
-  width: 399px !important;
+  width: 400px !important;
   position:relative;
   top:-13px;
   right:16px;
   height: 40px;
   background-color: #EEEEEE;
+  border-right: 1px solid #bdbdbd;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   box-sizing: border-box;
 }
@@ -219,6 +220,7 @@
   vertical-align: middle;
   text-align: center;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #bdbdbd;
   padding:10px;
   padding-left:11px;
   padding-bottom: 7px;
