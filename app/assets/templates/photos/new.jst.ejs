@@ -7,9 +7,186 @@
         <input id='file-source' type='file' accept='image/*'>
         <button id='cancel' class='btn btn-default'>Cancel</button>
         <button id='upload' class='btn btn-default'>Upload</button>
-
       </div>
     <div id='editor'><img src='http://imagizer.imageshack.us/a/img537/5251/zJwG5T.png'></div>
     </form>
+
+    <div id='filters' class='clearfix'>
+      <div class='filter-preview filter'>
+        <span>None</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/73.small."  data-filt='none'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Glowing Sun</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/77.small." data-filt='glowingSun'>
+      </div>
+      <div class="filter-preview filter">
+        <span>Old Boot</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/78.small." data-filt='oldBoot'>
+      </div>
+      <div class="filter-preview filter">
+        <span>Cross Process</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/79.small." data-filt='crossProcess'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Vintage</span>
+        <img class='img-rounded' class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/72.small."  data-filt='vintage'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Orange Peel</span>      
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/80.small." data-filt='orangePeel'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Jarques</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/82.small." data-filt='jarques'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Sunrise</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/83.small." data-filt='sunrise'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Pinhole</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/84.small." data-filt='pinhole'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Love</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/85.small." data-filt='love'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Concentrate</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/86.small." data-filt='concentrate'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Hazy Days</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/87.small." data-filt='hazyDays'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Her Majesty</span>
+        <img class='img-rounded'src="https://s3.amazonaws.com/kittenstagramdev/images/photos/88.small." data-filt='herMajesty'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Nostalgia</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/89.small." data-filt='nostalgia'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Hemingway</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/90.small." data-filt='hemingway'>
+      </div>
+
+      <div class="filter-preview filter">
+        <span>Clarity</span>
+        <img class='img-rounded' src="https://s3.amazonaws.com/kittenstagramdev/images/photos/74.small." data-filt='clarity'>
+      </div>
+    </div>
+
+    <div id='adjustments'>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Size</div>
+        <div class='adjustment-slider'>
+          <input type='range' id='size-slider' name='size' min='0.1' max='2.5' step='0.01'
+            value='1' data-default='1'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Rotate</div>
+        <div class='adjustment-slider'>
+          <input type='range' id='rotate-slider' name='rotate' min='0' max='360' step='0.1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Brightness</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='brightness' min='-100' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Saturation</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='saturation' min='-100' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Exposure</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='exposure' min='-100' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Contrast</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='contrast' min='-100' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Vibrance</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='vibrance' min='-100' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Sharpen</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='sharpen' min='0' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Noise</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='noise' min='0' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Blur</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='stackBlur' min='0' max='10' step='0.1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Clip</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='clip' min='0' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Hue</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='hue' min='0' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='adjustment'>
+        <div class='adjustment-label'>Sepia</div>
+        <div class='adjustment-slider'>
+          <input type='range' name='sepia' min='0' max='100' step='1'
+            value='0' data-default='0'>
+        </div>
+      </div>
+      <div class='input-group'>
+        <button id='reset' class='btn btn-default'>Reset All</button>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -15,6 +15,7 @@
 //= require jquery.ui.sortable
 //= require jquery.bgswitcher
 //= require jquery.serializejson
+//= require jquery.mousewheel
 //= require underscore
 //= require backbone
 //= require bootstrap-sprockets

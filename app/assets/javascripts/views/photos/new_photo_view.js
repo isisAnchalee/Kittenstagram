@@ -10,9 +10,12 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   template:  JST['photos/new'],
 
   events: {
-    'click #file-upload': 'fileUploadClick',
     'change #file-source': 'handleFile',
+    'click .filter': 'layerFilter',
     'click #upload': 'upload',
+    'click #cancel': 'cancelUpload',
+    'change input[type=range]': 'makeAdjustment',
+    'click #reset': 'resetAll'
   },
 
   render: function () {
@@ -24,6 +27,9 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
       this.editor = new ImageEditor({
         selector: 'editor', 
         base64Image: view.image,
+        onInitialized: function () {
+          $('#size-slider').attr('data-default', this.scale).val(this.scale);
+        }
       });
     }
 
@@ -31,7 +37,7 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   },
 
   handleFile: function (event) {
-    
+
     var view = this;
     var file = event.currentTarget.files[0];
     var reader = new FileReader();
@@ -63,5 +69,45 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     });
   },
 
+  cancelUpload: function (event) {
+    event.preventDefault();
+    this.editor = null;
+    this.editing = false;
+    this.render();
+  },
 
+  layerFilter: function (event) {
+    event.preventDefault();
+
+    var filt = $(event.target).data('filt');
+    if (filt === 'none') {
+      this.editor.resetFilter();
+    } else {
+      this.editor.applyFilter(filt);
+    }
+  },
+
+ makeAdjustment: function (event) {
+    var name = event.target.name;
+    var weight = event.target.value * 1;
+    var defaultWeight = $(event.target).data('default') * 1;
+
+    if (name === 'size') {
+      this.editor.setScale(weight);
+    } else if (name === 'rotate') {
+      this.editor.setRotation(weight);
+    } else {
+      this.editor.applyAdjustment(name, weight, defaultWeight);
+    }
+  },
+
+  resetAll: function (event) {
+    event.preventDefault();
+
+    this.$('input[type=range]').each(function (id, el) { 
+      el.value = $(el).data('default');
+    });
+
+    this.editor.resetAll();
+  }
 });

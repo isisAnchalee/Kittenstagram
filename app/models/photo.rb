@@ -4,7 +4,7 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :image, :styles => {
     :big => "500x500>",
-    :small => "50x50#"
+    :small => "85x85#"
   }
 
   validates_attachment_content_type(
