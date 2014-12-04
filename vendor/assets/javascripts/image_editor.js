@@ -30,7 +30,7 @@ ImageEditor.prototype.initializeKinetic = function (selector) {
 
   this.imageLayer = new Kinetic.Layer();
 
-  this.stage.add(this.backgroundLayer);
+  // this.stage.add(this.backgroundLayer);
   this.stage.add(this.imageLayer);
 };
 
@@ -43,14 +43,16 @@ ImageEditor.prototype.initializeCaman = function ( base64Image) {
     this.camanCanvas.width = this.image.width;
     this.camanCanvas.height = this.image.height;
 
-    context.drawImage(this.image, 0, 0);
+    // setTimeout(function () {
+      context.drawImage(this.image, 0, 0);
+    // }.bind(this), 1000)
 
     this.finalizeKinetic();
 
     this.setBackgroundColor('#000000');
+    this.center(this.image.width, this.image.height, this.scale); 
     this.scaleToFit(this.image.width, this.image.height);
-    this.center(this.image.width, this.image.height, this.scale);
-    
+
     // Initialization complete, call our callback if we have one now!
     if (this.onInitialized) this.onInitialized();
 

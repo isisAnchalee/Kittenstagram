@@ -11,11 +11,11 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
 
   events: {
     'change #file-source': 'handleFile',
-    // 'click .filter': 'layerFilter',
-    // 'click #upload': 'upload',
-    // 'click #cancel': 'cancelUpload',
-    // 'change input[type=range]': 'makeAdjustment',
-    // 'click #reset': 'resetAll'
+    'click .filter': 'layerFilter',
+    'click #upload': 'upload',
+    'click #cancel': 'cancelUpload',
+    'change input[type=range]': 'makeAdjustment',
+    'click #reset': 'resetAll'
   },
 
   render: function () {
@@ -40,9 +40,9 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     this.editor = new ImageEditor({
       selector: 'editor', 
       base64Image: this.image,
-      // onInitialized: function () {
-      //   $('#size-slider').attr('data-default', this.scale).val(this.scale);
-      // }
+      onInitialized: function () {
+        $('#size-slider').attr('data-default', this.scale).val(this.scale);
+      }
     });
   },
 
@@ -51,7 +51,7 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     var file = event.currentTarget.files[0];
     var reader = new FileReader();
 
-    reader.onload = function (e) {
+    reader.onloadend = function (e) {
       view.image = this.result;
       view.editing = true;
       view.renderEditor();

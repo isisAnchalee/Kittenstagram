@@ -26,7 +26,7 @@
 //= require kittenstagram
 //= require caman.full.min
 //= require camanFiltering
-//= require kinetic-v5.1.0.min
+//= require kinetic
 //= require_tree ../images
 //= require_tree ./utils
 //= require_tree ../templates
