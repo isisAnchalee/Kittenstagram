@@ -27,12 +27,12 @@
   <div class='pull-right'>
   <ul>
   <% if signed_in? %>
-    <li><%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn custom-button" %></li>
+    <div class="navbar-profile-pane"></div>
+    <li><%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn custom-button sign-out-btn" %></li>
   <% else %>
     <li class="sign-in-text"><%= link_to "Log in", new_session_url %></li>
     <li class="sign-in-text"><%= link_to "Sign up", new_users_url %></li>
   <% end %>
   </ul>
-<div class="navbar-profile-pane"></div>
 </div>
 </nav>
