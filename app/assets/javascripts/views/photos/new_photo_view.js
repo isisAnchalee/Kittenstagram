@@ -58,12 +58,13 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     this.editor.saveImage(function (base64Image) {
       var attrs = $('#editor-form').serializeJSON();
       attrs.image = base64Image;
+
       view.model.save(attrs, {
         success:function(){
           console.log("meow!")
         },
-        error: function(){
-          console.log("nope")
+        error: function(model, resp){
+          console.log(resp)
         }
       });
     });
