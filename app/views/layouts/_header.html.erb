@@ -24,7 +24,7 @@
     </div>
   </div>
 
-
+  <div class='pull-right'>
   <ul>
   <% if signed_in? %>
     <li><%= button_to "Sign out", session_url, method: :delete, class: "navbar-btn custom-button" %></li>
@@ -34,5 +34,5 @@
   <% end %>
   </ul>
 <div class="navbar-profile-pane"></div>
-
+</div>
 </nav>

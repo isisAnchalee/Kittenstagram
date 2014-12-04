@@ -12,6 +12,18 @@
 	width:300px;
 }
 
+.sign-in-text{
+	display: inline;
+	color: white;
+	top:-26px;
+	padding-right:10px;
+}
+
+.sign-in-text a{
+	color:white;
+	opacity: 0.8;
+}
+
 .followers-pane{
 	z-index:10;
 	position:relative;
