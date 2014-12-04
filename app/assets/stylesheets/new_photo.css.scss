@@ -25,11 +25,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 #adjustments{
-	width:220px;
+	width:235px;
 	position:relative;
 	float:right;
 	top:-737px;
-	right: 30px;
+	right: 17px;
 }
 
 #filters{
@@ -73,12 +73,13 @@ input[type="range"]::-webkit-slider-thumb {
 
 #cancel{
 	position:relative;
-	left: 595px;
+	left: 593px;
 	top: 475px;
 }
+
 #reset{
 	position:relative;
-	left:360px;
+	left:358px;
 	top: 475px;
 }
 .upload-wrapper{
