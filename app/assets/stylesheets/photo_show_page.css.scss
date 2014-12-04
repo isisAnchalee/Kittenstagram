@@ -103,6 +103,7 @@
 	right:-1px;
 	background-color: #EEEEEE;
 	border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
@@ -195,6 +196,7 @@
   right:16px;
   height: 40px;
   background-color: #EEEEEE;
+  border-top: 1px solid #bdbdbd;
   border-right: 1px solid #bdbdbd;
   border-bottom: 1px solid #bdbdbd !important;
   box-sizing: border-box;
