@@ -11,11 +11,11 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
 
   events: {
     'change #file-source': 'handleFile',
-    'click .filter': 'layerFilter',
-    'click #upload': 'upload',
-    'click #cancel': 'cancelUpload',
-    'change input[type=range]': 'makeAdjustment',
-    'click #reset': 'resetAll'
+    // 'click .filter': 'layerFilter',
+    // 'click #upload': 'upload',
+    // 'click #cancel': 'cancelUpload',
+    // 'change input[type=range]': 'makeAdjustment',
+    // 'click #reset': 'resetAll'
   },
 
   render: function () {
@@ -23,29 +23,38 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     var content = this.template();
     this.$el.html(content);
 
-    if (this.editing) {
-      this.editor = new ImageEditor({
-        selector: 'editor', 
-        base64Image: view.image,
-        onInitialized: function () {
-          $('#size-slider').attr('data-default', this.scale).val(this.scale);
-        }
-      });
-    }
+    // if (this.editing) {
+    //   this.editor = new ImageEditor({
+    //     selector: 'editor', 
+    //     base64Image: view.image,
+    //     onInitialized: function () {
+    //       $('#size-slider').attr('data-default', this.scale).val(this.scale);
+    //     }
+    //   });
+    // }
 
     return this;
   },
 
-  handleFile: function (event) {
+  renderEditor: function () {
+    this.editor = new ImageEditor({
+      selector: 'editor', 
+      base64Image: this.image,
+      // onInitialized: function () {
+      //   $('#size-slider').attr('data-default', this.scale).val(this.scale);
+      // }
+    });
+  },
 
+  handleFile: function (event) {
     var view = this;
     var file = event.currentTarget.files[0];
     var reader = new FileReader();
 
-    reader.onloadend = function (e) {
+    reader.onload = function (e) {
       view.image = this.result;
       view.editing = true;
-      view.render();
+      view.renderEditor();
     };
 
     reader.readAsDataURL(file);
