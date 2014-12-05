@@ -11,7 +11,9 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
 
   events:{ 
     "click .fav-btn": "likePhoto",
-    "submit .new-comment": "createNewComment"
+    "submit .new-comment": "createNewComment",
+    "click #delete-photo-btn" : "deletePhoto",
+    "click #profile-photo-btn": "setProfilePhoto"
   },
 
   addNewCommentView: function(comment){
@@ -55,6 +57,26 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.model.toggleLike(function(){
       $(event.currentTarget).toggleClass('red');
     }.bind(this))
-  }
+  },
+
+  setProfilePhoto: function(event){
+    event.preventDefault();
+    var user = new Kittenstagram.Models.User({id: this.model.get("user_id")});
+    user.set("profile_photo", this.model.get("url"));
+
+    user.save({},{
+      success: function(){
+        Backbone.history.navigate("#users/" + CURRENT_USER_ID, { trigger: true });
+      }
+    });
+  },
+  
+  deletePhoto: function(event){
+    event.preventDefault;
+    this.model.destroy();
+    Backbone.history.navigate("#", { trigger: true })
+  },
+
+  
 
 });
