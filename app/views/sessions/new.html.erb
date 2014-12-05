@@ -1,7 +1,15 @@
-
+<style>
+html,body {
+    background: url(http://imagizer.imageshack.us/a/img661/4435/OXCsAm.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+}
+</style>
 <div class="box">
-  <%= render partial: "layouts/errors" %>
   <div class="welcome-wrapper">
+    <%= render partial: "layouts/errors" %>
     <div class="splash-sign-up"> Log in!</div>
     <div class="welcome-message"> Welcome back meow.</div>
     <form class="login-form" action="/session" method="post">
@@ -18,4 +26,3 @@
     </form>
   </div>
 </div>
-<%= render partial: "layouts/bg" %>

@@ -136,6 +136,13 @@ input[type="range"]::-webkit-slider-thumb {
 	display: block;
 }
 
+.spinner{
+	position:relative;
+	z-index:1000;
+	top:-480px;
+	left:260px;
+}
+
 .filter-preview {
 	position: relative;
 	cursor: pointer;
@@ -146,4 +153,8 @@ input[type="range"]::-webkit-slider-thumb {
 	margin-bottom: 9px;
 	text-align: center;
 }
+.loading{
+	position:relative;
+	top:-200px;
 
+}

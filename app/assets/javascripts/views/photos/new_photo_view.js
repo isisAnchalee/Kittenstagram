@@ -1,6 +1,5 @@
 Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   initialize: function () {
-    this.editing = false;
     this.editor = null;
     $('body').css('background-color', '#edeeef');
   },
@@ -25,6 +24,11 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     return this;
   },
 
+  addSpinner: function(){
+    var $loading = $('<div>').addClass('spinner');
+    $('.spin-holder').append($loading);
+  },
+
   renderEditor: function () {
     this.editor = new ImageEditor({
       selector: 'editor', 
@@ -42,7 +46,6 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
 
     reader.onloadend = function (e) {
       view.image = this.result;
-      view.editing = true;
       view.renderEditor();
     };
 
@@ -52,27 +55,24 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   upload: function (event) {
     event.preventDefault();
     var view = this;
-
+    view.addSpinner();
     this.editor.saveImage(function (base64Image) {
       var attrs = $('#editor-form').serializeJSON();
       attrs.image = base64Image;
       view.model.save(attrs, {
         success:function(){
+          Backbone.history.navigate('#', { trigger: true });
         },
-        error: function(model, resp){
-          console.log(model);
-          console.log(resp)
+        error: function(){
+          Backbone.history.navigate('#', { trigger: true });
         }
       });
-
-
     });
   },
 
   cancelUpload: function (event) {
     event.preventDefault();
     this.editor = null;
-    this.editing = false;
     this.render();
   },
 
@@ -87,7 +87,7 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     }
   },
 
- makeAdjustment: function (event) {
+  makeAdjustment: function (event) {
     var name = event.target.name;
     var weight = event.target.value * 1;
     var defaultWeight = $(event.target).data('default') * 1;

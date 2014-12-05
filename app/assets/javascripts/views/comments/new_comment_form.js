@@ -21,13 +21,12 @@ Kittenstagram.Views.CommentForm = Backbone.CompositeView.extend({
 
     var attrs = $currentTarget.serializeJSON();
     var comment = new Kittenstagram.Models.Comment(attrs);
+    this.$(".form-control").val(" ")
     comment.save({},{
       success: function(){
-        //should get all the user profile stuff from rails
         that.model.comments().add(comment);
       }
     });
   }
-
 });
 
