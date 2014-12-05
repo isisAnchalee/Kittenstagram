@@ -22,17 +22,6 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     var view = this;
     var content = this.template();
     this.$el.html(content);
-
-    // if (this.editing) {
-    //   this.editor = new ImageEditor({
-    //     selector: 'editor', 
-    //     base64Image: view.image,
-    //     onInitialized: function () {
-    //       $('#size-slider').attr('data-default', this.scale).val(this.scale);
-    //     }
-    //   });
-    // }
-
     return this;
   },
 
@@ -67,15 +56,16 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     this.editor.saveImage(function (base64Image) {
       var attrs = $('#editor-form').serializeJSON();
       attrs.image = base64Image;
-
       view.model.save(attrs, {
         success:function(){
-          console.log("meow!")
         },
         error: function(model, resp){
+          console.log(model);
           console.log(resp)
         }
       });
+
+
     });
   },
 
