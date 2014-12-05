@@ -3,7 +3,7 @@ Kittenstagram.Views.GalleryImageView = Backbone.CompositeView.extend({
   className: 'col-xs-3',
 
   events:{
-  	'click a': 'showModal',
+  	'click .gallery-image': 'showModal',
   	'hidden.bs.modal .modal': 'removeModalEvent',
 
   },
