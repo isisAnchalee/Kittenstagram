@@ -66,7 +66,7 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
   deletePhoto: function(event){
     event.preventDefault;
     this.model.destroy();
-    Backbone.history.navigate("#", { trigger: true })
+    Backbone.history.navigate("#users"+ CURRENT_USER_ID, { trigger: true })
   },
 
   removeComment: function(comment){
