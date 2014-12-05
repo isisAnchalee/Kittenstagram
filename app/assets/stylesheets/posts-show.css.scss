@@ -88,10 +88,11 @@
 }
 
 .actions-btn{
-	height:40px !important;
+	height:39px !important;
 	padding: 0 !important;
 	border: none !important;
-	padding-bottom:-1px !important;
+	border-bottom: 1px solid #bdbdbd !important;
+	padding-bottom:-3px !important;
 }
 
 .fav-btn:hover, .actions-btn:hover {
