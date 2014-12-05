@@ -2,14 +2,17 @@
 <div class="singular-photo-wrapper">
 	<div class="photo-display list-group-item">
 		<img class= 'feed-photo-img ind-page' src="<%= photo.get('url') %>">
+
 		<div class="comment-details-pane list-group-item">
 			<div class='author-details'>
-				Posted by <a href='#users/<%= photo.escape("user_id")%>'><%= photo.get('username') %></a> <%= photo.get('time_ago') %> ago.
+
+				Posted by <a href='#users/<%= photo.escape("user_id")%>'><%= photo.get('user_username') %></a> <%= photo.get('time_ago') %> ago.
 			</div>
+
 			<div class="photo-comments">
 			</div>
-		<div class="private-pane">
 
+		<div class="private-pane">
 			<div class="like-button">
 				<% if (photo.get('liked')){ %>
 						<i class="fav-btn fa fa-heart red"></i>
@@ -18,31 +21,30 @@
 				<% } %>
 			</div>
 
+			<div class="feed-item-actions-btn">
+        <div class=" options-drop actions-btn">
+          <div class=" dropdown-toggle" data-toggle="dropdown">
+            ...
+          </div>
+          <ul class="dropdown-menu pull-right" role="menu">
+            <li><a href="#" id="set-profile-picture">Make Profile Picture</a></li>
+            <% if (photo.get("user_id") === CURRENT_USER_ID){ %>
+            <li><a href='#'> Delete Photo</a></li>
+						<% } %>
+          </ul>
+        </div>
+      </div>
+
 			<div class="like-heart">
 			</div>
 			<div class="photo-likes photo-show-likes">
 			</div>
 			
-      <div class='feed-item-actions-btn'>
-        <div class='actions-btn btn-group'>
-          <div class=' dropdown-toggle' data-toggle='dropdown'>
-            ...
-          </div>
-          <ul class='dropdown-menu pull-right' role='menu'>
-            <li><a href='#' id='set-profile-picture'>Make Profile Picture</a></li>
-          </ul>
-        </div>
-      </div>
-
 		</div>
 		<div class="comment-form comment-form-photo-show"></div>
 		</div>
 
 		<div class="author-options">
-		<% if (photo.get("user_id") === CURRENT_USER_ID){ %>
-			<button class='delete-photo-btn'> Delete </button>
-			<button class='profile-photo-btn'> Make Profile Photo</button>
-		<% } %>
 		</div>
 	</div>
 </div>

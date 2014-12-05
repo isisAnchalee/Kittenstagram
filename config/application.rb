@@ -32,5 +32,6 @@ module Kittenstagram
         :secret_access_key => Figaro.env.secret_access_key
       }
     }
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end

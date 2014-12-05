@@ -4,6 +4,10 @@ json.liked !!current_user.likes.find{ |like| like.photo_id == photo.id }
 json.username photo.user.username
 json.user_profile_photo photo.user.profile_photo
 
+json.user photo.user, :id, :username, :profile_photo
+json.user_username photo.user.username
+json.user_prof_photo photo.user.profile_photo
+
 json.likes photo.likes do |like|
 	json.id like.id
 	json.photo_id like.photo_id

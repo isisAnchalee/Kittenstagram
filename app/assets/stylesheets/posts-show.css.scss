@@ -1,3 +1,4 @@
+
 .author-details{
 	padding:6px;
 	width:358px;
@@ -10,6 +11,7 @@
   letter-spacing: 1px;
 	font-size:0.85em;
 }
+
 .photo-feed{
 	position:relative;
 	width:90%;
@@ -99,6 +101,40 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
+.feed-item-fav-btn, .feed-item-actions-btn {
+	display: table;
+	color: rgb(225, 0, 0) !important;
+}
+	
+.feed-item-actions-btn {
+  float: right;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+
+}
+
+.feed-item-actions-btn {
+  display: table;
+  cursor: pointer;
+  width: 40px;
+  height: 30px !important;
+  background-color: #EEEEEE;
+}
+
+.actions-btn{
+	height:39px !important;
+	padding: 0 !important;
+	border: none !important;
+	border-bottom: 1px solid #bdbdbd !important;
+	padding-bottom:-3px !important;
+}
+
+.fav-btn:hover, .actions-btn:hover {
+  color: gray;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .photo-show{
 	width: 640px;
 	margin: 0 auto;
@@ -171,7 +207,6 @@
 
 .likes{
 	margin: 0 auto;
-	// font-family: 'Montserrat', sans-serif;
 	width:240px;
 	position:relative;
 	top:-27px !important;
