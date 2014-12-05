@@ -18,7 +18,7 @@ Kittenstagram.Views.Explore = Backbone.CompositeView.extend({
   },
 
   createSubviews: function(){
-    $('#loading').remove();
+    $('.throbber').remove();
     this.collection.each(this.addItem.bind(this));
   },
 
