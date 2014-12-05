@@ -143,12 +143,12 @@
 
   background-color: #EEEEEE;
 }
-.fav-btn:hover, .actions-btn:hover {
+.fav-btn:hover, .actions-btn:hover, .nav-opts:hover {
   color: gray;
 
   text-decoration: none;
 
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1) !important;
 }
 
 .feed-item-fav-btn, .feed-item-actions-btn {
@@ -179,9 +179,10 @@
 	padding-bottom:-3px !important;
 }
 
-.fav-btn:hover, .actions-btn:hover {
+.fav-btn:hover, .actions-btn:hover, .nav-opts:hover {
   color: gray;
   text-decoration: none;
+  cursor: pointer;
   background: rgba(0, 0, 0, 0.1);
 }
 
