@@ -22,7 +22,7 @@ module Kittenstagram
     # config.i18n.default_locale = :de    
     config.paperclip_defaults = {
       :storage => :s3,
-      :s3_protocol => 'http',
+      :s3_protocol => 'https',
       :url =>':s3_path_url',
       :path => "images/:class/:id.:style.:extension",
       :s3_host_name => 's3.amazonaws.com',
