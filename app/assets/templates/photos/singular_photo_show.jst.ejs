@@ -14,7 +14,7 @@
 
 		<div class="private-pane">
 			<div class="like-button">
-				<% if (photo.escape('liked')){ %>
+				<% if (photo.get('liked')){ %>
 						<i class="fav-btn fa fa-heart red"></i>
 				<% } else {%>
 						<i class="fav-btn fa fa-heart"></i>
@@ -28,7 +28,7 @@
           </div>
           <ul class="dropdown-menu pull-right" role="menu">
             <li><a href="#" id="set-profile-picture">Make Profile Picture</a></li>
-            <% if (photo.escape("user_id") === CURRENT_USER_ID){ %>
+            <% if (photo.get("user_id") === CURRENT_USER_ID){ %>
             <li><a href='#'> Delete Photo</a></li>
 						<% } %>
           </ul>

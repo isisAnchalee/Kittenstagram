@@ -4,19 +4,14 @@
 <div class="like-heart"></div>
 <div class="feed-item-favorite-bar">
 
-				<div class="feed-item-actions-btn">
-        <div class=" options-drop actions-btn">
-          <div class=" dropdown-toggle" data-toggle="dropdown">
-            ...
-          </div>
-          <ul class="dropdown-menu pull-right" role="menu">
-            <li><a href="#" id="set-profile-picture">Make Profile Picture</a></li>
-            <% if (photo.get("user_id") === CURRENT_USER_ID){ %>
-            <li><a href='#'> Delete Photo</a></li>
-						<% } %>
-          </ul>
-        </div>
-      </div>
+		<nav class='options-drop actions-btn' id="primary_nav_wrap">
+		<ul>
+		  <li class='nav-opts'><a href="#">...</a>
+		    <ul>
+		      <li><a href="#">Set as Profile Photo</a></li>
+		      <li><a href="#">Delete</a></li>
+		      <ul>
+		</nav>
       
 	<div class="like-button">
 		<% if (photo.get('liked')){ %>
