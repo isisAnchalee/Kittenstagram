@@ -1,9 +1,7 @@
 <div class="photo-feed">
-<% if (!photos){ %>
-	<div class='redirect-user'>	
-	<img class='greeting-logo' src='https://s3.amazonaws.com/kittenstagramdev/images/photos/lighterlogo.png'><br>
-	Oops! It looks like there are no photos in your current feed. Check out the <a href='#explore'>explore</a> page to browse some photos.
-
-	</div>
-<% } %>
+	<% if (!photos){ %>
+		<div class='redirect-user'>	
+		<a href='#explore'> Explore!</a>
+		</div>
+	<% } %>
 </div>

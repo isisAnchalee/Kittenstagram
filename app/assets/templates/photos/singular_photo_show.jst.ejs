@@ -3,6 +3,9 @@
 	<div class="photo-display list-group-item">
 		<img class= 'feed-photo-img ind-page' src="<%= photo.get('url') %>">
 		<div class="comment-details-pane list-group-item">
+			<div class='author-details'>
+				Posted by <a href='#users/<%= photo.escape("user_id")%>'><%= photo.get('username') %></a> <%= photo.get('time_ago') %> ago.
+			</div>
 			<div class="photo-comments">
 			</div>
 		<div class="private-pane">
