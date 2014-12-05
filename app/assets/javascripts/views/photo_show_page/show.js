@@ -12,8 +12,8 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
   events:{
     "click .fav-btn" : "likePhoto",
-    "click .delete-photo-btn" : "deletePhoto",
-    "click .profile-photo-btn": "setProfilePhoto"
+    "click #delete-photo-btn" : "deletePhoto",
+    "click #profile-photo-btn": "setProfilePhoto"
   },
 
   addCommentFormView: function(){
