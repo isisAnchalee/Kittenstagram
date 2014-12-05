@@ -25,7 +25,7 @@ module Kittenstagram
       :s3_protocol => 'https',
       :url =>':s3_path_url',
       :path => "images/:class/:id.:style.:extension",
-      :s3_host_name => 's3.amazonaws.com',
+      :s3_host_name => 's3-us-west-1.amazonaws.com',
       :s3_credentials => {
         :bucket => Figaro.env.aws_bucket, #these values safely stored in application.yml thanks to figaro!
         :access_key_id => Figaro.env.access_key_id,
