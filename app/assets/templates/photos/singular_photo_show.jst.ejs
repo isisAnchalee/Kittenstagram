@@ -1,12 +1,12 @@
 
 <div class="singular-photo-wrapper">
 	<div class="photo-display list-group-item">
-		<img class= 'feed-photo-img ind-page' src="<%= photo.get('url') %>">
+		<img class= 'feed-photo-img ind-page' src="<%= photo.escape('url') %>">
 
 		<div class="comment-details-pane list-group-item">
 			<div class='author-details'>
 
-				Posted by <a href='#users/<%= photo.escape("user_id")%>'><%= photo.get('user_username') %></a> <%= photo.get('time_ago') %> ago.
+				Posted by <a href='#users/<%= photo.escape("user_id")%>'><%= photo.escape('user_username') %></a> <%= photo.escape('time_ago') %> ago.
 			</div>
 
 			<div class="photo-comments">
@@ -14,7 +14,7 @@
 
 		<div class="private-pane">
 			<div class="like-button">
-				<% if (photo.get('liked')){ %>
+				<% if (photo.escape('liked')){ %>
 						<i class="fav-btn fa fa-heart red"></i>
 				<% } else {%>
 						<i class="fav-btn fa fa-heart"></i>
@@ -28,7 +28,7 @@
           </div>
           <ul class="dropdown-menu pull-right" role="menu">
             <li><a href="#" id="set-profile-picture">Make Profile Picture</a></li>
-            <% if (photo.get("user_id") === CURRENT_USER_ID){ %>
+            <% if (photo.escape("user_id") === CURRENT_USER_ID){ %>
             <li><a href='#'> Delete Photo</a></li>
 						<% } %>
           </ul>

@@ -7,6 +7,7 @@ json.photos @user.photos do |photo|
 	json.thumb_url photo.image.url(:thumb)
 	json.time_ago time_ago_in_words(photo.created_at)
 	json.user_username @user.username
+	json.user_id photo.user_id
 	
 	json.likes photo.likes do |like|
 		json.id like.id

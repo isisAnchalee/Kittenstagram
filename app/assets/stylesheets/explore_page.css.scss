@@ -35,3 +35,162 @@
 	width:130px;
 	height: 130px;
 }
+
+.spinner {
+  /* Playing with these values (make sure to adjust HAML iter.) */
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+.spinner > div {
+  width: 9%;
+  height: 35%;
+  background: #000;
+  position: absolute;
+  left: 44.5%;
+  top: 37%;
+  opacity: 0;
+  /* I Use compass-animation for cross-browser */
+  animation: fade 1s linear infinite;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  /* Loop through total ticks to rotate accordingly & change timing. */
+}
+.spinner > div.bar1 {
+  -moz-transform: rotate(0deg) translate(0, -142%);
+  -ms-transform: rotate(0deg) translate(0, -142%);
+  -webkit-transform: rotate(0deg) translate(0, -142%);
+  transform: rotate(0deg) translate(0, -142%);
+  animation-delay: -1s;
+}
+.spinner > div.bar2 {
+  -moz-transform: rotate(30deg) translate(0, -142%);
+  -ms-transform: rotate(30deg) translate(0, -142%);
+  -webkit-transform: rotate(30deg) translate(0, -142%);
+  transform: rotate(30deg) translate(0, -142%);
+  animation-delay: -0.91667s;
+}
+.spinner > div.bar3 {
+  -moz-transform: rotate(60deg) translate(0, -142%);
+  -ms-transform: rotate(60deg) translate(0, -142%);
+  -webkit-transform: rotate(60deg) translate(0, -142%);
+  transform: rotate(60deg) translate(0, -142%);
+  animation-delay: -0.83333s;
+}
+.spinner > div.bar4 {
+  -moz-transform: rotate(90deg) translate(0, -142%);
+  -ms-transform: rotate(90deg) translate(0, -142%);
+  -webkit-transform: rotate(90deg) translate(0, -142%);
+  transform: rotate(90deg) translate(0, -142%);
+  animation-delay: -0.75s;
+}
+.spinner > div.bar5 {
+  -moz-transform: rotate(120deg) translate(0, -142%);
+  -ms-transform: rotate(120deg) translate(0, -142%);
+  -webkit-transform: rotate(120deg) translate(0, -142%);
+  transform: rotate(120deg) translate(0, -142%);
+  animation-delay: -0.66667s;
+}
+.spinner > div.bar6 {
+  -moz-transform: rotate(150deg) translate(0, -142%);
+  -ms-transform: rotate(150deg) translate(0, -142%);
+  -webkit-transform: rotate(150deg) translate(0, -142%);
+  transform: rotate(150deg) translate(0, -142%);
+  animation-delay: -0.58333s;
+}
+.spinner > div.bar7 {
+  -moz-transform: rotate(180deg) translate(0, -142%);
+  -ms-transform: rotate(180deg) translate(0, -142%);
+  -webkit-transform: rotate(180deg) translate(0, -142%);
+  transform: rotate(180deg) translate(0, -142%);
+  animation-delay: -0.5s;
+}
+.spinner > div.bar8 {
+  -moz-transform: rotate(210deg) translate(0, -142%);
+  -ms-transform: rotate(210deg) translate(0, -142%);
+  -webkit-transform: rotate(210deg) translate(0, -142%);
+  transform: rotate(210deg) translate(0, -142%);
+  animation-delay: -0.41667s;
+}
+.spinner > div.bar9 {
+  -moz-transform: rotate(240deg) translate(0, -142%);
+  -ms-transform: rotate(240deg) translate(0, -142%);
+  -webkit-transform: rotate(240deg) translate(0, -142%);
+  transform: rotate(240deg) translate(0, -142%);
+  animation-delay: -0.33333s;
+}
+.spinner > div.bar10 {
+  -moz-transform: rotate(270deg) translate(0, -142%);
+  -ms-transform: rotate(270deg) translate(0, -142%);
+  -webkit-transform: rotate(270deg) translate(0, -142%);
+  transform: rotate(270deg) translate(0, -142%);
+  animation-delay: -0.25s;
+}
+.spinner > div.bar11 {
+  -moz-transform: rotate(300deg) translate(0, -142%);
+  -ms-transform: rotate(300deg) translate(0, -142%);
+  -webkit-transform: rotate(300deg) translate(0, -142%);
+  transform: rotate(300deg) translate(0, -142%);
+  animation-delay: -0.16667s;
+}
+.spinner > div.bar12 {
+  -moz-transform: rotate(330deg) translate(0, -142%);
+  -ms-transform: rotate(330deg) translate(0, -142%);
+  -webkit-transform: rotate(330deg) translate(0, -142%);
+  transform: rotate(330deg) translate(0, -142%);
+  animation-delay: -0.08333s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+.global-spinner-container {
+  position: fixed;
+  z-index: 10000;
+  background: #000;
+  background: rgba(0, 0, 0, 0.75);
+  width: 154px;
+  height: 154px;
+  top:200px;
+  left: 50%;
+  margin-left: -77px;
+  margin-top: -77px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.global-spinner-container .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: -25px;
+  margin-top: -40px;
+}
+.global-spinner-container .spinner div {
+  background: #fff;
+  width: 12%;
+  height: 35%;
+}
+.global-spinner-container .spinner-message {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  text-align: center;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: bold;
+}
