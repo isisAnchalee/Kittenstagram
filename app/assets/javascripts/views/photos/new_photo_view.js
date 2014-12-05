@@ -14,7 +14,8 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     'click #upload': 'upload',
     'click #cancel': 'cancelUpload',
     'change input[type=range]': 'makeAdjustment',
-    'click #reset': 'resetAll'
+    'click #reset': 'resetAll',
+    'click .test' : 'addSpinner'
   },
 
   render: function () {
@@ -25,8 +26,19 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   },
 
   addSpinner: function(){
-    var $loading = $('<div>').addClass('spinner');
-    $('.spin-holder').append($loading);
+    $letter1 = $('<span>').addClass('letter').text('L');
+    $letter2 = $('<span>').addClass('letter').text('O');
+    $letter3 = $('<span>').addClass('letter').text('A');
+    $letter4 = $('<span>').addClass('letter').text('D');
+    $letter5 = $('<span>').addClass('letter').text('I');
+    $letter6 = $('<span>').addClass('letter').text('N');
+    $letter7 = $('<span>').addClass('letter').text('G');
+    $letter8 = $('<span>').addClass('letter').text('.');
+    $letter9 = $('<span>').addClass('letter').text('.');
+    $letter10 = $('<span>').addClass('letter').text('.');
+    $loaderDiv = $('<div>').addClass('loader').append($letter1, [ $letter2, $letter3, $letter4, $letter5, $letter6, $letter7, $letter8, $letter9, $letter10])
+ 
+    $('.spin-holder').html($loaderDiv);
   },
 
   renderEditor: function () {
