@@ -56,7 +56,9 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     event.preventDefault();
 
     var $likeBtn = $(event.currentTarget);
-      $likeBtn.attr("disabled", "disabled");
+    $likeBtn.attr("disabled", "disabled");
+
+    this.likeAnimation($likeBtn);
 
       setTimeout(function(){
         $likeBtn.removeAttr("disabled");
@@ -92,6 +94,16 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
       }
     } else {
       Backbone.history.navigate("#", { trigger: true });
+    }
+  },
+
+  likeAnimation: function($likeBtn){
+    if (!$likeBtn.children().first().hasClass('red')){
+    var that = this;
+    var $img = this.$('.heart-place').addClass("heart pulse1").text("♥")
+      setTimeout(function(){
+        that.$('.heart-place').removeClass("heart pulse1").text("")
+      }, 550);
     }
   }
   
