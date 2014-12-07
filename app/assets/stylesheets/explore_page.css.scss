@@ -1,7 +1,9 @@
 .explore-page{
 	margin-top:55px;
 }
-
+.dots{
+  font-size:2em;
+}
 .explore-photo{
 	height:140px;
 	width:140px;
@@ -108,7 +110,7 @@
 
 .nav-opts{
   border-left: 1px solid #bdbdbd;
-  padding-bottom:7px !important;
+  padding-bottom:5px !important;
   z-index: 1000;
 }
 
@@ -124,7 +126,7 @@
   float:right;
   margin:0;
   color:black;
-  padding:0 15px;
+  padding:0 4px;
   font-size:12px;
   padding:0;
   box-shadow: 0px 0px 35px -12px rgba(0, 0, 0, 0.75);
@@ -137,8 +139,7 @@
   color:black;
   text-decoration:none;
   font-size: 12px;
-  line-height:32px;
-  padding:0 15px;
+  padding:0 10px;
   font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
 }
 
