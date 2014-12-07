@@ -179,7 +179,18 @@
 	padding-bottom:-3px !important;
 }
 
-.fav-btn:hover, .actions-btn:hover, .nav-opts:hover {
+.like-btn{
+	// border: 1px solid #bdbdbd !important;
+	padding: 5px 10px;
+	border: none;
+	border-right: 1px solid #bdbdbd;
+	border-left: 1px solid #bdbdbd;
+	background-color: #EEEEEE;
+	font-size: 1.4em;
+	color: silver;
+}
+
+.fav-btn:hover, .like-btn:hover, .actions-btn:hover, .nav-opts:hover {
   color: gray;
   text-decoration: none;
   cursor: pointer;

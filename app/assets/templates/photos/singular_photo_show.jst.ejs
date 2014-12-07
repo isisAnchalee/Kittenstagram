@@ -13,13 +13,13 @@
 			</div>
 
 		<div class="private-pane">
-			<div class="like-button">
-				<% if (photo.get('liked')){ %>
-						<i class="fav-btn fa fa-heart red"></i>
-				<% } else {%>
-						<i class="fav-btn fa fa-heart"></i>
-				<% } %>
-			</div>
+		<button class='like-btn'>
+			<% if (photo.get('liked')){ %>
+					<i class="fa fa-heart red"></i>
+			<% } else {%>
+					<i class="fa fa-heart"></i>
+			<% } %>
+		</button>
 
 		<nav class='options-drop actions-btn' id="primary_nav_wrap">
 			<ul>

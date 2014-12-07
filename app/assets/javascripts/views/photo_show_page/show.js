@@ -11,7 +11,7 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
   },
 
   events:{
-    "click .fav-btn" : "likePhoto",
+    "click .like-btn" : "likePhoto",
     "click #delete-photo-btn" : "deletePhoto",
     "click #profile-photo-btn": "setProfilePhoto"
   },
@@ -58,8 +58,16 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
   likePhoto: function(event){
     event.preventDefault();
+
+    var $likeBtn = $(event.currentTarget);
+      $likeBtn.attr("disabled", "disabled");
+
+      setTimeout(function(){
+        $likeBtn.removeAttr("disabled");
+      }, 300);
+
     this.model.toggleLike(function(){
-      $(event.currentTarget).toggleClass('red');
+      $likeBtn.children().first().toggleClass('red')
     }.bind(this))
   },
 

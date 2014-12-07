@@ -6,11 +6,10 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     this.model.comments().each(this.addNewCommentView.bind(this));
     this.listenTo(this.model.comments(), "add", this.addNewCommentView);
     this.listenTo(this.model.comments(), "remove", this.removeComment);
-    // this.listenTo(this.model.likes(), "add remove", this.refreshLikesView.bind(this))
   },
 
   events:{ 
-    "click .fav-btn": "likePhoto",
+    "click .like-btn": "likePhoto",
     "submit .new-comment": "createNewComment",
     "click #delete-photo-btn" : "deletePhoto",
     "click #profile-photo-btn": "setProfilePhoto"
@@ -29,6 +28,7 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   	var renderedContent = this.template({
       photo: this.model
     });
+
   	this.$el.html(renderedContent);
     this.attachSubviews();
   	return this;
@@ -54,8 +54,14 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
 
   likePhoto: function(event){
     event.preventDefault();
+    var $likeBtn = $(event.currentTarget);
+      $likeBtn.attr("disabled", "disabled");
+      setTimeout(function(){
+        $likeBtn.removeAttr("disabled");
+      }, 300)
+      
     this.model.toggleLike(function(){
-      $(event.currentTarget).toggleClass('red');
+      $likeBtn.toggleClass('red');
     }.bind(this))
   },
 
