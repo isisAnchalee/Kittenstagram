@@ -9,6 +9,7 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
   template:  JST['photos/new'],
 
   events: {
+    'click #file-upload': 'fileUploadClick',
     'change #file-source': 'handleFile',
     'click .filter': 'layerFilter',
     'click #upload': 'upload',
@@ -23,6 +24,11 @@ Kittenstagram.Views.NewPhoto = Backbone.View.extend({
     var content = this.template();
     this.$el.html(content);
     return this;
+  },
+
+  fileUploadClick: function (event) {
+    var $fileInput = $('#file-source');
+    $fileInput.click();
   },
 
   addSpinner: function(){

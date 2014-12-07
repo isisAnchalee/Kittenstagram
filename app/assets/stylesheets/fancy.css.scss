@@ -25,7 +25,7 @@ $font-family-sans-serif: $main-font;
     position: relative;
     box-sizing: border-box;
 }
-h3 {
+h3, .click-text {
     text-transform: uppercase;
     letter-spacing: 0.5em;
     font-size: 12px !important;
@@ -33,16 +33,5 @@ h3 {
     text-align: center;
     padding: 10px;
     color: darken($lightgrey, 20%);
-}
-
-@font-face {
-  font-family: 'Billabong';    
-  src: url('/assets/Billabong.eot');
-  src: url('/assets/Billabong.eot?iefix') format('eot'),
-  url('/assets/Billabong.woff') format('woff'),
-  url('/assets/Billabong.ttf') format('truetype'),
-  url('/assets/Billabong.svg#webfont3AwWkQXK') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 
