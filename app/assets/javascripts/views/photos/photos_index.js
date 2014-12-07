@@ -2,7 +2,7 @@ Kittenstagram.Views.PhotosIndex = Backbone.CompositeView.extend({
   template: JST['photos/index'],
 
   initialize: function(){
-    this.listenTo(this.collection, 'sync remove', this.render);
+    this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addImageView)
     this.collection.each(this.addImageView.bind(this));
   },

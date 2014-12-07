@@ -389,3 +389,17 @@
  }
 
 }
+
+.heart-overlay {
+  background: url('https://s3-us-west-1.amazonaws.com/kitdevaws/images/photos/glyph-heart-pop-big.png') no-repeat center center;
+}
+
+.heart-overlay{
+  position: absolute;
+  background-size: 100%;
+  top: 25%; left: 25%;
+  width: 50%;
+  height: 50%;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+}

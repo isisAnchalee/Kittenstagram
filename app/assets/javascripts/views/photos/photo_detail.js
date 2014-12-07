@@ -82,7 +82,17 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   deletePhoto: function(event){
     event.preventDefault;
     this.model.destroy();
-    Backbone.history.navigate("#", { trigger: true })
+    var newFragment = Backbone.history.getFragment($(this).attr('href'));
+    var path = newFragment.split("/")[0];
+
+    if (path === '#'){
+      if (Backbone.history.fragment == newFragment) {
+          Backbone.history.fragment = null;
+          Backbone.history.navigate(newFragment, true);
+      }
+    } else {
+      Backbone.history.navigate("#", { trigger: true });
+    }
   }
   
 });
