@@ -93,13 +93,20 @@ Kittenstagram.Views.SingularPhotoShow = Backbone.CompositeView.extend({
 
     user.save({},{
       success: function(){
-        var newFragment = Backbone.history.getFragment($(that).attr('href'));
         $('.modal').modal('hide');
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
-        if (Backbone.history.fragment == newFragment) {
-            Backbone.history.fragment = null;
-            Backbone.history.navigate(newFragment, true);
+
+        var newFragment = Backbone.history.getFragment($(that).attr('href'));
+        var path = newFragment.split("/")[0];
+
+        if (path === 'users'){
+          if (Backbone.history.fragment == newFragment) {
+              Backbone.history.fragment = null;
+              Backbone.history.navigate(newFragment, true);
+          }
+        } else {
+          Backbone.history.navigate("#users/" + CURRENT_USER_ID, { trigger: true });
         }
       }
     });
