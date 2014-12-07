@@ -177,18 +177,6 @@
   border-right: 1px solid silver;
 }
 
-.glyphicon {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .feed-item-favorite-bar {
   width: 400px !important;
   position:relative;
@@ -202,12 +190,16 @@
   box-sizing: border-box;
 }
 
+.fa-heart{
+  transition: color 350ms, background-color 200ms;
+}
+
 .feed-item-fav-btn {
   float: left;
   border-right: 1px solid rgba(0,0,0,0.1);
 }
 
-.fav-btn, .actions-btn {
+.actions-btn {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -221,10 +213,6 @@
   transition: color 350ms, background-color 200ms;
 }
 
-.like-button{
-	display: inline;
-
-}
 .ind-page{
   top:0px !important;
 }
