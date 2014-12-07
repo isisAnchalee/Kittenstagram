@@ -54,14 +54,16 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
 
   likePhoto: function(event){
     event.preventDefault();
+
     var $likeBtn = $(event.currentTarget);
       $likeBtn.attr("disabled", "disabled");
+
       setTimeout(function(){
         $likeBtn.removeAttr("disabled");
-      }, 300)
-      
+      }, 300);
+
     this.model.toggleLike(function(){
-      $likeBtn.toggleClass('red');
+      $likeBtn.children().first().toggleClass('red')
     }.bind(this))
   },
 

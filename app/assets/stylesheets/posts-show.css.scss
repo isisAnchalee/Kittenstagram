@@ -187,7 +187,7 @@
 	border-left: 1px solid #bdbdbd;
 	background-color: #EEEEEE;
 	font-size: 1.4em;
-	color: silver;
+color: silver;
 }
 
 .fav-btn:hover, .like-btn:hover, .actions-btn:hover, .nav-opts:hover {
@@ -223,22 +223,25 @@
 	min-width: 600px;
 
 }
-
+.mid-logo{
+	width: 148px;
+	height: 42px;
+}
 .timelineCenter {
 	background: #e0e1e2 url(//d36xtkk24g8jdx.cloudfront.net/bluebar/be7c37a/images/shared/noise-2.png);
 	border: 1px solid rgba(0,0,0,.1);
 	border-width: 0 1px;
 	width: 470px;
 	margin-top:-30px;
-	margin-bottom:-80px;
 	padding: 16px 32px;
 	margin-left: 70px;
 }
 
 .feed-photo-img{
 	position:relative;
-	top:-50px;
+	top:-20px;
 	width:400px;
+	border: 1px solid #bdbdbd;
 	height:400px;
 	-webkit-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 35px -12px rgba(0,0,0,0.75);
