@@ -15,15 +15,6 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     "click #profile-photo-btn": "setProfilePhoto"
   },
 
-  addNewCommentView: function(comment){
-    var newCommentView = new Kittenstagram.Views.CommentShow({
-      model: comment,
-      user: comment.user
-    });
-
-    this.addSubview(".photo-comments", newCommentView);
-  },
-
   render: function(){
   	var renderedContent = this.template({
       photo: this.model
@@ -32,6 +23,15 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
   	this.$el.html(renderedContent);
     this.attachSubviews();
   	return this;
+  },
+
+  addNewCommentView: function(comment){
+    var newCommentView = new Kittenstagram.Views.CommentShow({
+      model: comment,
+      user: comment.user
+    });
+
+    this.addSubview(".photo-comments", newCommentView);
   },
 
   removeComment: function(comment){
@@ -83,8 +83,6 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
     event.preventDefault;
     this.model.destroy();
     Backbone.history.navigate("#", { trigger: true })
-  },
-
+  }
   
-
 });
