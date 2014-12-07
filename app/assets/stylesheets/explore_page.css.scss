@@ -126,7 +126,9 @@
   color:black;
   padding:0 15px;
   font-size:12px;
-  padding:0
+  padding:0;
+  box-shadow: 0px 0px 35px -12px rgba(0, 0, 0, 0.75);
+
 }
 
 #primary_nav_wrap ul a
@@ -142,7 +144,6 @@
 
 #primary_nav_wrap ul li
 {
-  box-shadow: 0px 0px 35px -12px rgba(0, 0, 0, 0.75);
   position:relative;
   float:left;
   margin:0;
