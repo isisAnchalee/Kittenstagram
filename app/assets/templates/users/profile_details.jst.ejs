@@ -14,7 +14,12 @@
                 <% }else{ %>
                     <button class='unfollow-btn'> <span class="ui-button-text">Unfollow</span> </button>
                 <% } %>
-                <h2 class='short-profile-name'><%= user.escape('username') %>
+                <% if (user.escape('username').length > 13 ){ %>
+                    <h2 class='short-profile-name'><%= user.escape('username') %>
+                <% } else { %>
+                    <h2 class='long-profile-name'><%= user.escape('username') %>
+                <% } %>
+                
                 <span class='gender-sign'>
                 <% if (user.get("gender") === "M"){ %>
                     ♂ 
