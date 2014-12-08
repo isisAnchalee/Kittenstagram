@@ -23,14 +23,18 @@
 
 		<nav class='options-drop actions-btn' id="primary_nav_wrap">
 			<ul>
-		  <li class='nav-opts'><a href="#"><span class='dots'>...</span></a>
-		    <ul>
-		      <li id='profile-photo-btn'><a href="#">Set As Profile Photo</a></li>
-		      <li id='delete-photo-btn'><a href="#">Delete</a></li>
-		     </ul>
+			  <li class='nav-opts'><a href="#">
+			  	<span class='dots'>...</span></a>
+				    <ul>
+				      <li id='profile-photo-btn'><a href="#">Set as Profile Photo</a></li>
+				      <% if (photo.get('user_id') === CURRENT_USER_ID){ %>
+				      	<li id='delete-photo-btn'><a href="#">Delete</a></li>
+				      <% } %>
+				    </ul>
+				</li>
 		 	</ul>
 		</nav>
-
+		
 			<div class="like-heart">
 			</div>
 			<div class="photo-likes photo-show-likes">

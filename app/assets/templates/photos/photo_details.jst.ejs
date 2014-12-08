@@ -11,7 +11,9 @@
 			  	<span class='dots'>...</span></a>
 				    <ul>
 				      <li id='profile-photo-btn'><a href="#">Set as Profile Photo</a></li>
-				      <li id='delete-photo-btn'><a href="#">Delete</a></li>
+				      <% if (photo.get('user_id') === CURRENT_USER_ID){ %>
+				      	<li id='delete-photo-btn'><a href="#">Delete</a></li>
+				      <% } %>
 				    </ul>
 				</li>
 		 	</ul>
