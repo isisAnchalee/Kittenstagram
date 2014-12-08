@@ -140,6 +140,8 @@
 }
 
 .custom-login{
+	color:silver;
+	opacity: 0.8;
 	width:200px;
 	height:40px;
 	font-weight:normal;
@@ -217,4 +219,28 @@ display: inline;
 }
 .custom-button:hover{
 	opacity: 1;
+}
+
+
+.sign-up-button{
+	color:white;
+	width:100px important;
+	border: none;
+	height:37px !important;
+	border-radius: 4px;
+	background-color: #afa3a8 !important;
+}
+
+.sign-up-button:hover{
+	background-color: #6a5f63 !important;
+}
+
+.guest-login-button{
+	background-color: #325f91;
+	color:white;
+	border: none;
+	border-radius: 4px;
+}
+.guest-login-button:hover{
+	background-color: #284c74;
 }

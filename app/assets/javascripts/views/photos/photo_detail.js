@@ -87,7 +87,6 @@ Kittenstagram.Views.PhotoDetails = Backbone.CompositeView.extend({
 
     var newFragment = Backbone.history.getFragment($(this).attr('href'));
     var path = newFragment.split("/")[0];
-    debugger;
     if (path === ''){
       if (Backbone.history.fragment == newFragment) {
           Backbone.history.fragment = null;

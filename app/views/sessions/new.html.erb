@@ -1,6 +1,6 @@
 <style>
 html,body {
-    background: url(http://imagizer.imageshack.us/a/img661/4435/OXCsAm.jpg) no-repeat center center fixed;
+    background: url(http://th04.deviantart.net/fs70/PRE/f/2012/224/5/6/cute_cat_wallpaper_hd_by_alexandruiuilian-d5aslq1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover; /* For WebKit*/
     -moz-background-size: cover;    /* Mozilla*/
     -o-background-size: cover;      /* Opera*/
@@ -16,13 +16,13 @@ html,body {
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input name="user[username]" type="text" class="custom-login username-input" value="Username"><br>
         <input name="user[password]" type="password" class="custom-login password-input" value="Password"><br>
-      <input type="submit" value="Submit" class="btn btn-success custom-login">
+      <input type="submit" value="Submit" class="custom-login sign-up-button">
     </form>
     <form class="login-form guest-log-in" action="/session" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="user[username]" value="isis">
     <input type="hidden" name="user[password]" value="meowmeow">
-    <input type="submit" value="Guest Login" class="btn btn-primary custom-login">
+    <input type="submit" value="Guest Login" class="guest-login-button custom-login">
     </form>
   </div>
 </div>
