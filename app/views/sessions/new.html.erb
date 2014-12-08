@@ -7,9 +7,9 @@ html,body {
     background-size: cover;         /* Generic*/
 }
 </style>
+<%= render partial: "layouts/errors" %>
 <div class="box">
   <div class="welcome-wrapper">
-    <%= render partial: "layouts/errors" %>
     <div class="splash-sign-up"> Log in!</div>
     <div class="welcome-message"> Welcome back meow.</div>
     <form class="login-form" action="/session" method="post">
