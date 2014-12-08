@@ -14,6 +14,9 @@ Kittenstagram.Views.PhotosIndex = Backbone.CompositeView.extend({
   	$('body').css('background-color','#edeeef')
   	this.$el.html(renderedContent);
     this.attachSubviews();
+    setTimeout(function(){
+      $('.redirect-user').css('visibility', 'visible')
+    }, 1000)
   	return this;
   },
 
